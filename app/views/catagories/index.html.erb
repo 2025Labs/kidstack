@@ -1,0 +1,38 @@
+
+<div class="row-fluid">
+	<div class="span12">
+		<%= link_to image_tag("kidstack75x75.png", :alt =>"kidstack logo", :class => "topnav"), root_path %>
+	</div>
+</div>
+		
+<div class="row-fluid">
+	
+	<div class="span6">
+		<%= image_tag("pics/introvideo.png", :alt => "intro video") %>			
+	</div>
+	
+	
+	<div class="span6">
+		<% @catagories.each_with_index do |catagory, index| %>
+	
+			<div class="row-fluid">
+				<div class="span2">
+					<%= image_tag(catagory.navgraphic, :class => "navgraph") %>	
+				</div>
+		
+				<div class="span2">
+					<%= image_tag(catagory.navgraphic.next, :class => "navgraph") %>	
+				</div>
+			</div>
+			
+		
+		<% end %>
+	</div>
+			
+	
+	<div class="row-fluid">
+		<div class="span12">
+		</div>
+	</div>
+	
+</div>
