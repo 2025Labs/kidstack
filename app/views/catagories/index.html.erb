@@ -7,23 +7,24 @@
 		
 <div class="row-fluid">
 	
-	<div class="span6">
+	<div class="span7">
 		<%= image_tag("pics/introvideo.png", :alt => "intro video") %>			
 	</div>
 	
 	
-	<div class="span6">
+	<div class="span5">
 		<% @catagories.each_with_index do |catagory, index| %>
-	
-			<div class="row-fluid">
-				<div class="span2">
-					<%= image_tag(catagory.navgraphic, :class => "navgraph") %>	
-				</div>
-		
-				<div class="span2">
-					<%= image_tag(catagory.navgraphic.next, :class => "navgraph") %>	
-				</div>
-			</div>
+			
+			<% if index%2 == 0 %>
+				<div class="row-fluid">
+			<%end%>
+					<div class="span6">
+						<%= image_tag(catagory.navgraphic, :class => "navgraph") %>
+						</div>
+						<%if index%2==1 %>
+							
+					 	</div>
+						<% end %>
 			
 		
 		<% end %>
