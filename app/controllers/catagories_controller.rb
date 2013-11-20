@@ -8,4 +8,8 @@ class CatagoriesController < ApplicationController
   
   def cathome
   end
+  
+  def show
+    @catagory = Catagory.find(params[:id])
+  end
 end

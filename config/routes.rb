@@ -1,8 +1,13 @@
 Kidstack::Application.routes.draw do
   
-  get "catagories/new"
-  get "catagories/index"
-  
+  resources :catagories
+  resources :topics
+  get "topics/new"
+  get "topics/topichome"
+  #get "catagories/new"
+  #get "catagories/index"
+  #get "catagories/cathome" #I want to send this the catagory name
+  #get "catagories/cathome/:name, to 
   root 'static_pages#home'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
