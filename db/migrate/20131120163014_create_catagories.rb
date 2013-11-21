@@ -5,6 +5,7 @@ class CreateCatagories < ActiveRecord::Migration
       t.string :navgraphic
       t.string :video
       t.string :timeline
+      t.string :headergraphic
 
       t.timestamps
     end

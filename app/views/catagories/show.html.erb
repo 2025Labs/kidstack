@@ -1,4 +1,37 @@
-<% @catagory.name %>
+<div class="row-fluid">
+	<div class="span12">
+		<%= link_to image_tag("kidstack75x75.png", :alt =>"kidstack logo", :class => "topnav"), root_path %>
+	</div>
+</div>
 
-<%= image_tag(@catagory.navgraphic) %>
+<div class="row-fluid">
+	
+	<div class="span7">
+		<%= image_tag(@catagory.video, :alt => "intro video") %>			
+	</div>
+
+	<div class="span5">
+		<% @topics.each_with_index do |topic, index| %>
+			
+			<% if index%2 == 0 %>
+				<div class="row-fluid">
+			<%end%>
+					<div class="span6">
+						<%= link_to image_tag(topic.navgraphic, :class => "navgraph"), "#" %>
+						</div>
+						<%if index%2==1 %>
+							
+					 	</div>
+						<% end %>
+			
+		
+		<% end %>
+	</div>
+	
+	<div class="row-fluid">
+		<div class="span12">
+		</div>
+	</div>
+</div>
+
 

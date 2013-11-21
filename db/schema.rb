@@ -21,15 +21,17 @@ ActiveRecord::Schema.define(version: 20131120205557) do
     t.string   "navgraphic"
     t.string   "video"
     t.string   "timeline"
+    t.string   "headergraphic"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "topics", force: true do |t|
     t.string   "name"
-    t.string   "catagory"
+    t.string   "c_type"
     t.string   "video"
     t.string   "navgraphic"
+    t.string   "headergraphic"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -6,5 +6,6 @@ FactoryGirl.define do
     navgraphic "MyString"
     video "MyString"
     timeline "MyString"
+    headergraphic "MyString"
   end
 end

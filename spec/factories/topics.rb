@@ -3,8 +3,10 @@
 FactoryGirl.define do
   factory :topic do
     name "MyString"
-    catagory "MyString"
+    c_type "MyString"
     video "MyString"
     navgraphic "MyString"
+    headergraphic "MyString"
+    
   end
 end
