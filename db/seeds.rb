@@ -15,7 +15,7 @@ FactoryGirl.create(:catagory, name:"Energy", navgraphic: "navgraphics/energy.png
 FactoryGirl.create(:catagory, name:"Computing", navgraphic: "navgraphics/computing.png", video: "pics/computingvideo.png")
 
 #topics for structures
-FactoryGirl.create(:topic, name:"Bridges", c_type:"Structures", navgraphic: "navgraphics/bridges.png", headergraphic: "headernav/bridgessheader.png")
+FactoryGirl.create(:topic, name:"Bridges", c_type:"Structures", navgraphic: "navgraphics/bridges.png", headergraphic: "headernav/bridgesheader.png", video: "pics/bridgesvideo.png")
 FactoryGirl.create(:topic, name:"Skyscrapers", c_type:"Structures", navgraphic: "navgraphics/skyscrapers.png")
 FactoryGirl.create(:topic, name:"Roads", c_type:"Structures", navgraphic: "navgraphics/roads.png")
 FactoryGirl.create(:topic, name:"Plumbing", c_type:"Structures", navgraphic: "navgraphics/plumbing.png")

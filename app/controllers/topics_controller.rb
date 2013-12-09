@@ -2,6 +2,11 @@ class TopicsController < ApplicationController
   def new
   end
 
-  def topichome
+  def show
+    @topic = Topic.find_by_name(params[:id])
+    @peanuts = @topic.c_type
+    @catagory = Catagory.find_by_name(@peanuts)
+    
+    #I want the catagory where params[:id].c_type = Catagory.name
   end
 end

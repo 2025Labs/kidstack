@@ -1,16 +1,25 @@
 
 <div class="row-fluid">
 	<div class="span12">
-		<%= link_to image_tag("kidstack75x75.png", :alt =>"kidstack logo", :class => "topnav"), root_path %>
+		<%= link_to image_tag("kidstack65x65.png", :alt =>"kidstack logo", :class => "topnav"), root_path %>
 	</div>
 </div>
 		
 <div class="row-fluid">
 	
 	<div class="span7">
-		<%= image_tag("pics/introvideo.png", :alt => "intro video") %>			
+		<%= image_tag("standardnav/quiz.png", :class => "catnav") %>
+		<%= image_tag("standardnav/read.png", :class => "catnav") %>
+		<%= image_tag("standardnav/watch.png", :class => "catnav") %>
+		
+			
+	 <%= image_tag("pics/introvideo.png", :alt => "intro video", :name => "slide") %> 
+	 <!--<script type="text/javascript">
+	 //showSlideshow(); // these three lines
+	 </script>-->				
 	</div>
 	
+
 	
 	<div class="span5">
 		<% @catagories.each_with_index do |catagory, index| %>
