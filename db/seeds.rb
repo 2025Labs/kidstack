@@ -30,4 +30,13 @@ FactoryGirl.create(:topic, name:"Failure Analysis", c_type:"Engineering Process"
 FactoryGirl.create(:topic, name:"Reverse Engineering", c_type:"Engineering Process", navgraphic: "navgraphics/reverse_engineering.png")
 FactoryGirl.create(:topic, name:"Technology", c_type:"Engineering Process", navgraphic: "navgraphics/technology.png")
 
+#slides
+FactoryGirl.create(:slide, image: "slideshow/steve1.jpg", title: "Steve1", desc: "Here is the text for Steve1", sort_id=1)
+FactoryGirl.create(:slide, image: "slideshow/steve2.jpg", title: "Steve2", desc: "Here is the text for Steve2", sort_id=2)
+FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Steve3", desc: "Here is the text for Steve3", sort_id=3)
+
+#slideshow
+FactoryGirl.create(:slideshow, title: "Bridges")
+
+
 

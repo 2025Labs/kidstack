@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131120205557) do
+ActiveRecord::Schema.define(version: 20140120222406) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,22 @@ ActiveRecord::Schema.define(version: 20131120205557) do
     t.string   "video"
     t.string   "timeline"
     t.string   "headergraphic"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "slides", force: true do |t|
+    t.string   "image"
+    t.string   "title"
+    t.text     "desc"
+    t.string   "audio"
+    t.integer  "sort_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "slideshows", force: true do |t|
+    t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
