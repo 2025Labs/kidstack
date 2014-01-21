@@ -15,20 +15,20 @@ FactoryGirl.create(:catagory, name:"Energy", navgraphic: "navgraphics/energy.png
 FactoryGirl.create(:catagory, name:"Computing", navgraphic: "navgraphics/computing.png", video: "pics/computingvideo.png")
 
 #topics for structures
-FactoryGirl.create(:topic, name:"Bridges", c_type:"Structures", navgraphic: "navgraphics/bridges.png", headergraphic: "headernav/bridgesheader.png", video: "pics/bridgesvideo.png")
-FactoryGirl.create(:topic, name:"Skyscrapers", c_type:"Structures", navgraphic: "navgraphics/skyscrapers.png")
-FactoryGirl.create(:topic, name:"Roads", c_type:"Structures", navgraphic: "navgraphics/roads.png")
-FactoryGirl.create(:topic, name:"Plumbing", c_type:"Structures", navgraphic: "navgraphics/plumbing.png")
-FactoryGirl.create(:topic, name:"Beams", c_type:"Structures", navgraphic: "navgraphics/beams.png")
-FactoryGirl.create(:topic, name:"Push and Pull", c_type:"Structures", navgraphic: "navgraphics/push_and_pull.png")
+FactoryGirl.create(:topic, name:"Bridges", navgraphic: "navgraphics/bridges.png", headergraphic: "headernav/bridgesheader.png", video: "pics/bridgesvideo.png", catagory_id: 3)
+FactoryGirl.create(:topic, name:"Skyscrapers",  navgraphic: "navgraphics/skyscrapers.png", catagory_id: 3)
+FactoryGirl.create(:topic, name:"Roads",  navgraphic: "navgraphics/roads.png", catagory_id: 3)
+FactoryGirl.create(:topic, name:"Plumbing",  navgraphic: "navgraphics/plumbing.png", catagory_id: 3)
+FactoryGirl.create(:topic, name:"Beams",  navgraphic: "navgraphics/beams.png", catagory_id: 3)
+FactoryGirl.create(:topic, name:"Push and Pull",  navgraphic: "navgraphics/push_and_pull.png", catagory_id: 3)
 
 #topics for engineering process
-FactoryGirl.create(:topic, name:"Research and Development", c_type:"Engineering Process", navgraphic: "navgraphics/r_and_d.png")
-FactoryGirl.create(:topic, name:"Product Innovation", c_type:"Engineering Process", navgraphic: "navgraphics/product_innovation.png")
-FactoryGirl.create(:topic, name:"Design Process", c_type:"Engineering Process", navgraphic: "navgraphics/design_process.png")
-FactoryGirl.create(:topic, name:"Failure Analysis", c_type:"Engineering Process", navgraphic: "navgraphics/failure_analysis.png")
-FactoryGirl.create(:topic, name:"Reverse Engineering", c_type:"Engineering Process", navgraphic: "navgraphics/reverse_engineering.png")
-FactoryGirl.create(:topic, name:"Technology", c_type:"Engineering Process", navgraphic: "navgraphics/technology.png")
+FactoryGirl.create(:topic, name:"Research and Development",  navgraphic: "navgraphics/r_and_d.png", catagory_id: 1)
+FactoryGirl.create(:topic, name:"Product Innovation",  navgraphic: "navgraphics/product_innovation.png", catagory_id: 1)
+FactoryGirl.create(:topic, name:"Design Process",  navgraphic: "navgraphics/design_process.png", catagory_id: 1)
+FactoryGirl.create(:topic, name:"Failure Analysis",  navgraphic: "navgraphics/failure_analysis.png", catagory_id: 1)
+FactoryGirl.create(:topic, name:"Reverse Engineering", navgraphic: "navgraphics/reverse_engineering.png", catagory_id: 1)
+FactoryGirl.create(:topic, name:"Technology", navgraphic: "navgraphics/technology.png", catagory_id: 1)
 
 #slideshow
 FactoryGirl.create(:slideshow, title: "Bridges", topic_id: 1)

@@ -46,7 +46,6 @@ ActiveRecord::Schema.define(version: 20140120222406) do
 
   create_table "topics", force: true do |t|
     t.string   "name"
-    t.string   "c_type"
     t.string   "video"
     t.string   "navgraphic"
     t.string   "headergraphic"
