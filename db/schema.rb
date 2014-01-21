@@ -32,12 +32,14 @@ ActiveRecord::Schema.define(version: 20140120222406) do
     t.text     "desc"
     t.string   "audio"
     t.integer  "sort_id"
+    t.integer  "slideshow_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "slideshows", force: true do |t|
     t.string   "title"
+    t.integer  "topic_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -48,6 +50,7 @@ ActiveRecord::Schema.define(version: 20140120222406) do
     t.string   "video"
     t.string   "navgraphic"
     t.string   "headergraphic"
+    t.integer  "catagory_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
