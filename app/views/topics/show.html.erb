@@ -16,7 +16,39 @@
 		<%= image_tag("standardnav/quiz.png", :class => "catnav") %>
 		<%= image_tag("standardnav/read.png", :class => "catnav") %>
 		<%= image_tag("standardnav/watch.png", :class => "catnav") %>
-		<%= image_tag(@topic.video) %>	
+
+		
+		<div class="cycle-slideshow"
+		       data-cycle-fx="fade"
+               data-cycle-timeout=0
+               data-cycle-prev="#prev"
+               data-cycle-next="#next"
+                >
+
+ 			
+
+			<!-- empty element for overlay -->
+           <div class="cycle-overlay"></div> 
+		   
+
+<!-- look through the slide data  -->
+           <% @topic.slideshow.slides.each do |t| %>
+           
+             <img src=<%=asset_path(t.image)%>  
+		        data-cycle-title=<%=t.title%> 
+                data-cycle-desc="<%=t.desc%>" >
+
+            <%end %>
+		   
+		            <!-- empty element for pager links -->
+    		<div class="cycle-pager"></div>
+	    </div>  
+
+	   <!-- prev/next links -->
+    <div class=center>
+        <span id=prev>&lt;&lt;Prev </span>
+        <span id=next> Next&gt;&gt;</span>
+    </div>	
 						
 	</div>
 
