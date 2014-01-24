@@ -5,8 +5,7 @@
 		<%= image_tag(@catagory.headergraphic, :class => "topnav") %>
 		<%= image_tag("arrow.png", :alt => "arrow pointing right", :class => "topnav") %>
 		<%= image_tag(@topic.headergraphic, :class => "topnav") %>
-					
-		
+
 	</div>
 </div>
 
@@ -16,45 +15,47 @@
 		<%= image_tag("standardnav/quiz.png", :class => "catnav") %>
 		<%= image_tag("standardnav/read.png", :class => "catnav") %>
 		<%= image_tag("standardnav/watch.png", :class => "catnav") %>
-
 		
-		<div class="cycle-slideshow"
-		       data-cycle-fx="fade"
-               data-cycle-timeout=0
-               data-cycle-prev="#prev"
-               data-cycle-next="#next"
-                >
-
- 			
-
-			<!-- empty element for overlay -->
-           <div class="cycle-overlay"></div> 
-		   
-
-<!-- look through the slide data  -->
-           <% @topic.slideshow.slides.each do |t| %>
-           
-             <img src=<%=asset_path(t.image)%>  
-		        data-cycle-title=<%=t.title%> 
-                data-cycle-desc="<%=t.desc%>" >
-
-            <%end %>
-		   
-		            <!-- empty element for pager links -->
-    		<div class="cycle-pager"></div>
-	    </div>  
-
-	   <!-- prev/next links -->
-    <div class=center>
-        <span id=prev>&lt;&lt;Prev </span>
-        <span id=next> Next&gt;&gt;</span>
-    </div>	
+		<!-- @topic.slideshow.slides.each_with_index do |t, index| -->
+		<!--you can do it this way, but the issue is getting everything to appear right on top of each other -->
+		<!--what if we handle this by making a partial for the slides - that might be the only way to get the images to write on top of each other vs. stacking one underneath another-->
+		<%= @topic.slideshow.slides.count%>
+		<% number = 0 %>
+				
+		<%= render "topics/slideshow", :num => number %>
+		
+								
+		<button type="button" onclick="prevFunction()"><%= image_tag("leftarrow.png", :alt => "arrow pointing right") %></button>
+		<button type="button" onclick="nextFunction()"><%= image_tag("arrow.png", :alt => "arrow pointing right") %></button>
+				
+			<!--So if the person clicks previous, I want the index to go down by 1-->
+			<!--So if the person clicks next, I want the index to go up by 1-->
+		
+    	<script>
+		function nextFunction() {
+			document.getElementById("demo").innerHTML = "nextfunction";
+			
+		}
+		</script>
+		
+		<script>
+		function prevFunction() {
+			document.getElementById("demo").innerHTML = "prevfunction";
+			
+		}
+		</script>
 						
 	</div>
-
+    
 	<div class="span5">
+		
 			<%= image_tag("standardnav/projects.png", :class => "topicnav") %>
 			<%= image_tag("standardnav/interaction.png", :class => "topicnav") %>
+
+			<p id="demo">which function am I looking at</p>	
+
+			
+			
 			
 	</div>
 	
