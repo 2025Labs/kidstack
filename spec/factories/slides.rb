@@ -7,6 +7,6 @@ factory :slide do
     desc "MyText"
     audio "MyString"
     sort_id 1
-    slideshow_id 0
+    topic_id 0
   end
 end

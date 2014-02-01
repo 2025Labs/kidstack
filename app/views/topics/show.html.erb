@@ -15,54 +15,39 @@
 		<%= image_tag("standardnav/quiz.png", :class => "catnav") %>
 		<%= image_tag("standardnav/read.png", :class => "catnav") %>
 		<%= image_tag("standardnav/watch.png", :class => "catnav") %>
+	
+		<div id="show_slide">
+		<% slide = @topic.slides.first %>
+		<%=image_tag(slide.image)%></br>
+		<%= slide.title %></br>
+		<%= slide.desc %></br>
+		<% nextslide = slide.next %></br>
+		</div>
 		
-		<!-- @topic.slideshow.slides.each_with_index do |t, index| -->
-		<!--you can do it this way, but the issue is getting everything to appear right on top of each other -->
-		<!--what if we handle this by making a partial for the slides - that might be the only way to get the images to write on top of each other vs. stacking one underneath another-->
-		<%= @topic.slideshow.slides.count%>
-		<% number = 0 %>
-				
-		<%= render "topics/slideshow", :num => number %>
+		<%= link_to 'nextslide', slide_topic_path(:topic_id => @topic.id, :id => @slide.id),  :remote => true %>
 		
-								
-		<button type="button" onclick="prevFunction()"><%= image_tag("leftarrow.png", :alt => "arrow pointing right") %></button>
-		<button type="button" onclick="nextFunction()"><%= image_tag("arrow.png", :alt => "arrow pointing right") %></button>
-				
-			<!--So if the person clicks previous, I want the index to go down by 1-->
-			<!--So if the person clicks next, I want the index to go up by 1-->
 		
-    	<script>
-		function nextFunction() {
-			document.getElementById("demo").innerHTML = "nextfunction";
-			
-		}
-		</script>
 		
-		<script>
-		function prevFunction() {
-			document.getElementById("demo").innerHTML = "prevfunction";
-			
-		}
-		</script>
-						
+
+
+		
+		
+	
+		
 	</div>
+
     
 	<div class="span5">
-		
 			<%= image_tag("standardnav/projects.png", :class => "topicnav") %>
 			<%= image_tag("standardnav/interaction.png", :class => "topicnav") %>
-
-			<p id="demo">which function am I looking at</p>	
-
-			
-			
-			
+		
 	</div>
 	
 	<div class="row-fluid">
 		<div class="span12">
 		</div>
 	</div>
+	
 </div>
 
 
