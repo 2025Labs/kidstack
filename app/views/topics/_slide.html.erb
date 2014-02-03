@@ -4,7 +4,7 @@
 <%= @slide.title %></br>
 <%= @slide.desc %></br>
 <%= @slide.id %> </br>
-
+<%= audio_tag(@slide.audio, autoplay: true) %>
 	<% nextslide = @slide.next %>
 	<%= nextslide.id %>
 	<%= link_to 'nextslide', slide_topic_path(:topic_id => @topic.id, :id => nextslide.id),  :remote => true %>
