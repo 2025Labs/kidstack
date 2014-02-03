@@ -15,16 +15,27 @@
 		<%= image_tag("standardnav/quiz.png", :class => "catnav") %>
 		<%= image_tag("standardnav/read.png", :class => "catnav") %>
 		<%= image_tag("standardnav/watch.png", :class => "catnav") %>
-	
-		<div id="show_slide">
+		<% num_slides = @topic.slides.count %>
+		
 		<% slide = @topic.slides.first %>
+		
+		<div id="show_slide">
 		<%=image_tag(slide.image)%></br>
 		<%= slide.title %></br>
 		<%= slide.desc %></br>
-		<% nextslide = slide.next %></br>
+		<%= slide.id %> </br>
+		
+		<% nextslide = slide.next %>
+		<%= link_to 'nextslide', slide_topic_path(:topic_id => @topic.id, :id => nextslide.id),  :remote => true %>
+		
+		
 		</div>
 		
-		<%= link_to 'nextslide', slide_topic_path(:topic_id => @topic.id, :id => @slide.id),  :remote => true %>
+
+		
+	
+
+		
 		
 		
 		

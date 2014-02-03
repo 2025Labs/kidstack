@@ -1,6 +1,13 @@
+<% num_slides = @topic.slides.count %>
+<%= num_slides %>
 <%=image_tag(@slide.image)%></br>
 <%= @slide.title %></br>
 <%= @slide.desc %></br>
+<%= @slide.id %> </br>
+
+	<% nextslide = @slide.next %>
+	<%= nextslide.id %>
+	<%= link_to 'nextslide', slide_topic_path(:topic_id => @topic.id, :id => nextslide.id),  :remote => true %>
 
 
 

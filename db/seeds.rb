@@ -34,6 +34,7 @@ FactoryGirl.create(:topic, name:"Technology", navgraphic: "navgraphics/technolog
 FactoryGirl.create(:slide, image: "slideshow/steve1.jpg", title: "Steve1", desc: "Here is the text for Steve1", audio: "jump.wav", topic_id: 1)
 FactoryGirl.create(:slide, image: "slideshow/steve2.jpg", title: "Steve2", desc: "Here is the text for Steve2", audio: "explosion.wav", topic_id: 1)
 FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Steve3", desc: "Here is the text for Steve3", audio: "jump.wav", topic_id: 1)
+FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Steve4", desc: "Here is the text for Steve4", audio: "jump.wav", topic_id: 1)
 
 
 
