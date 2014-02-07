@@ -1,20 +1,15 @@
-<% num_slides = @topic.slides.count %>
+<% num_slides = @catagory.slides.count %>
 	
 	<div class="row-fluid">
 		<div class="span8">
 			<%=image_tag(@slide.image)%></br>
-			<% nextslide = @slide.next %>
+			<% nextslide = @slide.catnext %>
 		</div>
 		<div class="span4">
 			<span class="title"><%= @slide.title %></br></span>
 			<span class="desc"><%= @slide.desc %></br></span>
 			<%= audio_tag(@slide.audio, autoplay: true) %>
-			<%= link_to image_tag("arrow.png", :alt => "arrow pointing right"), slide_topic_path(:topic_id => @topic.id, :id => nextslide.id),  :remote => true %>
+			<%= link_to image_tag("arrow.png", :alt => "arrow pointing right"), catslide_catagory_path(:catagory_id => @catagory.id, :id => nextslide.id),  :remote => true %>
 			
 		</div>
 	</div>
-
-
-
-
-

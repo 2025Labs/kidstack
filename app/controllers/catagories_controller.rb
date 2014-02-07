@@ -9,6 +9,15 @@ class CatagoriesController < ApplicationController
   
   def show
     @catagory = Catagory.find_by_name(params[:id])
-  
+    @slide = @catagory.slides.first
   end
+  
+  def catslide
+    @catagory = Catagory.find(params[:catagory_id])
+    @slide = @catagory.slides.find(params[:id])
+    respond_to do |format|
+      format.js {render :layout => false}
+    end
+  end
+  
 end

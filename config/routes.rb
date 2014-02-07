@@ -1,11 +1,15 @@
 Kidstack::Application.routes.draw do
   
 
-  resources :catagories, :topics
+  resources :slides
+  resources :catagories do
+    member do
+      get 'catslide'
+    end
+  end
   resources :topics do
     member do
       get 'slide'
-      get 'arrow'
     end
   end
 

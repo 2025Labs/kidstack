@@ -8,5 +8,6 @@ factory :slide do
     audio "MyString"
     sort_id 1
     topic_id 0
+    catagory_id  0
   end
 end

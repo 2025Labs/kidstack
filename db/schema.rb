@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20140120222259) do
     t.string   "audio"
     t.integer  "sort_id"
     t.integer  "topic_id"
+    t.integer  "catagory_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

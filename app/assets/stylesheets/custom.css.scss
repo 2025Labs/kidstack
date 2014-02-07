@@ -1,6 +1,7 @@
 @import "bootstrap";
 
 
+
 .circlebuttons{
 	float:right;
 	padding-left:10px;
@@ -33,6 +34,27 @@
 
 }
 
+
+.circlebuttons{
+	float:right;
+	padding-left:10px;
+	padding-bottom:10px;
+}
+
+
+/* these are the styles for the slide shows*/
+.title {
+	color: #21B6A5;
+	font-family: "Comic Sans MS", cursive, sans-serif; 
+	font-size: 24px;
+	line-height: 35px;
+}
+
+.desc {
+	color: #a1a1a1;
+	font-size: 16px;
+	line-height: 24px;
+}
 
 /*
    cycle2 slide show code

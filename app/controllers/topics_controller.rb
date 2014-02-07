@@ -2,9 +2,11 @@ class TopicsController < ApplicationController
   def new
   end
 
+
   def show
     @topic = Topic.find_by_name(params[:id])
     @catagory = Catagory.find(@topic.catagory_id)
+    @topics = @catagory.topics.all
     @slide = @topic.slides.first
     @slides = @topic.slides.all
   end
@@ -22,5 +24,7 @@ class TopicsController < ApplicationController
       format.js
     end
   end
+  
+
 
 end

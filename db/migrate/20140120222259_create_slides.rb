@@ -7,6 +7,7 @@ class CreateSlides < ActiveRecord::Migration
       t.string :audio
       t.integer :sort_id
       t.integer :topic_id
+      t.integer :catagory_id
       t.timestamps
     end
   end
