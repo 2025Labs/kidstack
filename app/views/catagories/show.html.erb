@@ -3,7 +3,8 @@
 		<div class="row-fluid">
 			<%= link_to image_tag("kidstack65x65.png", :alt =>"kidstack logo", :class => "topnav"), root_path %>
 			<%= image_tag("arrow.png", :alt => "arrow pointing right", :class => "topnav") %>
-			<%= link_to image_tag(@catagory.headergraphic, :class => "topnav"), catagory_path(@catagory.name) %>
+			<div class="span2"><%= link_to image_tag(@catagory.navgraphic, :class => "topnav"), catagory_path(@catagory.name) %>
+			</div>
 		</div>
 	
 		<% slide = @catagory.slides.first %>
