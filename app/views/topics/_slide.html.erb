@@ -3,13 +3,24 @@
 	<div class="row-fluid">
 		<div class="span8">
 			<%=image_tag(@slide.image)%></br>
-			<% nextslide = @slide.next %>
+			
 		</div>
 		<div class="span4">
 			<span class="title"><%= @slide.title %></br></span>
 			<span class="desc"><%= @slide.desc %></br></span>
 			<%= audio_tag(@slide.audio, autoplay: true) %>
-			<%= link_to image_tag("arrow.png", :alt => "arrow pointing right"), slide_topic_path(:topic_id => @topic.id, :id => nextslide.id),  :remote => true %>
+			
+			
+			<% unless @slide.prev.nil? %>
+				<% prevslide = @slide.prev %>
+				<%= link_to image_tag("leftarrow.png", :alt => "arrow pointing left"), slide_topic_path(:topic_id => @topic.id, :id => prevslide.id),  :remote => true %>
+			<% end%>
+			
+			<% unless @slide.next.nil? %>
+				<% nextslide = @slide.next %>
+				<%= link_to image_tag("arrow.png", :alt => "arrow pointing right"), slide_topic_path(:topic_id => @topic.id, :id => nextslide.id),  :remote => true %>
+			<% end%>
+			
 			
 		</div>
 	</div>
