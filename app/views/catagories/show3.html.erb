@@ -1,0 +1,49 @@
+<div class="row-fluid">
+	<div class="span10">
+		<div class="row-fluid">
+			<%= link_to image_tag("kidstack65x65.png", :alt =>"kidstack logo", :class => "topnav"), root_path %>
+			<%= image_tag("arrow.png", :alt => "arrow pointing right", :class => "topnav") %>
+			<div class="span2"><%= link_to image_tag(@catagory.navgraphic, :class => "topnav"), catagory_path(@catagory.name) %>
+			</div>
+		</div>
+	
+		<% slide = @catagory.slides.first %>
+		
+		
+		<div class="row-fluid">			
+			<div id="show_slide">
+				<div class="span8">
+					<%=image_tag(slide.image)%></br>
+					<% nextslide = slide.catnext %>
+				</div>
+				<div class="span4">
+					<span class="title"><%= slide.title %></br></span>
+					<span class="desc"><%= slide.desc %></br></span>
+					<%= audio_tag(slide.audio, autoplay: true) %>
+					<%= link_to image_tag("arrow.png", :alt => "arrow pointing right"), catslide_catagory_path(:catagory_id => @catagory.id, :id => nextslide.id),  :remote => true %>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+		
+	<div class="span2">
+		<div class="row-fluid">
+			<div class="span2">
+
+			</div>
+			<div class="span10">
+				<% @catagory.topics.each do |topic| %>
+					<%= link_to image_tag(topic.navgraphic, :class => "navgraph"), topic_path(topic.name) %>
+				<% end %>
+			</div>
+			
+		</div>
+	</div>
+			
+</div>
+
+
+
+
+

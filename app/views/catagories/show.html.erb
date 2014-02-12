@@ -7,21 +7,12 @@
 			</div>
 		</div>
 	
-		<% slide = @catagory.slides.first %>
+	
 		
 		
 		<div class="row-fluid">			
 			<div id="show_slide">
-				<div class="span8">
-					<%=image_tag(slide.image)%></br>
-					<% nextslide = slide.catnext %>
-				</div>
-				<div class="span4">
-					<span class="title"><%= slide.title %></br></span>
-					<span class="desc"><%= slide.desc %></br></span>
-					<%= audio_tag(slide.audio, autoplay: true) %>
-					<%= link_to image_tag("arrow.png", :alt => "arrow pointing right"), catslide_catagory_path(:catagory_id => @catagory.id, :id => nextslide.id),  :remote => true %>
-				</div>
+				<%=  render( :partial => "catslide", :locals => { :slide => @slide} ) %>
 			</div>
 		</div>
 	</div>

@@ -25,21 +25,10 @@
 		<div class="row-fluid">			
 
 			<div id="show_slide">
-				<div class="span8">
-					<%=image_tag(slide.image)%></br>
-					<% nextslide = slide.next %>
-				</div>
-				<div class="span4">
-					<%= image_tag("standardnav/quiz.png", :class => "catnav") %>
-					<%= image_tag("standardnav/projects.png", :class => "catnav") %>
-					</br></br>
-					<span class="title"><%= slide.title %></br></span>
-					<span class="desc"><%= slide.desc %></br></span>
-					<%= audio_tag(slide.audio, autoplay: true) %>
-					<%= link_to image_tag("arrow.png", :alt => "arrow pointing right"), slide_topic_path(:topic_id => @topic.id, :id => nextslide.id),  :remote => true %>
+				<%=  render( :partial => "slide", :locals => { :slide => @slide} ) %>
 				</div>
 			</div>
-		</div>
+
 	</div>
 	
 		
