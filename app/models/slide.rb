@@ -3,23 +3,26 @@ class Slide < ActiveRecord::Base
   belongs_to :catagory
   
     def next
-      unless topic.id.nil?
-        topic.slides.where("id > ?", id).order("id ASC").first
+      if topic.id.nil?
+        if catagory.id.present?
+          catagory.slides.where("id > ?", id).order("id ASC").first
+        end 
+      else
+        if topic.id.present?
+          topic.slides.where("id > ?", id).order("id ASC").first
+        end
       end
     end
 
     def prev
-      topic.slides.where("id < ?", id).order("id DESC").first
-    end
-
-    def catnext
-      catagory.slides.where("id > ?", id).order("id ASC").first
-    end
-
-    def catprev
-      catagory.slides.where("id < ?", id).order("id DESC").first
-    end     
-
   
-    
+       if topic_id.blank?
+          catagory.slides.where("id < ?", id).order("id DESC").first
+        else
+          topic.slides.where("id < ?", id).order("id DESC").first
+        end
+        
+      
+    end
+  
 end
