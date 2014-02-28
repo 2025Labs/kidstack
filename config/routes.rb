@@ -15,6 +15,7 @@ Kidstack::Application.routes.draw do
 
       
   root 'catagories#index'
+ 
   
 
   
