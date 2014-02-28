@@ -1,10 +1,22 @@
 Kidstack::Application.routes.draw do
   
-  resources :catagories, :topics
-  
+
+  resources :slides
+  resources :catagories do
+    member do
+      get 'catslide'
+    end
+  end
+  resources :topics do
+    member do
+      get 'slide'
+    end
+  end
+
+      
   root 'catagories#index'
   
-  get "topics/new"
+
   
 
   # The priority is based upon order of creation: first created -> highest priority.
