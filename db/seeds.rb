@@ -175,42 +175,48 @@ FactoryGirl.create(:slide, image: "slideshow/steve2.jpg", title: "Steve2", desc:
 FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Steve3", desc: "Here is the text for Steve3", audio: "jump.wav", topic_id: 12)
 FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Steve4", desc: "Here is the text for Steve4", audio: "jump.wav", topic_id: 12)
 
+#slides for structures - push and pull
+FactoryGirl.create(:slide, image: "slideshow/steve1.jpg", title: "How do Structures Stand Up to Forces?", desc: "In the introduction to structures, you learned that structures are load bearing and that load is another word for force. In this section, we are going to look more closely at how structures react to the different forces that act on them, and how structures are able to stand up to those forces without permanently changing or breaking.", audio: "jump.wav", topic_id: 13)
+FactoryGirl.create(:slide, image: "slideshow/steve2.jpg", title: "How do Structures Stand Up to Forces?", desc: "By definition, a force is a push or a pull on one object by another object. When you think about pushing or pulling an object, you might think about moving it. For example you might open a door by either pushing or pulling on it. But not all objects move when you push or pull on them. If you push on a wall, you are definitely exerting a force, but unlike the door, it isn't going to move. So objects have other ways of reacting to forces besides moving. Structures that don't break under a load react to forces in three different ways. Structures can be in a state of tension, compression, or torsion (or combinations of these three states). Let's take a look at each of these words to understand what they mean.", audio: "explosion.wav", topic_id: 13)
+FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "What is Tension", desc: "When a structure is being pulled, it is under tension. For example when you sit down on a swing, the force of your weight pulls down on the swing, creating tension in the swing. The chains on the swing act like a rubber band and stretch. Unlike a rubber band, you can't actually see the chain stretch because the amount of the stretch is incredibly small. Imagine instead that the chain links are made of rubber bands instead of metal. With rubber bands, you would definitely be able to see the stretch. But since the purpose of a swing is to allow you to swing, not to bounce or sink straight to the ground, it has to be built with something that stretches just a tiny amount under tension. ", audio: "jump.wav", topic_id: 13)
+FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "What is Elasticity", desc: "When you get off the swing, the chains return to their normal length. If they didn't, the swing would eventually sink to the ground, and it wouldn't be able to fulfill its purpose of being a swing. The swing chains act just like a rubber band that returns to its original size once you stop pulling on it.  This ability of a structure, or any other object, to stretch and then return back to its original size is a behavior known as elasticity.", audio: "jump.wav", topic_id: 13)
+FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "What is Compression?", desc: "When a structure is being pushed, it is under compression. When you sit on a chair, the force of your weight pushes down on the chair, putting the chair under compression. Much as the chains on the swing got a little bit longer when your weight pulled down on them, the chair gets a little bit shorter when you push down on it. When you stand up, the chair goes back to its normal height. Just like the chains on the swing, the chair is showing its elastic behavior.", audio: "jump.wav", topic_id: 13)
+FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "What is Torsion", desc: "Torsion: When a structure is being twisted, it is experiencing torsion. If instead of swinging back and forth, you twist your swing up instead, then the swing is under torsion. You know what happens once you lift your feet off the ground: the chair spins right back to its resting position. Not only is the twisted swing a fun ride, it also demonstrates how a structure is able to return to its normal position without being permanently changed after being twisted.", audio: "jump.wav", topic_id: 13)
+FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "How do structures stand up to forces?", desc: "You've already learned the structures and the materials they are built with have to be elastic, so they can return to their original size when forces are removed. When you exert a force on a structure, it exerts an equal and opposite force back on you. This idea is known as Newton's third law of motion. This means that if you are exerting a force down on a chair, the chair has to be exerting an equal force up back at you. If the chair wasn't exerting an equal force, you would crash through it. If it was exerting more force, you would fly off it. To get an idea for how this works, imagine that the legs of a chair have been replaced with giant, super stiff springs. When you push your finger down on a spring, you can feel it pushing back against your hand. That is exactly what the chair is doing; you just can't see it. ", audio: "jump.wav", topic_id: 13)
+FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Structures of all Sizes experience Tension, Compression and Torsion", desc: "We used small structures like swings and chairs to demonstrate how structures respond to different forces through tension, compression, and torsion. Larger structures like buildings and bridges react to forces the exact same ways. The cables on a suspension bridge experience tension as they help support the weight of the bridge and its users. The roof of your house experiences compression if there is a lot of snow on top of it. A skyscraper can experience torsion if it twists slightly in the wind. Structures can also experience a combination of these reactions. For example a twisted swing is experiencing both torsion from the twist and tension as you are still pulling down on the chains. Tension, compression and torsion (and combinations!) are three reactions that enable structures to support the different forces acting on them.", audio: "jump.wav", topic_id: 13)
+
+
 #slides for structures - bridges
-FactoryGirl.create(:slide, image: "slideshow/steve1.jpg", title: "Steve1", desc: "Here is the text for Steve1", audio: "bridges1.wav", topic_id: 13)
-FactoryGirl.create(:slide, image: "slideshow/steve2.jpg", title: "Steve2", desc: "Here is the text for Steve2", audio: "explosion.wav", topic_id: 13)
-FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Steve3", desc: "Here is the text for Steve3", audio: "jump.wav", topic_id: 13)
-FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Steve4", desc: "Here is the text for Steve4", audio: "jump.wav", topic_id: 13)
+FactoryGirl.create(:slide, image: "slideshow/steve1.jpg", title: "Bridges1", desc: "Bridges1", audio: "bridges1.wav", topic_id: 14)
+FactoryGirl.create(:slide, image: "slideshow/steve2.jpg", title: "Bridges2", desc: "Bridges2", audio: "explosion.wav", topic_id: 14)
+FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Bridges3", desc: "Bridges3", audio: "jump.wav", topic_id: 14)
+FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Bridges4", desc: "Bridges4", audio: "jump.wav", topic_id: 14)
 
 #slides for structures - skyscrapers
-FactoryGirl.create(:slide, image: "slideshow/girlsatdesk.png", title: "Skyscraper1", desc: "Skyscraper1", audio: "explosion.wav", topic_id: 14)
-FactoryGirl.create(:slide, image: "slideshow/girlsatdesk.png", title: "Skyscraper2", desc: "Skyscraper2", audio: "explosion.wav", topic_id: 14)
-FactoryGirl.create(:slide, image: "slideshow/girlsatdesk.png", title: "Skyscraper3", desc: "Skyscraper3", audio: "explosion.wav", topic_id: 14)
-FactoryGirl.create(:slide, image: "slideshow/girlsatdesk.png", title: "Skyscraper3", desc: "Skyscraper4", audio: "explosion.wav", topic_id: 14)
+FactoryGirl.create(:slide, image: "slideshow/girlsatdesk.png", title: "Skyscraper1", desc: "Skyscraper1", audio: "explosion.wav", topic_id: 15)
+FactoryGirl.create(:slide, image: "slideshow/girlsatdesk.png", title: "Skyscraper2", desc: "Skyscraper2", audio: "explosion.wav", topic_id: 15)
+FactoryGirl.create(:slide, image: "slideshow/girlsatdesk.png", title: "Skyscraper3", desc: "Skyscraper3", audio: "explosion.wav", topic_id: 15)
+FactoryGirl.create(:slide, image: "slideshow/girlsatdesk.png", title: "Skyscraper4", desc: "Skyscraper4", audio: "explosion.wav", topic_id: 15)
 
 
 #slides for structures - roads
-FactoryGirl.create(:slide, image: "slideshow/steve1.jpg", title: "Roads", desc: "Here is the text for Roads", audio: "jump.wav", topic_id: 15)
-FactoryGirl.create(:slide, image: "slideshow/steve2.jpg", title: "Steve2", desc: "Here is the text for Steve2", audio: "explosion.wav", topic_id: 15)
-FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Steve3", desc: "Here is the text for Steve3", audio: "jump.wav", topic_id: 15)
-FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Steve4", desc: "Here is the text for Steve4", audio: "jump.wav", topic_id: 15)
+FactoryGirl.create(:slide, image: "slideshow/steve1.jpg", title: "Roads1", desc: "Roads1", audio: "jump.wav", topic_id: 16)
+FactoryGirl.create(:slide, image: "slideshow/steve2.jpg", title: "Roads2", desc: "Roads2", audio: "explosion.wav", topic_id: 16)
+FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Roads3", desc: "Roads3", audio: "jump.wav", topic_id: 16)
+FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Roads4", desc: "Roads4", audio: "jump.wav", topic_id: 16)
 
 #slides for structures - plumbing
-FactoryGirl.create(:slide, image: "slideshow/steve1.jpg", title: "Plumbing", desc: "Here is the text for Plumbing", audio: "jump.wav", topic_id: 16)
-FactoryGirl.create(:slide, image: "slideshow/steve2.jpg", title: "Steve2", desc: "Here is the text for Steve2", audio: "explosion.wav", topic_id: 16)
-FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Steve3", desc: "Here is the text for Steve3", audio: "jump.wav", topic_id: 16)
-FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Steve4", desc: "Here is the text for Steve4", audio: "jump.wav", topic_id: 16)
+FactoryGirl.create(:slide, image: "slideshow/steve1.jpg", title: "Plumbing1", desc: "Plumbing1", audio: "jump.wav", topic_id: 17)
+FactoryGirl.create(:slide, image: "slideshow/steve2.jpg", title: "Plumbing2", desc: "Plumbing2", audio: "explosion.wav", topic_id: 17)
+FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Plumbing3", desc: "Plumbing3", audio: "jump.wav", topic_id: 17)
+FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Plumbing4", desc: "Plumbing4", audio: "jump.wav", topic_id: 17)
 
 #slides for structures - beams
-FactoryGirl.create(:slide, image: "slideshow/steve1.jpg", title: "Beams, Columns and Other Parts", desc: "Here is the text for Beams, Columns and Other Parts", audio: "jump.wav", topic_id: 17)
-FactoryGirl.create(:slide, image: "slideshow/steve2.jpg", title: "Steve2", desc: "Here is the text for Steve2", audio: "explosion.wav", topic_id: 17)
-FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Steve3", desc: "Here is the text for Steve3", audio: "jump.wav", topic_id: 17)
-FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Steve4", desc: "Here is the text for Steve4", audio: "jump.wav", topic_id: 17)
-
-#slides for structures - push and pull
-FactoryGirl.create(:slide, image: "slideshow/steve1.jpg", title: "Push and Pull", desc: "Here is the text for Push and Pull", audio: "jump.wav", topic_id: 18)
+FactoryGirl.create(:slide, image: "slideshow/steve1.jpg", title: "Beams, Columns and Other Parts", desc: "Here is the text for Beams, Columns and Other Parts", audio: "jump.wav", topic_id: 18)
 FactoryGirl.create(:slide, image: "slideshow/steve2.jpg", title: "Steve2", desc: "Here is the text for Steve2", audio: "explosion.wav", topic_id: 18)
 FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Steve3", desc: "Here is the text for Steve3", audio: "jump.wav", topic_id: 18)
 FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Steve4", desc: "Here is the text for Steve4", audio: "jump.wav", topic_id: 18)
+
 
 #slides for machines - simple machines
 FactoryGirl.create(:slide, image: "slideshow/steve1.jpg", title: "Simple Machines", desc: "Here is the text for Simple Machines", audio: "jump.wav", topic_id: 19)
@@ -243,10 +249,10 @@ FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Steve3", desc:
 FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Steve4", desc: "Here is the text for Steve4", audio: "jump.wav", topic_id: 23)
 
 #slides for machines - robotics
-FactoryGirl.create(:slide, image: "slideshow/steve1.jpg", title: "Robotics", desc: "Here is the text for Robotics", audio: "jump.wav", topic_id: 24)
-FactoryGirl.create(:slide, image: "slideshow/steve2.jpg", title: "Steve2", desc: "Here is the text for Steve2", audio: "explosion.wav", topic_id: 24)
-FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Steve3", desc: "Here is the text for Steve3", audio: "jump.wav", topic_id: 24)
-FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Steve4", desc: "Here is the text for Steve4", audio: "jump.wav", topic_id: 24)
+FactoryGirl.create(:slide, image: "slideshow/steve1.jpg", title: "Robotics1", desc: "Robotics1", audio: "jump.wav", topic_id: 24)
+FactoryGirl.create(:slide, image: "slideshow/steve2.jpg", title: "Robotics2", desc: "Robotics2", audio: "explosion.wav", topic_id: 24)
+FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Robotics3", desc: "Robotics3", audio: "jump.wav", topic_id: 24)
+FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Robotics4", desc: "Robotics4", audio: "jump.wav", topic_id: 24)
 
 #slides for energy - history of energy
 FactoryGirl.create(:slide, image: "slideshow/steve1.jpg", title: "History of Energy", desc: "Here is the text for History of Energy", audio: "jump.wav", topic_id: 25)
