@@ -18,6 +18,7 @@
 			
 			<% unless @slide.catnext.nil? %>
 				<% nextslide = @slide.catnext %>
+				
 				<%= link_to image_tag("arrow.png", :alt => "arrow pointing right"), catslide_catagory_path(:catagory_id => @catagory.id, :id => nextslide.id),  :remote => true %>
 			<% end%>
 			
