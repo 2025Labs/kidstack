@@ -1,0 +1,43 @@
+cmyk colors for the squares:
+
+Kidstack Logo Red:
+c = 0
+m = 88.24
+y = 100
+k = 0
+
+Engineering Process Blue: 
+c = 77.8
+m = 24.26
+y = 5.64
+k = 0
+
+Materials Purple: old (c =38.28, m = 63.84)
+c = 45.11
+m = 81.57
+y = 0
+k = 0
+
+Structures Teal: 
+c = 81.46
+m = 19.51
+y = 42.49
+k = .92
+
+Machines Green: 
+c = 40.69
+m = 0
+y = 100
+k = 0
+
+Energy Orange: 
+c = 0
+m = 47.26
+y = 100
+k = 0
+
+Computing Pink: 
+c = 0
+m = 85
+y = 0
+k = 0

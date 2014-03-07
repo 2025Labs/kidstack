@@ -1,13 +1,14 @@
 <div class="row-fluid">
-	<div class="span10">
+	<div class="span9">
 		
 		<div class="row-fluid">
 		
+			<div class="row-fluid">
 			<%= link_to image_tag("kidstack65x65alternate4.png", :alt =>"kidstack logo", :class => "topnav"), root_path %>
 
-			<div class="span2">
-				<%= link_to image_tag(@catagory.navgraphic, :class => "topnav"), catagory_path(@catagory.name) %>
-			</div>		
+			<%= link_to image_tag("navgraphics/structurestext.png", :alt =>"structures", :class => "cattext"), catagory_path(@catagory.name) %>
+			</div>
+		
 	
 		</div>
 		
@@ -29,15 +30,15 @@
 	</div>
 	
 		
-	<div class="span2">
+	<div class="span3">
 		<% @topics.each do |topic| %>
 			<div class="row-fluid">
-				<div class="span2">
+				<div class="span3">
 					<% if topic == @topic %>
-						<%= image_tag("smallsquarestroke.png") %>
+						<%= image_tag("pointingfigure.png") %>
 					<% end %>
 				</div>
-				<div class="span10">
+				<div class="span9">
 					<%= link_to image_tag(topic.navgraphic, :class => "navgraph"), topic_path(topic.name) %>
 				</div>
 			</div>

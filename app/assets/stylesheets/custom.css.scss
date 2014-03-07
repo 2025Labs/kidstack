@@ -1,5 +1,6 @@
 @import "bootstrap";
 
+
 /* defining the colors*/
 $logo_color: #FF1F00;
 $possible_color: #21B6A5;
@@ -30,7 +31,18 @@ $slide_text: #a1a1a1;
 	color: #c6c6c6;
 	font-size: 26px;
 	line-height: 30px;
+
 }
+
+
+.cattext{
+
+	float:right;
+	padding-top:7px;
+	padding-bottom:7px;
+
+}
+
 
 
 /* these are the styles for the slide shows*/

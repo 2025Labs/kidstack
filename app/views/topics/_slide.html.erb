@@ -1,22 +1,26 @@
 <% num_slides = @topic.slides.count %>
 	
 	<div class="row-fluid">
-		<div class="span8">
+		<div class="span7">
 			<%=image_tag(@slide.image)%></br>
-			
-		</div>
-		<div class="span4">
-			<%= audio_tag(@slide.audio, controls: true) %>
-			<span class="title"><%= @slide.title %></br></span>
+			<%= image_tag("controls/play.png") %>
+			<%= image_tag("controls/stop.png") %>
+			<%= image_tag("controls/pause.png")%>
 			<% unless @slide.prev.nil? %>
 				<% prevslide = @slide.prev %>
-				<%= link_to image_tag("leftarrow.png", :alt => "arrow pointing left"), slide_topic_path(:topic_id => @topic.id, :id => prevslide.id),  :remote => true %>
+				<%= link_to image_tag("controls/previous.png"), slide_topic_path(:topic_id => @topic.id, :id => prevslide.id),  :remote => true %>
 			<% end%>
 			
 			<% unless @slide.next.nil? %>
 				<% nextslide = @slide.next %>
-				<%= link_to image_tag("arrow.png", :alt => "arrow pointing right"), slide_topic_path(:topic_id => @topic.id, :id => nextslide.id),  :remote => true %>
+				<%= link_to image_tag("controls/next.png"), slide_topic_path(:topic_id => @topic.id, :id => nextslide.id),  :remote => true %>
 			<% end%>
+			
+		</div>
+		<div class="span5">
+			<%= audio_tag(@slide.audio) %>
+			<span class="title"><%= @slide.title %></br></span>
+
 			
 			</br>
 			

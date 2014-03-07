@@ -1,26 +1,31 @@
 <div class="row-fluid">
-	<div class="span8">
+	<div class="span7">
 		<%=image_tag(@slide.image)%></br>
+		<div id="play_audio">
+			<%= link_to image_tag("controls/play.png"), audio_catagory_path(:catagory_id => @catagory.id, :id => @slide.id), :remote => true %>
+			<%= image_tag("controls/stop.png") %>
+			<%= image_tag("controls/pause.png")%>
+		
+			<% unless @slide.catprev.nil? %>
+				<% prevslide = @slide.catprev %>
+				<%= link_to image_tag("controls/previous.png"), catslide_catagory_path(:catagory_id => @catagory.id, :id => prevslide.id),  :remote => true %>
+			<% end%>
+
+			<% unless @slide.catnext.nil? %>
+				<% nextslide = @slide.catnext %>
+				<%= link_to image_tag("controls/next.png"), catslide_catagory_path(:catagory_id => @catagory.id, :id => nextslide.id),  :remote => true %>
+			<% end%>
+		</div>
 	</div>
-	<div class="span4">
+	<div class="span5">
 		<div class="row-fluid">			
-			<div id="play_audio">
-				<%= link_to image_tag("arrow.png"), audio_catagory_path(:catagory_id => @catagory.id, :id => @slide.id), :remote => true %>
-			</div>
+
 		</div>
 
 		
 		<span class="title"><%= @slide.title %></span>
 		
-		<% unless @slide.catprev.nil? %>
-			<% prevslide = @slide.catprev %>
-			<%= link_to image_tag("leftarrow.png", :alt => "arrow pointing left"), catslide_catagory_path(:catagory_id => @catagory.id, :id => prevslide.id),  :remote => true %>
-		<% end%>
 
-		<% unless @slide.catnext.nil? %>
-			<% nextslide = @slide.catnext %>
-			<%= link_to image_tag("arrow.png", :alt => "arrow pointing right"), catslide_catagory_path(:catagory_id => @catagory.id, :id => nextslide.id),  :remote => true %>
-		<% end%>
 		
 		</br>
 		
