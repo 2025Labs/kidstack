@@ -5,7 +5,9 @@ Kidstack::Application.routes.draw do
   resources :catagories do
     member do
       get 'catslide'
+      get 'audio'
     end
+    
   end
   resources :topics do
     member do

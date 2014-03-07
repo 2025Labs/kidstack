@@ -20,4 +20,12 @@ class CatagoriesController < ApplicationController
     end
   end
   
+  def audio
+    @catagory = Catagory.find(params[:catagory_id])
+    @slide = @catagory.slides.find(params[:id])
+    respond_to do |format|
+      format.js {render :layout => false}
+    end
+  end
+  
 end

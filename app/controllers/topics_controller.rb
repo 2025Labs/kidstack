@@ -12,6 +12,7 @@ class TopicsController < ApplicationController
   end
   
   def slide
+    @topic = Topic.find(params[:topic_id])
     @slide = @topic.slides.find(params[:id])
     respond_to do |format|
       format.js {render :layout => false}
