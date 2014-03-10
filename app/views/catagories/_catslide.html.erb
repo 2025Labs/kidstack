@@ -1,6 +1,9 @@
+<div class="slidearea">
+
 <div class="row-fluid">
 	<div class="span7">
 		<%=image_tag(@slide.image)%></br>
+		</br>
 		<div id="play_audio">
 			<%= link_to image_tag("controls/play.png"), audio_catagory_path(:catagory_id => @catagory.id, :id => @slide.id), :remote => true %>
 			<%= image_tag("controls/stop.png") %>
@@ -19,16 +22,12 @@
 	</div>
 	<div class="span5">
 		<div class="row-fluid">			
-
 		</div>
-
 		
-		<span class="title"><%= @slide.title %></span>
+			<span class="title"><span class= "<%= @catagory.color %>" ><%= @slide.title %></span></span>		
+			</br>
 		
-
-		
-		</br>
-		
-		<span class="desc"><%= @slide.desc %></br></span>
+			<span class="desc"><%= @slide.desc %></br></span>
 	</div>
+</div>
 </div>

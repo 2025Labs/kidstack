@@ -6,6 +6,12 @@ $logo_color: #FF1F00;
 $possible_color: #21B6A5;
 $slide_title: #FF1F00;
 $slide_text: #a1a1a1;
+$engineering_process_color: #1A9CD6;
+$materials_color: #A05CAC;
+$structures_color: #139F9D;
+$machines_color: #A3D147;
+$energy_color: #F59A00;
+$computing_color: #F74D9C;
 
 
 /* padding used throughout to get spacing correct*/
@@ -34,7 +40,6 @@ $slide_text: #a1a1a1;
 
 }
 
-
 .cattext{
 
 	float:right;
@@ -43,12 +48,15 @@ $slide_text: #a1a1a1;
 
 }
 
+.slidearea{
+	background-color: #f2f2f2;
+	padding:20px;
+}
+
 
 
 /* these are the styles for the slide shows*/
 .title {
-	color: $slide_title;
-	font-family: "Comic Sans MS", cursive, sans-serif; 
 	font-size: 24px;
 	line-height: 35px;
 }
@@ -58,3 +66,67 @@ $slide_text: #a1a1a1;
 	font-size: 16px;
 	line-height: 24px;
 }
+
+/* colors for text to align with catagories*/
+.engineering_process{
+	color:$engineering_process_color;
+}
+
+.materials{
+	color:$materials_color;
+}
+
+.structures{
+	color:$structures_color;
+}
+
+.machines{
+	color:$machines_color;
+}
+
+.energy{
+	color:$energy_color;
+}
+
+.computing{
+	color:$computing_color;
+}
+
+
+/* In order to get the links to be colored with the catagory colors you have to use the a link formatting, so that's what this sectin is all about*/
+a:link {
+	text-decoration:none;
+	color: #0099cc;
+}
+
+a:visited {
+	text-decoration:none;
+}
+	
+a:hover {
+	text-decoration:none;
+	color: #a1a1a1;
+}
+
+a:active {
+	text-decoration:none;
+}
+
+a.engineering_process:link {
+	color: $engineering_process_color;
+}
+a.materials:link {
+	color: $materials_color;
+}
+a.structures:link {
+	color: $structures_color;
+}
+a.machines:link {
+	color: $machines_color;
+}
+a.energy:link {
+	color: $energy_color;
+}	
+a.computing:link {
+		color: $computing_color;
+	}

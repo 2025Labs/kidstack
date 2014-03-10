@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20140120222259) do
   create_table "catagories", force: true do |t|
     t.string   "name"
     t.string   "navgraphic"
-    t.string   "video"
+    t.string   "color"
     t.string   "timeline"
     t.string   "headergraphic"
     t.datetime "created_at"

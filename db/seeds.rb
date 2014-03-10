@@ -7,12 +7,12 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 #catagories
-FactoryGirl.create(:catagory, name:"Engineering Process", navgraphic: "navgraphics/engineering_process.png", video: "pics/engineeringprocessvideo.png")
-FactoryGirl.create(:catagory, name:"Materials", navgraphic: "navgraphics/materials.png", video: "pics/materialsvideo.png")
-FactoryGirl.create(:catagory, name:"Structures", navgraphic: "navgraphics/structures.png", video: "pics/structuresvideo.png", headergraphic: "headernav/structuresheader.png")
-FactoryGirl.create(:catagory, name:"Machines", navgraphic: "navgraphics/machines.png", video: "pics/machinesvideo.png")
-FactoryGirl.create(:catagory, name:"Energy", navgraphic: "navgraphics/energy.png", video: "pics/energyvideo.png")
-FactoryGirl.create(:catagory, name:"Computing", navgraphic: "navgraphics/computing.png", video: "pics/computingvideo.png")
+FactoryGirl.create(:catagory, name:"Engineering Process", navgraphic: "navgraphics/engineering_process.png", headergraphic: "engineering process", color: "engineering_process")
+FactoryGirl.create(:catagory, name:"Materials", navgraphic: "navgraphics/materials.png", headergraphic: "materials", color: "materials")
+FactoryGirl.create(:catagory, name:"Structures", navgraphic: "navgraphics/structures.png", headergraphic: "structures", color: "structures")
+FactoryGirl.create(:catagory, name:"Machines", navgraphic: "navgraphics/machines.png", headergraphic: "machines", color: "machines")
+FactoryGirl.create(:catagory, name:"Energy", navgraphic: "navgraphics/energy.png", headergraphic: "energy", color: "energy")
+FactoryGirl.create(:catagory, name:"Computing", navgraphic: "navgraphics/computing.png", headergraphic: "computing", color: "computing")
 
 #topics for engineering process
 FactoryGirl.create(:topic, name:"Research and Development",  navgraphic: "navgraphics/r_and_d.png", catagory_id: 1)

@@ -3,7 +3,7 @@ class CreateCatagories < ActiveRecord::Migration
     create_table :catagories do |t|
       t.string :name
       t.string :navgraphic
-      t.string :video
+      t.string :color
       t.string :timeline
       t.string :headergraphic
 

@@ -4,7 +4,7 @@ FactoryGirl.define do
   factory :catagory do
     name "MyString"
     navgraphic "MyString"
-    video "MyString"
+    color "MyString"
     timeline "MyString"
     headergraphic "MyString"
   end

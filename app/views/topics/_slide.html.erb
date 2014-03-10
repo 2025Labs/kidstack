@@ -1,8 +1,9 @@
-<% num_slides = @topic.slides.count %>
+<div class = "slidearea">
 	
 	<div class="row-fluid">
 		<div class="span7">
 			<%=image_tag(@slide.image)%></br>
+			</br>
 			<%= image_tag("controls/play.png") %>
 			<%= image_tag("controls/stop.png") %>
 			<%= image_tag("controls/pause.png")%>
@@ -19,7 +20,7 @@
 		</div>
 		<div class="span5">
 			<%= audio_tag(@slide.audio) %>
-			<span class="title"><%= @slide.title %></br></span>
+			<span class="title"><span class= "<%= @catagory.color %>" ><%= @slide.title %></br></span></span>
 
 			
 			</br>
@@ -32,6 +33,7 @@
 			
 		</div>
 	</div>
+</div>
 
 
 
