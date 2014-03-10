@@ -69,7 +69,7 @@ FactoryGirl.create(:topic, name:"Future",  navgraphic: "navgraphics/computingfut
 FactoryGirl.create(:slide, image: "navgraphics/engineering_process.png", title: "Engineering Process1", desc: "Here is the text for Engineering Process1", audio: "jump.wav", catagory_id: 1)
 FactoryGirl.create(:slide, image: "slideshow/steve2.jpg", title: "Engineering Process2", desc: "Here is the text for EngineeringProcess2", audio: "explosion.wav", catagory_id: 1)
 FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Engineering Process3", desc: "Here is the text for EngineeringPRocess3", audio: "jump.wav", catagory_id: 1)
-FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Engineering Process4Last", desc: "Here is the text for Engineering Process4", audio: "steve1.wav", catagory_id: 1)
+FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Engineering Process4Last", desc: "Here is the text for Engineering Process4", audio: "jump.wav", catagory_id: 1)
 
 #slides for materials main
 FactoryGirl.create(:slide, image: "navgraphics/materials.png", title: "Materials1", desc: "Here is the text for Materials1", audio: "jump.wav", catagory_id: 2)
