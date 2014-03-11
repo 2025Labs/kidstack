@@ -20,7 +20,6 @@ FactoryGirl.create(:topic, name:"Product Innovation",  navgraphic: "navgraphics/
 FactoryGirl.create(:topic, name:"Design Process",  navgraphic: "navgraphics/design_process.png", catagory_id: 1)
 FactoryGirl.create(:topic, name:"Failure Analysis",  navgraphic: "navgraphics/failure_analysis.png", catagory_id: 1)
 FactoryGirl.create(:topic, name:"Reverse Engineering", navgraphic: "navgraphics/reverse_engineering.png", catagory_id: 1)
-FactoryGirl.create(:topic, name:"Technology", navgraphic: "navgraphics/technology.png", catagory_id: 1)
 
 #topics for materials
 FactoryGirl.create(:topic, name:"History of Materials", navgraphic: "navgraphics/historyofmaterials.png", catagory_id: 2)
@@ -66,10 +65,8 @@ FactoryGirl.create(:topic, name:"Future",  navgraphic: "navgraphics/computingfut
 
 
 #slides for engineering process main
-FactoryGirl.create(:slide, image: "navgraphics/engineering_process.png", title: "What is an Engineer? What do Engineers do?", desc: "Well... Engineers design things and build things. Engineers figure out how things work, or why they don't work. Sometimes, Engineers experiment with things - materials, machines, technologies - to find out what they are, or what they can do or can't do, or how well they do them. Sometimes Engineers think of new ways to use things that were discovered or invented before. And, sometimes, they come up with new things that didn't exist - like the first time a working car was invented, or an airplane, or a cell phone.<br><br>Being an Engineer can involve different types of activities, but Engineers are almost always using their brains to figure out how to solve problems, and they use math and science as tools to help them.<br><br>To learn more about how Engineers do their work, click one of the buttons on the right.", audio: "EP/engprocessintro.wav", catagory_id: 1)
-FactoryGirl.create(:slide, image: "slideshow/steve2.jpg", title: "Engineering Process2", desc: "Here is the text for EngineeringProcess2", audio: "explosion.wav", catagory_id: 1)
-FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Engineering Process3", desc: "Here is the text for EngineeringPRocess3", audio: "jump.wav", catagory_id: 1)
-FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Engineering Process4Last", desc: "Here is the text for Engineering Process4", audio: "jump.wav", catagory_id: 1)
+FactoryGirl.create(:slide, image: "navgraphics/engineering_process.png", title: "What is an Engineer?", desc: "Well... Engineers design things and build things. Engineers figure out how things work, or why they don't work. Sometimes, Engineers experiment with things - materials, machines, technologies - to find out what they are, or what they can do or can't do, or how well they do them. Sometimes Engineers think of new ways to use things that were discovered or invented before. And, sometimes, they come up with new things that didn't exist - like the first time a working car was invented, or an airplane, or a cell phone.", audio: "EP/engprocessintro.wav", catagory_id: 1)
+FactoryGirl.create(:slide, image: "navgraphics/engineering_process.png", title: "What do Engineers do?", desc: "Being an Engineer can involve different types of activities, but Engineers are almost always using their brains to figure out how to solve problems, and they use math and science as tools to help them.<br><br>To learn more about how Engineers do their work, click one of the buttons on the right.", audio: "explosion.wav", catagory_id: 1)
 
 #slides for materials main
 FactoryGirl.create(:slide, image: "navgraphics/materials.png", title: "Materials1", desc: "Here is the text for Materials1", audio: "jump.wav", catagory_id: 2)
@@ -105,40 +102,34 @@ FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Computing3", d
 FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Computing4Last", desc: "Here is the text for computing4", audio: "jump.wav", catagory_id: 6)
 
 #slides for engineering process - R & D
-FactoryGirl.create(:slide, image: "slideshow/steve1.jpg", title: "Research and Development1", desc: "Here is the text for Research and Development1", audio: "jump.wav", topic_id: 1)
-FactoryGirl.create(:slide, image: "slideshow/steve2.jpg", title: "Research and Development2", desc: "Here is the text for Research and Development2", audio: "explosion.wav", topic_id: 1)
-FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Research and Development3", desc: "Here is the text for Research and Development3", audio: "jump.wav", topic_id: 1)
-FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Research and Development4Last", desc: "Here is the text for Research and Development4", audio: "jump.wav", topic_id: 1)
+FactoryGirl.create(:slide, image: "navgraphics/r_and_d.png", title: "Research and Development1", desc: "Here is the text for Research and Development1", audio: "jump.wav", topic_id: 1)
+FactoryGirl.create(:slide, image: "navgraphics/r_and_d.png", title: "Research and Development2", desc: "Here is the text for Research and Development2", audio: "explosion.wav", topic_id: 1)
+FactoryGirl.create(:slide, image: "navgraphics/r_and_d.png", title: "Research and Development3", desc: "Here is the text for Research and Development3", audio: "jump.wav", topic_id: 1)
+FactoryGirl.create(:slide, image: "navgraphics/r_and_d.png", title: "Research and Development4Last", desc: "Here is the text for Research and Development4", audio: "jump.wav", topic_id: 1)
 
 #slides for engineering process - Product Innovation
-FactoryGirl.create(:slide, image: "slideshow/steve1.jpg", title: "Product Innovation1", desc: "Here is the text for Product Innovation1", audio: "jump.wav", topic_id: 2)
-FactoryGirl.create(:slide, image: "slideshow/steve2.jpg", title: "Product Innovation2", desc: "Here is the text for Product Innovation2", audio: "explosion.wav", topic_id: 2)
-FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Product Innovation3", desc: "Here is the text for Product Innovation3", audio: "jump.wav", topic_id: 2)
-FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Product Innovation4Last", desc: "Here is the text for Product Innovation4", audio: "jump.wav", topic_id: 2)
+FactoryGirl.create(:slide, image: "navgraphics/product_innovation.png", title: "Product Innovation1", desc: "Here is the text for Product Innovation1", audio: "jump.wav", topic_id: 2)
+FactoryGirl.create(:slide, image: "navgraphics/product_innovation.png", title: "Product Innovation2", desc: "Here is the text for Product Innovation2", audio: "explosion.wav", topic_id: 2)
+FactoryGirl.create(:slide, image: "navgraphics/product_innovation.pngg", title: "Product Innovation3", desc: "Here is the text for Product Innovation3", audio: "jump.wav", topic_id: 2)
+FactoryGirl.create(:slide, image: "navgraphics/product_innovation.png", title: "Product Innovation4Last", desc: "Here is the text for Product Innovation4", audio: "jump.wav", topic_id: 2)
 
 #slides for engineering process - Design Process
-FactoryGirl.create(:slide, image: "slideshow/steve1.jpg", title: "Design Process1", desc: "Here is the text for Design Process", audio: "jump.wav", topic_id: 3)
-FactoryGirl.create(:slide, image: "slideshow/steve2.jpg", title: "Design Process2", desc: "Here is the text for Design Process2", audio: "explosion.wav", topic_id: 3)
-FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Design Process3", desc: "Here is the text for Design Process3", audio: "jump.wav", topic_id: 3)
-FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Design Process4Last", desc: "Here is the text for Design Process4", audio: "jump.wav", topic_id: 3)
+FactoryGirl.create(:slide, image: "navgraphics/design_process.png", title: "Design Process1", desc: "Here is the text for Design Process", audio: "jump.wav", topic_id: 3)
+FactoryGirl.create(:slide, image: "navgraphics/design_process.png", title: "Design Process2", desc: "Here is the text for Design Process2", audio: "explosion.wav", topic_id: 3)
+FactoryGirl.create(:slide, image: "navgraphics/design_process.png", title: "Design Process3", desc: "Here is the text for Design Process3", audio: "jump.wav", topic_id: 3)
+FactoryGirl.create(:slide, image: "navgraphics/design_process.png", title: "Design Process4Last", desc: "Here is the text for Design Process4", audio: "jump.wav", topic_id: 3)
 
 #slides for engineering process - Failure Analysis
-FactoryGirl.create(:slide, image: "slideshow/steve1.jpg", title: "Failure Analysis1", desc: "Here is the text for Failure Analysis1", audio: "jump.wav", topic_id: 4)
-FactoryGirl.create(:slide, image: "slideshow/steve2.jpg", title: "Failure Analysis2", desc: "Here is the text for Failure Analysis2", audio: "explosion.wav", topic_id: 4)
-FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Failure Analysis3", desc: "Here is the text for Steve3", audio: "jump.wav", topic_id: 4)
-FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Failure Analysis4Last", desc: "Here is the text for Failure Analysis4", audio: "jump.wav", topic_id: 4)
+FactoryGirl.create(:slide, image: "navgraphics/failure_analysis.png", title: "Failure Analysis1", desc: "Here is the text for Failure Analysis1", audio: "jump.wav", topic_id: 4)
+FactoryGirl.create(:slide, image: "navgraphics/failure_analysis.png", title: "Failure Analysis2", desc: "Here is the text for Failure Analysis2", audio: "explosion.wav", topic_id: 4)
+FactoryGirl.create(:slide, image: "navgraphics/failure_analysis.png", title: "Failure Analysis3", desc: "Here is the text for Steve3", audio: "jump.wav", topic_id: 4)
+FactoryGirl.create(:slide, image: "navgraphics/failure_analysis.png", title: "Failure Analysis4Last", desc: "Here is the text for Failure Analysis4", audio: "jump.wav", topic_id: 4)
 
 #slides for engineering process - Reverse Engineering
-FactoryGirl.create(:slide, image: "slideshow/steve1.jpg", title: "Reverse Engineering1", desc: "Here is the text for Reverse Engineering1", audio: "jump.wav", topic_id: 5)
-FactoryGirl.create(:slide, image: "slideshow/steve2.jpg", title: "Reverse Engineering2", desc: "Here is the text for Reverse Engineering2", audio: "explosion.wav", topic_id: 5)
-FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Reverse Engineering3", desc: "Here is the text for Reverse Engineering3", audio: "jump.wav", topic_id: 5)
-FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Reverse Engineering4Last", desc: "Here is the text for Reverse Engineering4", audio: "jump.wav", topic_id: 5)
-
-#slides for engineering process - Technology
-FactoryGirl.create(:slide, image: "slideshow/steve1.jpg", title: "Technology1", desc: "Here is the text for Technonogy1", audio: "jump.wav", topic_id: 6)
-FactoryGirl.create(:slide, image: "slideshow/steve2.jpg", title: "Technology2", desc: "Here is the text for Technology2", audio: "explosion.wav", topic_id: 6)
-FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Technology3", desc: "Here is the text for Technology3", audio: "jump.wav", topic_id: 6)
-FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Technology4Last", desc: "Here is the text for Technology4", audio: "jump.wav", topic_id: 6)
+FactoryGirl.create(:slide, image: "navgraphics/reverse_engineering.png", title: "Reverse Engineering1", desc: "Here is the text for Reverse Engineering1", audio: "jump.wav", topic_id: 5)
+FactoryGirl.create(:slide, image: "navgraphics/reverse_engineering.png", title: "Reverse Engineering2", desc: "Here is the text for Reverse Engineering2", audio: "explosion.wav", topic_id: 5)
+FactoryGirl.create(:slide, image: "navgraphics/reverse_engineering.png", title: "Reverse Engineering3", desc: "Here is the text for Reverse Engineering3", audio: "jump.wav", topic_id: 5)
+FactoryGirl.create(:slide, image: "navgraphics/reverse_engineering.png", title: "Reverse Engineering4Last", desc: "Here is the text for Reverse Engineering4", audio: "jump.wav", topic_id: 5)
 
 #slides for materials - History of Materials
 FactoryGirl.create(:slide, image: "slideshow/steve1.jpg", title: "History of Materials1", desc: "Here is the text for History of Materials1", audio: "jump.wav", topic_id: 7)
