@@ -1,0 +1,37 @@
+<div class="slidearea">
+
+<div class="row-fluid">
+	<div class="span7">
+		<%=image_tag(@slide.image)%></br>
+		</br>
+		<div id="play_audio">
+			<%= link_to image_tag("controls/play.png"), audio_catagory_path(:catagory_id => @catagory.id, :id => @slide.id), :remote => true %>
+			<%= image_tag("controls/stop.png") %>
+			<%= image_tag("controls/pause.png")%>
+			<p id="banana"></p>
+			<!-- This is where I want to set the timer - if 10 seconds has passed, then render the next slide-->
+			
+		
+			<% unless @slide.catprev.nil? %>
+				<% prevslide = @slide.catprev %>
+				<!-- This is where I want to show and play this until it gets to the end -->
+				<%= link_to image_tag("controls/previous.png"), catslide_catagory_path(:catagory_id => @catagory.id, :id => prevslide.id),  :remote => true %>
+			<% end%>
+
+			<% unless @slide.catnext.nil? %>
+				<% nextslide = @slide.catnext %>
+				<%= link_to image_tag("controls/next.png"), catslide_catagory_path(:catagory_id => @catagory.id, :id => nextslide.id),  :remote => true %>
+			<% end%>
+		</div>
+	</div>
+	<div class="span5">
+		<div class="row-fluid">			
+		</div>
+		
+			<span class="title"><span class= "<%= @catagory.color %>" ><%= @slide.title %></span></span>		
+			</br>
+		
+			<span class="desc"><%= @slide.desc %></br></span>
+	</div>
+</div>
+</div>

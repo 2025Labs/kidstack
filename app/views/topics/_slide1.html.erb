@@ -1,0 +1,54 @@
+<div class = "slidearea">
+	
+	<div class="row-fluid">
+		<div class="span7">
+			<%=image_tag(@slide.image)%></br>
+			</br>
+			<%= image_tag("controls/play.png") %>
+			<%= image_tag("controls/stop.png") %>
+			<%= image_tag("controls/pause.png")%>
+			<% unless @slide.prev.nil? %>
+				<% prevslide = @slide.prev %>
+				<%= link_to image_tag("controls/previous.png"), slide_topic_path(:topic_id => @topic.id, :id => prevslide.id),  :remote => true %>
+			<% end%>
+			
+			<% unless @slide.next.nil? %>
+				<% nextslide = @slide.next %>
+				<%= link_to image_tag("controls/next.png"), slide_topic_path(:topic_id => @topic.id, :id => nextslide.id),  :remote => true %>
+			<% end%>
+			
+		</div>
+		<div class="span5">
+			<%= audio_tag(@slide.audio, :controls=> true) %>
+			button.addEventListener('click', function(e)
+			{
+			  if(media.paused)
+			  {
+			    media.play();
+			  }
+			  else
+			  {
+			    media.pause();
+			  }
+
+			}, false);
+			
+			<span class="title"><span class= "<%= @catagory.color %>" ><%= @slide.title %></br></span></span>
+
+			
+			</br>
+			
+			<span class="desc"><%= @slide.desc %></br></span>
+			
+			
+
+			
+			
+		</div>
+	</div>
+</div>
+
+
+
+
+
