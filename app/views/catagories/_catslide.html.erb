@@ -1,33 +1,40 @@
-<div class="slidearea">
-
+<div class = "slidearea">
+	
 <div class="row-fluid">
 	<div class="span7">
 		<%=image_tag(@slide.image)%></br>
+	</div>
+	<div class="span5">
+		<span class="title"><span class= "<%= @catagory.color %>" ><%= @slide.title %></br></span></span>
 		</br>
-		<div id="play_audio">
-			<%= link_to image_tag("controls/play.png"), audio_catagory_path(:catagory_id => @catagory.id, :id => @slide.id), :remote => true %>
-			<%= image_tag("controls/stop.png") %>
-			<%= image_tag("controls/pause.png")%>
+		<span class="desc"><%= @slide.desc.html_safe %></br></span>		
+	</div>
+</div>
+	
+<div class="row-fluid">
+	<div class="span7">
+		</br>
+		<%= audio_tag(@slide.audio, :controls=>true) %>
+	</div>
 		
+	<div class="span5">
+		<div class="span1">
+		</div>
+		
+		<div class="span5">
 			<% unless @slide.catprev.nil? %>
+				</br>
 				<% prevslide = @slide.catprev %>
 				<%= link_to image_tag("controls/previous.png"), catslide_catagory_path(:catagory_id => @catagory.id, :id => prevslide.id),  :remote => true %>
 			<% end%>
-
+		</div>
+		<div class="span6">
 			<% unless @slide.catnext.nil? %>
+				</br>
 				<% nextslide = @slide.catnext %>
 				<%= link_to image_tag("controls/next.png"), catslide_catagory_path(:catagory_id => @catagory.id, :id => nextslide.id),  :remote => true %>
 			<% end%>
 		</div>
-	</div>
-	<div class="span5">
-		<div class="row-fluid">			
-		</div>
-		
-			<span class="title"><span class= "<%= @catagory.color %>" ><%= @slide.title %></span></span>		
-			</br><br>
-		
-			<span class="desc"><%= @slide.desc.html_safe %></br></span>
 	</div>
 </div>
 </div>
