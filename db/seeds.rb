@@ -108,13 +108,13 @@ FactoryGirl.create(:slide, image: "navgraphics/r_and_d.png", title: "Research an
 FactoryGirl.create(:slide, image: "navgraphics/r_and_d.png", title: "Research and Development4Last", desc: "Here is the text for Research and Development4", audio: "jump.wav", topic_id: 1)
 
 #slides for engineering process - Product Innovation
-FactoryGirl.create(:slide, image: "navgraphics/product_innovation.png", title: "Product Innovation1", desc: "Here is the text for Product Innovation1", audio: "jump.wav", topic_id: 2)
+FactoryGirl.create(:slide, image: "navgraphics/product_innovation.png", title: "How do new things get invented?", desc: "Inventing new things isn't easy. We can hop on an airplane and fly anywhere in the world now, but airplanes didn't always exist. It took people a while to figure out how to get any type of transportation to fly. Now, we have really big planes, and really fast planes, and little planes, and even military planes. And, we didn't always have cars. People used to use horses as their main form of transportation, or they walked where they wanted to go. It took quite some experimentation to get the first working car actually working.<br><br>So, how do things get invented? Let's look at some examples...", audio: "jump.wav", topic_id: 2)
 FactoryGirl.create(:slide, image: "navgraphics/product_innovation.png", title: "Product Innovation2", desc: "Here is the text for Product Innovation2", audio: "explosion.wav", topic_id: 2)
 FactoryGirl.create(:slide, image: "navgraphics/product_innovation.pngg", title: "Product Innovation3", desc: "Here is the text for Product Innovation3", audio: "jump.wav", topic_id: 2)
 FactoryGirl.create(:slide, image: "navgraphics/product_innovation.png", title: "Product Innovation4Last", desc: "Here is the text for Product Innovation4", audio: "jump.wav", topic_id: 2)
 
 #slides for engineering process - Design Process
-FactoryGirl.create(:slide, image: "navgraphics/design_process.png", title: "Design Process1", desc: "Here is the text for Design Process", audio: "jump.wav", topic_id: 3)
+FactoryGirl.create(:slide, image: "navgraphics/design_process.png", title: "How do Engineers design the things they build?", desc: "When people think about Engineering, they often think about  Engineering Design processes. Engineers design things before they build them, to make sure that the things they build will work well for how they will be used. <br><br> A good example of an engineering design problem is building a bridge. ", audio: "jump.wav", topic_id: 3)
 FactoryGirl.create(:slide, image: "navgraphics/design_process.png", title: "Design Process2", desc: "Here is the text for Design Process2", audio: "explosion.wav", topic_id: 3)
 FactoryGirl.create(:slide, image: "navgraphics/design_process.png", title: "Design Process3", desc: "Here is the text for Design Process3", audio: "jump.wav", topic_id: 3)
 FactoryGirl.create(:slide, image: "navgraphics/design_process.png", title: "Design Process4Last", desc: "Here is the text for Design Process4", audio: "jump.wav", topic_id: 3)
