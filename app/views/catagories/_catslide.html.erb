@@ -14,27 +14,28 @@
 <div class="row-fluid">
 	<div class="span7">
 		</br>
-		<%= audio_tag(@slide.audio, :controls=>true) %>
+		<%= audio_tag(@slide.audio, :controls=>true, :id=>"audio1") %>
+	
+		
+		<script>
+		
+		$('#audio1').bind('ended', function() {
+		   $( "#nextlink" ).click();
+		});
+
+		</script>
 	</div>
-		
 	<div class="span5">
-		<div class="span1">
-		</div>
+		<% unless @slide.catprev.nil? %>
+			<% prevslide = @slide.catprev %>
+			<%= link_to image_tag("controls/previous.png"), catslide_catagory_path(:catagory_id => @catagory.id, :id => prevslide.id),  :remote => true %>
+		<% end%>
 		
-		<div class="span5">
-			<% unless @slide.catprev.nil? %>
-				</br>
-				<% prevslide = @slide.catprev %>
-				<%= link_to image_tag("controls/previous.png"), catslide_catagory_path(:catagory_id => @catagory.id, :id => prevslide.id),  :remote => true %>
-			<% end%>
-		</div>
-		<div class="span6">
-			<% unless @slide.catnext.nil? %>
-				</br>
-				<% nextslide = @slide.catnext %>
-				<%= link_to image_tag("controls/next.png"), catslide_catagory_path(:catagory_id => @catagory.id, :id => nextslide.id),  :remote => true %>
-			<% end%>
-		</div>
+		<% unless @slide.catnext.nil? %>
+			<% nextslide = @slide.catnext %>
+			<%= link_to image_tag("controls/next.png"), catslide_catagory_path(:catagory_id => @catagory.id, :id => nextslide.id),  :remote => true, :id=>"nextlink"%>
+		<% end%>
 	</div>
 </div>
+
 </div>
