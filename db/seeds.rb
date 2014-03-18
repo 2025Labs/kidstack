@@ -6,323 +6,255 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-#catagories
-FactoryGirl.create(:catagory, name:"Engineering Process", navgraphic: "navgraphics/engineering_process.png", headergraphic: "engineering process", color: "engineering_process")
-FactoryGirl.create(:catagory, name:"Materials", navgraphic: "navgraphics/materials.png", headergraphic: "materials", color: "materials")
-FactoryGirl.create(:catagory, name:"Structures", navgraphic: "navgraphics/structures.png", headergraphic: "structures", color: "structures")
-FactoryGirl.create(:catagory, name:"Machines", navgraphic: "navgraphics/machines.png", headergraphic: "machines", color: "machines")
-FactoryGirl.create(:catagory, name:"Energy", navgraphic: "navgraphics/energy.png", headergraphic: "energy", color: "energy")
-FactoryGirl.create(:catagory, name:"Computing", navgraphic: "navgraphics/computing.png", headergraphic: "computing", color: "computing")
 
-#topics for engineering process
-FactoryGirl.create(:topic, name:"Research and Development",  navgraphic: "navgraphics/r_and_d.png", catagory_id: 1)
-FactoryGirl.create(:topic, name:"Product Innovation",  navgraphic: "navgraphics/product_innovation.png", catagory_id: 1)
-FactoryGirl.create(:topic, name:"Design Process",  navgraphic: "navgraphics/design_process.png", catagory_id: 1)
-FactoryGirl.create(:topic, name:"Failure Analysis",  navgraphic: "navgraphics/failure_analysis.png", catagory_id: 1)
-FactoryGirl.create(:topic, name:"Reverse Engineering", navgraphic: "navgraphics/reverse_engineering.png", catagory_id: 1)
-
-#topics for materials
-FactoryGirl.create(:topic, name:"History of Materials", navgraphic: "navgraphics/historyofmaterials.png", catagory_id: 2)
-FactoryGirl.create(:topic, name:"Concrete",  navgraphic: "navgraphics/materialsconcrete.png", catagory_id: 2)
-FactoryGirl.create(:topic, name:"Metal",  navgraphic: "navgraphics/materialsmetal.png", catagory_id: 2)
-FactoryGirl.create(:topic, name:"Glass",  navgraphic: "navgraphics/materialsglass.png", catagory_id: 2)
-FactoryGirl.create(:topic, name:"Steel",  navgraphic: "navgraphics/materialssteel.png", catagory_id: 2)
-FactoryGirl.create(:topic, name:"Silion",  navgraphic: "navgraphics/materialssilicon.png", catagory_id: 2)
-
-#topics for structures
-FactoryGirl.create(:topic, name:"Push and Pull",  navgraphic: "navgraphics/push_and_pull.png", catagory_id: 3)
-FactoryGirl.create(:topic, name:"Beams",  navgraphic: "navgraphics/beams.png", catagory_id: 3)
-FactoryGirl.create(:topic, name:"Bridges", navgraphic: "navgraphics/bridges.png", catagory_id: 3)
-FactoryGirl.create(:topic, name:"Skyscrapers",  navgraphic: "navgraphics/skyscrapers.png", catagory_id: 3)
-FactoryGirl.create(:topic, name:"Plumbing",  navgraphic: "navgraphics/plumbing.png", catagory_id: 3)
-FactoryGirl.create(:topic, name:"Roads",  navgraphic: "navgraphics/roads.png", catagory_id: 3)
-
-
-
-#topics for machines
-FactoryGirl.create(:topic, name:"Simple Machines", navgraphic: "navgraphics/machinessimplemachines.png", catagory_id: 4)
-FactoryGirl.create(:topic, name:"Gears",  navgraphic: "navgraphics/gears.png", catagory_id: 4)
-FactoryGirl.create(:topic, name:"Motors",  navgraphic: "navgraphics/machinesmotors.png", catagory_id: 4)
-FactoryGirl.create(:topic, name:"Engines",  navgraphic: "navgraphics/machinesengines.png", catagory_id: 4)
-FactoryGirl.create(:topic, name:"Electronics",  navgraphic: "navgraphics/machineselectronics.png", catagory_id: 4)
-FactoryGirl.create(:topic, name:"Robotics",  navgraphic: "navgraphics/machinesrobotics.png", catagory_id: 4)
-
-#topics for energy
-FactoryGirl.create(:topic, name:"History of Energy", navgraphic: "navgraphics/historyofenergy.png", catagory_id: 5)
-FactoryGirl.create(:topic, name:"Renewable Energy",  navgraphic: "navgraphics/renewableenergy.png", catagory_id: 5)
-FactoryGirl.create(:topic, name:"Nonrenewable Energy",  navgraphic: "navgraphics/nonrenewableenergy.png", catagory_id: 5)
-FactoryGirl.create(:topic, name:"Energy Transmission",  navgraphic: "navgraphics/energytransmission.png", catagory_id: 5)
-FactoryGirl.create(:topic, name:"Energy Storage",  navgraphic: "navgraphics/energystorage.png", catagory_id: 5)
-FactoryGirl.create(:topic, name:"Energy Consumption",  navgraphic: "navgraphics/energyconsumption.png", catagory_id: 5)
-
-#topics for computing
-FactoryGirl.create(:topic, name:"Hardware", navgraphic: "navgraphics/computinghardware.png", catagory_id: 6)
-FactoryGirl.create(:topic, name:"Software",  navgraphic: "navgraphics/computingsoftware.png", catagory_id: 6)
-FactoryGirl.create(:topic, name:"Networks",  navgraphic: "navgraphics/computingnetworks.png", catagory_id: 6)
-FactoryGirl.create(:topic, name:"Routing",  navgraphic: "navgraphics/computingrouting.png", catagory_id: 6)
-FactoryGirl.create(:topic, name:"Challenges",  navgraphic: "navgraphics/computingchallenges.png", catagory_id: 6)
-FactoryGirl.create(:topic, name:"Future",  navgraphic: "navgraphics/computingfuture.png", catagory_id: 6)
-
-
-#slides for engineering process main
-FactoryGirl.create(:slide, image: "navgraphics/engineering_process.png", title: "What is an Engineer?", desc: "Well... Engineers design things and build things. Engineers figure out how things work, or why they don't work. Sometimes, Engineers experiment with things - materials, machines, technologies - to find out what they are, or what they can do or can't do, or how well they do them. Sometimes Engineers think of new ways to use things that were discovered or invented before. And, sometimes, they come up with new things that didn't exist - like the first time a working car was invented, or an airplane, or a cell phone.", audio: "EP/engprocessintro.wav", catagory_id: 1)
-FactoryGirl.create(:slide, image: "navgraphics/engineering_process.png", title: "What do Engineers do?", desc: "Being an Engineer can involve different types of activities, but Engineers are almost always using their brains to figure out how to solve problems, and they use math and science as tools to help them.<br><br>To learn more about how Engineers do their work, click one of the buttons on the right.", audio: "explosion.wav", catagory_id: 1)
-
-#slides for materials main
-FactoryGirl.create(:slide, image: "navgraphics/materials.png", title: "Materials1", desc: "Here is the text for Materials1", audio: "jump.wav", catagory_id: 2)
-FactoryGirl.create(:slide, image: "slideshow/steve2.jpg", title: "Materials2", desc: "Here is the text for Materials2", audio: "explosion.wav", catagory_id: 2)
-FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Materials3", desc: "Here is the text for Materials3", audio: "jump.wav", catagory_id: 2)
-FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Materials4Last", desc: "Here is the text for Materials4", audio: "jump.wav", catagory_id: 2)
-
-#slides for structures main
-FactoryGirl.create(:slide, image: "slideshow/girlsatdesk.png", title: "Structure1", desc: "Are you at home sitting on a chair looking at your iPad? Or maybe you are at the library sitting at a desk watching on a computer. You might even be in a car or an airplane looking at a smartphone. Wherever you are, you  are likely sitting on a structure, like a chair, and sitting in a structure, like a building. If you are sitting in a vehicle like a car or an airplane, then you are in vehicle, which is machine with structural components, or parts. In this slideshow, you are going to learn what a structure is. ", audio: "structuresmain_audio/structuresmain_slide1.wav", catagory_id: 3, topic_id: 0)
-FactoryGirl.create(:slide, image: "slideshow/CowboyJames.png", title: "Structure2", desc: "The simplest definition of a structure is that it's something with parts put together in a particular way. From an engineer's point of view, a structure is something that is 'load bearing'. Let's take a closer look at what each of these two words mean, so we can understand what it means to be 'load bearing'. ", audio: "structuresmain_audio/structuresmain_slide2.wav", catagory_id: 3, topic_id: 0)
-FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Structure3", desc: "When you hear the word 'load', you might think about carrying a load, or a load of laundry. In the case of structures, load is another word for force. A force is a push or a pull on a structure or any other kind of object. 'Bearing' might be a word you've never heard before, and it can have a few different definitions (none of them having to do with bears!). In this case, bearing means to hold up or stay strong against something. Putting these two ideas together, a structure is something that can hold up or stay strong against one or more forces, which means it won't break apart, collapse, or otherwise fall down.", audio: "structuresmain_audio/structuresmain_slide3.wav", catagory_id: 3, topic_id: 0)
-FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Structure4", desc: "Structures serve different purposes, but they are all load bearing. A chair's purpose is to be sat on (and maybe it's the place you put your backpack when you come home from school...). A house provides shelter. A bridge gives you a way to cross an obstacle. Each of these structures does something different, but they all have one load or force in common: their own weight. Before a chair can support the force of your weight, it has to support its own weight. The same thing is true for the house and the bridge. A structure's own weight is called its 'dead load.' Any other force the object supports (like you or your backpack) is called its 'live load'.", audio: "structuresmain_audio/structuresmain_slide4.wav", catagory_id: 3, topic_id: 0)
-FactoryGirl.create(:slide, image: "slideshow/boysonswings.png", title: "Structure5", desc: "Some structures have to support more then the force of the weight of people and things that use it. For example, a bridge is designed to support the weight of the vehicles and people crossing it and also to resist the force of the wind blowing against it. It wouldn't be a very useful bridge if it could support a lot of users, but blew over in the first strong wind. Depending on where the bridge is located, it might also be designed to resist the movement of the earth during an earthquake. Earthquakes and wind are environmental forces that act on structures, and they are important considerations for large structures like buildings and bridges.", audio: "structuresmain_audio/structuresmain_slide5.wav", catagory_id: 3, topic_id: 0)
-FactoryGirl.create(:slide, image: "slideshow/boysonchair.png", title: "Structure6", desc: "Engineers who work with structures are called structural engineers. They help to make sure that buildings and other large structures are safe to use. Structural engineers also work with machines and other objects in which their structure is critical to making sure that the object works and is safe. For example, a structural engineer would help to make sure that the frame (a structural component) of your car can support the weight of the car, your family, and your stuff. The structural engineer will also make sure that the frame doesn't collapse if you get in an accident.", audio: "structuresmain_audio/structuresmain_slide6.wav", catagory_id: 3, topic_id: 0)
-FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Structure7Last", desc: "We are surrounded by structures. What structures do you see around you?", audio: "structuresmain_audio/structuresmain_slide7.wav", catagory_id: 3, topic_id: 0)
-
-#slides for machines main
-FactoryGirl.create(:slide, image: "navgraphics/machines.png", title: "Machines1", desc: "Here is the text for Machines1", audio: "jump.wav", catagory_id: 4)
-FactoryGirl.create(:slide, image: "slideshow/steve2.jpg", title: "Machines2", desc: "Here is the text for Machines2", audio: "explosion.wav", catagory_id: 4)
-FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Machines3", desc: "Here is the text for Machines3", audio: "jump.wav", catagory_id: 4)
-FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Machines4Last", desc: "Here is the text for Machines4", audio: "jump.wav", catagory_id: 4)
-
-#slides for energy main
-FactoryGirl.create(:slide, image: "navgraphics/energy.png", title: "Energy1", desc: "Here is the text for Energy1", audio: "jump.wav", catagory_id: 5)
-FactoryGirl.create(:slide, image: "slideshow/steve2.jpg", title: "Energy2", desc: "Here is the text for Energy2", audio: "explosion.wav", catagory_id: 5)
-FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Energy3", desc: "Here is the text for Energy3", audio: "jump.wav", catagory_id: 5)
-FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Energy4Last", desc: "Here is the text for Energy4", audio: "jump.wav", catagory_id: 5)
-
-#slides for computing main
-FactoryGirl.create(:slide, image: "navgraphics/computing.png", title: "Computing1", desc: "Here is the text for Computing1", audio: "jump.wav", catagory_id: 6)
-FactoryGirl.create(:slide, image: "slideshow/steve2.jpg", title: "Computing2", desc: "Here is the text for computing2", audio: "explosion.wav", catagory_id: 6)
-FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Computing3", desc: "Here is the text for computing3", audio: "jump.wav", catagory_id: 6)
-FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Computing4Last", desc: "Here is the text for computing4", audio: "jump.wav", catagory_id: 6)
-
-#slides for engineering process - R & D
-FactoryGirl.create(:slide, image: "navgraphics/r_and_d.png", title: "Research and Development1", desc: "Here is the text for Research and Development1", audio: "jump.wav", topic_id: 1)
-FactoryGirl.create(:slide, image: "navgraphics/r_and_d.png", title: "Research and Development2", desc: "Here is the text for Research and Development2", audio: "explosion.wav", topic_id: 1)
-FactoryGirl.create(:slide, image: "navgraphics/r_and_d.png", title: "Research and Development3", desc: "Here is the text for Research and Development3", audio: "jump.wav", topic_id: 1)
-FactoryGirl.create(:slide, image: "navgraphics/r_and_d.png", title: "Research and Development4Last", desc: "Here is the text for Research and Development4", audio: "jump.wav", topic_id: 1)
-
-#slides for engineering process - Product Innovation
-FactoryGirl.create(:slide, image: "navgraphics/product_innovation.png", title: "How do new things get invented?", desc: "Inventing new things isn't easy. We can hop on an airplane and fly anywhere in the world now, but airplanes didn't always exist. It took people a while to figure out how to get any type of transportation to fly. Now, we have really big planes, and really fast planes, and little planes, and even military planes. And, we didn't always have cars. People used to use horses as their main form of transportation, or they walked where they wanted to go. It took quite some experimentation to get the first working car actually working.<br><br>So, how do things get invented? Let's look at some examples...", audio: "jump.wav", topic_id: 2)
-FactoryGirl.create(:slide, image: "navgraphics/product_innovation.png", title: "Inventions in Communications", desc: "Today you can pick up the telephone and call a relative in China. Or, you can FaceTime or Skype from your tablet computer to have a video call with distant relatives. But it wasn't always that way. Communicating at a distance used to require some kind of visual signal or sound, like smoke signals or drums.", audio: "jump.wav", topic_id: 2)
-FactoryGirl.create(:slide, image: "navgraphics/product_innovation.png", title: "Communications", desc: "If you have ever seen the movie Mulan, you might remember the part where they had sentries, or lookouts, posted at various places along the Great Wall of China. When the Huns were invading, the movie showed the sentries passing the message along from person to person along the wall so that everyone would know they were being invaded. That's how long-distance communication used to take place. Sending a message required a person to physically go to another person, or to send a signal that the person could see, or make a sound that the next person could hear. [drum sounds]", audio: "jump.wav", topic_id: 2)
-FactoryGirl.create(:slide, image: "navgraphics/product_innovation.png", title: "Communications", desc: "[To be added with picture of Paul Revere - Sound effects: <p><p>'Hey you! The British are coming! <p><p>What? <p><p>I said the British are coming! <p><p>What?? <p><p>Oh, I'll just ride over there and tell him... ]", audio: "jump.wav", topic_id: 2)
-FactoryGirl.create(:slide, image: "navgraphics/product_innovation.png", title: "Communications", desc: "In order to invent the electric telegraph, people first had to develop some understanding of electricity and how to control it. People knew about electricity in nature, such as electric eels, from ancient times. People also saw electricity in their lives in the form of lightning and static electricity (like when you rub a balloon in your hair and it makes your hair stand on end). It took much longer to figure out how to <i>control</i> electricity and harness it.", audio: "jump.wav", topic_id: 2)
-FactoryGirl.create(:slide, image: "navgraphics/product_innovation.png", title: "Communications", desc: "A person named Alessandro Volta figured out the basic mechanisms to make a battery work. The words 'volts' or 'voltage' are named after him. From there, it wasn't too hard to figure out how to run electricity through a wire, although it took some further innovations to be able to carry the signal over distance. Samuel Morse leveraged these discoveries to come up with ideas for a telegraph system. ", audio: "jump.wav", topic_id: 2)
-FactoryGirl.create(:slide, image: "navgraphics/product_innovation.png", title: "Communications", desc: "Morse determined that messages could be sent by stopping and starting the current in the wire, and using particular patterns in the current to convey the information. We call the code he invented, 'Morse code'. That's one of the great things about being an inventor - you can name things after yourself, and if they're cool enough, people will talk about it long after you're dead! The first telegraph message was sent on May 24, 1844 by Morse from the U.S. Supreme Court Chambers in Washington, D.C. to a colleague in Baltimore, Maryland. That famous message was 'What hath God wrought?'", audio: "jump.wav", topic_id: 2)
-FactoryGirl.create(:slide, image: "navgraphics/product_innovation.png", title: "Communications", desc: "To be added: Marconi leveraging discoveries of Faraday, Maxwell, and Hertz to invent wireless telegraphy", audio: "jump.wav", topic_id: 2)
-FactoryGirl.create(:slide, image: "navgraphics/product_innovation.png", title: "Communications", desc: "The famous ship the Titanic used Morse code over wireless telegraphy to communicate that the Titanic had hit an iceberg and was taking on water. Nearby ships the Olympic and Carpathia received Titanic's message. Among the messages sent by the boat were: 'SOS SOS CQD CQD. We are sinking fast. Passengers are being put into boats.' CQD was an alternate, older distress code to SOS, so the Titanic used both to make sure their message was understood.", audio: "jump.wav", topic_id: 2)
-FactoryGirl.create(:slide, image: "navgraphics/product_innovation.png", title: "Communications", desc: "To include: telephony invention, to telecom, to today. Theme: timeframe, people, experimentation, building on the knowledge of others,...", audio: "jump.wav", topic_id: 2)
-FactoryGirl.create(:slide, image: "navgraphics/product_innovation.png", title: "Product Innovation: Aircraft", desc: "We can fly almost anywhere in the world now. But it wasn't always that way. To cross oceans, people used to have to take boats. More than 100 years ago, the first motorized flying vehicle was invented. And, before that, inventors discovered how to make gliders - non-motorized aircraft - that could fly short distances. More stuff TBD", audio: "explosion.wav", topic_id: 2)
-FactoryGirl.create(:slide, image: "navgraphics/product_innovation.png", title: "Product Innovation4Last", desc: "Here is the text for Product Innovation4", audio: "jump.wav", topic_id: 2)
-
+#### Everything for Engineering Process
+catagory = Catagory.create(name:"Engineering Process", navgraphic: "navgraphics/engineering_process.png", headergraphic: "engineering process", color: "engineering_process")
+#FactoryGirl.create(:catagory, name:"Engineering Process", navgraphic: "navgraphics/engineering_process.png", headergraphic: "engineering process", color: "engineering_process")
+### Slides for engineering process main
+FactoryGirl.create(:slide, image: "navgraphics/engineering_process.png", title: "What is an Engineer?", desc: "Well... Engineers design things and build things. Engineers figure out how things work, or why they don't work. Sometimes, Engineers experiment with things - materials, machines, technologies - to find out what they are, or what they can do or can't do, or how well they do them. Sometimes Engineers think of new ways to use things that were discovered or invented before. And, sometimes, they come up with new things that didn't exist - like the first time a working car was invented, or an airplane, or a cell phone.", audio: "EP/cmengrprocessintro.wav", catagory_id: catagory.id, topic_id: 0)
+FactoryGirl.create(:slide, image: "navgraphics/engineering_process.png", title: "What do Engineers do?", desc: "Being an Engineer can involve different types of activities, but Engineers are almost always using their brains to figure out how to solve problems, and they use math and science as tools to help them.<br><br>To learn more about how Engineers do their work, click one of the buttons on the right.", audio: "explosion.wav", catagory_id: catagory.id, topic_id: 0)
+## Topic and slides for EP: R&D
+#FactoryGirl.create(:topic, name:"Research and Development",  navgraphic: "navgraphics/r_and_d.png", catagory_id: 1)
+topic = Topic.create(name:"Research and Development",  navgraphic: "navgraphics/r_and_d.png", catagory_id: catagory.id )
+#slide = Slide.create(image: "navgraphics/r_and_d.png", title: "Research and Development1", desc: "Here is the text for Research and Development1", audio: "jump.wav", catagory_id: catagory.id, topic_id: topic.id)
+FactoryGirl.create(:slide, image: "navgraphics/r_and_d.png", title: "Research and Development1", desc: "Here is the text for Research and Development1", audio: "jump.wav", catagory_id: catagory.id, topic_id: topic.id)
+FactoryGirl.create(:slide, image: "navgraphics/r_and_d.png", title: "Research and Development2", desc: "Here is the text for Research and Development2", audio: "explosion.wav", catagory_id: catagory.id, topic_id: topic.id)
+FactoryGirl.create(:slide, image: "navgraphics/r_and_d.png", title: "Research and Development3", desc: "Here is the text for Research and Development3", audio: "jump.wav", catagory_id: catagory.id, topic_id: topic.id)
+FactoryGirl.create(:slide, image: "navgraphics/r_and_d.png", title: "Research and Development4Last", desc: "Here is the text for Research and Development4", audio: "jump.wav", catagory_id: catagory.id, topic_id: topic.id)
+## Topic and slides for EP: Innovation
+topic = FactoryGirl.create(:topic, name:"Product Innovation",  navgraphic: "navgraphics/product_innovation.png", catagory_id: catagory.id )
+FactoryGirl.create(:slide, image: "navgraphics/product_innovation.png", title: "How do new things get invented?", desc: "Inventing new things isn't easy. We can hop on an airplane and fly anywhere in the world now, but airplanes didn't always exist. It took people a while to figure out how to get any type of transportation to fly. Now, we have really big planes, and really fast planes, and little planes, and even military planes. And, we didn't always have cars. People used to use horses as their main form of transportation, or they walked where they wanted to go. It took quite some experimentation to get the first working car actually working.<br><br>So, how do things get invented? Let's look at some examples...", audio: "jump.wav", catagory_id: catagory.id, topic_id: topic.id)
+FactoryGirl.create(:slide, image: "navgraphics/product_innovation.png", title: "Inventions in Communications", desc: "Let's start by looking at inventions related to how we communicate. <p><p>Today you can pick up the telephone and call a relative in China. Or, you can FaceTime or Skype from your tablet computer to have a video call with distant relatives. <p><p>But it wasn't always that way. Communicating at a distance used to require some kind of visual signal or sound, like smoke signals or drums.", audio: "jump.wav", catagory_id: catagory.id, topic_id: topic.id)
+FactoryGirl.create(:slide, image: "navgraphics/ep-pi-greatwall.png", title: "Inventions in Communications", desc: "If you have ever seen the movie Mulan, you might remember the part where they had sentries, or lookouts, posted at various places along the Great Wall of China. When the Huns were invading, the movie showed the sentries passing the message along from person to person along the wall so that everyone would know they were being invaded.", audio: "EP/drums.mp3", catagory_id: catagory.id, topic_id: topic.id)
+FactoryGirl.create(:slide, image: "navgraphics/ep-pi-greatwall.png", title: "Inventions in Communications", desc: "That's how long-distance communication used to take place. Sending a message required a person to physically go to another person, or to send a signal that the person could see, or make a sound that the next person could hear. In those days, if you had to send a message a very long distance, or to multiple people, the message had to be <i>relayed</i>. ", audio: "EP/drums.mp3", catagory_id: catagory.id, topic_id: topic.id)
+FactoryGirl.create(:slide, image: "navgraphics/ep-pi-paulrevere.png", title: "Inventions in Communications", desc: "[same pic or drums]<p><p>In the drum case, people would be posted on hilltops spread out over distance. The message sender would drum out the message, and then the person on the next hilltop would repeat it, and then the next person would repeat it, and so on. The process for sending a message using smoke signals was very similar. ", audio: "EP/drums.mp3", catagory_id: catagory.id, topic_id: topic.id)
+FactoryGirl.create(:slide, image: "navgraphics/ep-pi-paulrevere.png", title: "Inventions in Communications", desc: "[picture of Paul Revere & audio]If you wanted to send a message directly to another person, you might have someone ride a horse there, or run there. For example, during the American Revolution, Paul Revere spread the message that the British were coming by riding his horse. And, way back in Greek history, the original 'marathoner' ran 26 miles from Marathon to Athens to report that the Persians had been defeated - and then collapsed and died! <p><p>In order to get to more efficient long-distance communication, some discoveries and inventions were required first.", audio: "EP/paulrevere.wav", catagory_id: catagory.id, topic_id: topic.id)
+FactoryGirl.create(:slide, image: "navgraphics/ep-pi-electricity.png", title: "Inventions in Communications", desc: "The electric telegraph was one of these inventions. In order to invent the telegraph, people first had to develop some understanding of electricity and how to control it. <p><p>People knew about electricity in nature, such as electric eels, from ancient times. People also saw electricity in their lives in the form of lightning and static electricity (like when you rub a balloon in your hair and it makes your hair stand on end). It took much longer to figure out how to <i>control</i> electricity and harness it.", audio: "jump.wav", catagory_id: catagory.id, topic_id: topic.id)
+FactoryGirl.create(:slide, image: "navgraphics/product_innovation.png", title: "Inventions in Communications", desc: "A person named Alessandro Volta figured out the basic mechanisms to make a battery work. The words 'volts' or 'voltage' are named after him. From there, it wasn't too hard to figure out how to run electricity through a wire, although it took some further innovations to be able to carry the signal over distance. <p><p>Samuel Morse leveraged these discoveries to come up with ideas for a telegraph system. ", audio: "jump.wav", catagory_id: catagory.id, topic_id: topic.id)
+FactoryGirl.create(:slide, image: "navgraphics/ep-pi-morse.png", title: "Inventions in Communications", desc: "Morse determined that messages could be sent by stopping and starting the current in the wire, and using particular patterns in the current to convey the information. We call the code he invented, 'Morse code'. <p><p>That's one of the great things about being an inventor - you can name things after yourself, and if they're cool enough, people will talk about it long after you're dead! <p><p>The first telegraph message was sent on May 24, 1844 by Morse from the U.S. Supreme Court Chambers in Washington, D.C. to a colleague in Baltimore, Maryland. That famous message was 'What hath God wrought?'", audio: "EP/firstmorse_slow.wav", catagory_id: catagory.id, topic_id: topic.id)
+FactoryGirl.create(:slide, image: "navgraphics/product_innovation.png", title: "Inventions in Communications", desc: "Morse's telegraph system required the sending and receiving stations to be connected by wires. <p><p>Then, a guy named  Guglielmo Marconi figured out how to invent wireless telegraphy. In order to invent it, he used the discoveries of scientists before him.", audio: "jump.wav", catagory_id: catagory.id, topic_id: topic.id)
+FactoryGirl.create(:slide, image: "navgraphics/product_innovation.png", title: "Inventions in Communications", desc: "One such discovery was by a physicist named Michael Faraday who discovered in the 1800s that an electric current running through a wire creates a magnetic field. In addition, he was able to induce an electric current using a magnetic field.", audio: "jump.wav", catagory_id: catagory.id, topic_id: topic.id)
+FactoryGirl.create(:slide, image: "navgraphics/product_innovation.png", title: "Inventions in Communications", desc: "Another physicist, named James Clerk Maxwell, proved mathematically the relationships between electricity and magnetism and predicted that electromagnetic radiation travels through space in waves at the speed of light. 'Maxwell's equations' are still well-known to physicists and eletrical engineers, showing once again that discovering cool stuff can make you famous forever!", audio: "jump.wav", catagory_id: 1, topic_id: topic.id)
+FactoryGirl.create(:slide, image: "navgraphics/product_innovation.png", title: "Inventions in Communications", desc: "Heinrich Hertz was able demonstrate that electromagnetic forces really do travel through space. He demonstrated this by having a spark between two conductors induce a spark between two other conductors five feet away. He also later produced electromagnetic waves in a laboratory, measured their speed, showed that they travel at the speed of light, and proved that light and heat are electromagnetic radiations. Marconi leveraged Hertz's discoveries and was able to increase the distance between the sets of conductors to induce a spark from over 30 feet way, and then to 600 feet, and then to two miles (10,560 feet). Marconi was eventually able to send a signal across the Atlantic in 1901, using Morse code to send the letter 's' from western England to Newfoundland, Canada, a distance of over 2000 miles.[sound of morse s]", audio: "jump.wav", catagory_id: catagory.id, topic_id: topic.id)
+FactoryGirl.create(:slide, image: "navgraphics/product_innovation.png", title: "Inventions in Communications", desc: "Wireless telegraphy was adopted quickly, and by the time of the sinking of the famous ship, the Titanic, Morse code over wireless telegraphy was used to communicate that the Titanic had hit an iceberg and was taking on water. Nearby ships the Olympic and Carpathia received Titanic's message. Among the messages sent by the boat were: 'SOS SOS CQD CQD. We are sinking fast. Passengers are being put into boats.' CQD was an alternate, older distress code to SOS, so the Titanic used both to make sure their message was understood.", audio: "EP/titanicfull.wav", catagory_id: catagory.id, topic_id: topic.id)
+FactoryGirl.create(:slide, image: "navgraphics/product_innovation.png", title: "Inventions in Communications", desc: "The initial discoveries in wired telegraphy led to investigations into transmitting not just data - Morse code - but also voice. In 1876 Alexander Graham Bell made a succesfull telephone call to his lab assistant, Watson, in the famous communication, 'Mr. Watson - come here - I want you.' These early inventions in telegraph and telephone eventually led to the Internet and wireless networking. But, it took the contributions of many scientists and engineers developing knowledge and building on the knowledge of those who came before them to get all the way from observations of electricity in nature to surfing the Internet from an iPad. And, those scientists and inventors had to be curious about the world, and willing to spend a tremendous amount of time trying to unlock its mysteries and master its principles.", audio: "jump.wav", catagory_id: catagory.id, topic_id: topic.id)
+FactoryGirl.create(:slide, image: "navgraphics/product_innovation.png", title: "Product Innovation: Aircraft", desc: "We can fly almost anywhere in the world now. But it wasn't always that way. To cross oceans, people used to have to take boats. More than 100 years ago, the first motorized flying vehicle was invented. And, before that, inventors discovered how to make gliders - non-motorized aircraft - that could fly short distances. More stuff TBD", audio: "explosion.wav", catagory_id: catagory.id, topic_id: topic.id)
+FactoryGirl.create(:slide, image: "navgraphics/product_innovation.png", title: "Product Innovation4Last", desc: "Here is the text for Product Innovation4", audio: "jump.wav", catagory_id: catagory.id, topic_id: topic.id)
+## Everything for EP: Design
+topic = FactoryGirl.create(:topic, name:"Design Process",  navgraphic: "navgraphics/design_process.png", catagory_id: catagory.id )
 #slides for engineering process - Design Process
-FactoryGirl.create(:slide, image: "navgraphics/design_process.png", title: "How do Engineers design the things they build?", desc: "When people think about Engineering, they often think about  Engineering Design processes. Engineers design things before they build them, to make sure that the things they build will work well for how they will be used. <br><br> A good example of an engineering design problem is building a bridge. ", audio: "jump.wav", topic_id: 3)
-FactoryGirl.create(:slide, image: "navgraphics/design_process.png", title: "Design Process2", desc: "Here is the text for Design Process2", audio: "explosion.wav", topic_id: 3)
-FactoryGirl.create(:slide, image: "navgraphics/design_process.png", title: "Design Process3", desc: "Here is the text for Design Process3", audio: "jump.wav", topic_id: 3)
-FactoryGirl.create(:slide, image: "navgraphics/design_process.png", title: "Design Process4Last", desc: "Here is the text for Design Process4", audio: "jump.wav", topic_id: 3)
-
+FactoryGirl.create(:slide, image: "navgraphics/design_process.png", title: "How do Engineers design the things they build?", desc: "When people think about Engineering, they often think about  Engineering Design processes. Engineers design things before they build them, to make sure that the things they build will work well for how they will be used. <br><br> A good example of an engineering design problem is building a bridge. ", audio: "jump.wav", catagory_id: catagory.id, topic_id: topic.id)
+FactoryGirl.create(:slide, image: "navgraphics/design_process.png", title: "Design Process2", desc: "Here is the text for Design Process2", audio: "explosion.wav", catagory_id: catagory.id, topic_id: topic.id)
+FactoryGirl.create(:slide, image: "navgraphics/design_process.png", title: "Design Process3", desc: "Here is the text for Design Process3", audio: "jump.wav", catagory_id: catagory.id, topic_id: topic.id)
+FactoryGirl.create(:slide, image: "navgraphics/design_process.png", title: "Design Process4Last", desc: "Here is the text for Design Process4", audio: "jump.wav", catagory_id: catagory.id, topic_id: topic.id)
+## Everything for EP: Failure Analysis
+topic = FactoryGirl.create(:topic, name:"Failure Analysis",  navgraphic: "navgraphics/failure_analysis.png", catagory_id: catagory.id )
 #slides for engineering process - Failure Analysis
-FactoryGirl.create(:slide, image: "navgraphics/failure_analysis.png", title: "Failure Analysis1", desc: "Here is the text for Failure Analysis1", audio: "jump.wav", topic_id: 4)
-FactoryGirl.create(:slide, image: "navgraphics/failure_analysis.png", title: "Failure Analysis2", desc: "Here is the text for Failure Analysis2", audio: "explosion.wav", topic_id: 4)
-FactoryGirl.create(:slide, image: "navgraphics/failure_analysis.png", title: "Failure Analysis3", desc: "Here is the text for Steve3", audio: "jump.wav", topic_id: 4)
-FactoryGirl.create(:slide, image: "navgraphics/failure_analysis.png", title: "Failure Analysis4Last", desc: "Here is the text for Failure Analysis4", audio: "jump.wav", topic_id: 4)
-
+FactoryGirl.create(:slide, image: "navgraphics/failure_analysis.png", title: "Failure Analysis1", desc: "Here is the text for Failure Analysis1", audio: "jump.wav", catagory_id: catagory.id, topic_id: topic.id)
+FactoryGirl.create(:slide, image: "navgraphics/failure_analysis.png", title: "Failure Analysis2", desc: "Here is the text for Failure Analysis2", audio: "explosion.wav", catagory_id: catagory.id, topic_id: topic.id)
+FactoryGirl.create(:slide, image: "navgraphics/failure_analysis.png", title: "Failure Analysis3", desc: "Here is the text for Steve3", audio: "jump.wav", catagory_id: catagory.id, topic_id: topic.id)
+FactoryGirl.create(:slide, image: "navgraphics/failure_analysis.png", title: "Failure Analysis4Last", desc: "Here is the text for Failure Analysis4", audio: "jump.wav", catagory_id: catagory.id, topic_id: topic.id)
+## Everything for EP: Reverse Engineering
+topic = FactoryGirl.create(:topic, name:"Reverse Engineering", navgraphic: "navgraphics/reverse_engineering.png", catagory_id: catagory.id )
 #slides for engineering process - Reverse Engineering
-FactoryGirl.create(:slide, image: "navgraphics/reverse_engineering.png", title: "Reverse Engineering1", desc: "Here is the text for Reverse Engineering1", audio: "jump.wav", topic_id: 5)
-FactoryGirl.create(:slide, image: "navgraphics/reverse_engineering.png", title: "Reverse Engineering2", desc: "Here is the text for Reverse Engineering2", audio: "explosion.wav", topic_id: 5)
-FactoryGirl.create(:slide, image: "navgraphics/reverse_engineering.png", title: "Reverse Engineering3", desc: "Here is the text for Reverse Engineering3", audio: "jump.wav", topic_id: 5)
-FactoryGirl.create(:slide, image: "navgraphics/reverse_engineering.png", title: "Reverse Engineering4Last", desc: "Here is the text for Reverse Engineering4", audio: "jump.wav", topic_id: 5)
-
-#slides for materials - History of Materials
-FactoryGirl.create(:slide, image: "slideshow/steve1.jpg", title: "History of Materials1", desc: "Here is the text for History of Materials1", audio: "jump.wav", topic_id: 7)
-FactoryGirl.create(:slide, image: "slideshow/steve2.jpg", title: "History of Materials2", desc: "Here is the text for History of Materials2", audio: "explosion.wav", topic_id: 7)
-FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "History of Materials3", desc: "Here is the text for History of Materials3", audio: "jump.wav", topic_id: 7)
-FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "History of Materials4Last", desc: "Here is the text for History of Materials4", audio: "jump.wav", topic_id: 7)
-
-#slides for materials - Concrete
-FactoryGirl.create(:slide, image: "slideshow/steve1.jpg", title: "Concrete1", desc: "Here is the text for Concrete1", audio: "jump.wav", topic_id: 8)
-FactoryGirl.create(:slide, image: "slideshow/steve2.jpg", title: "Concrete2", desc: "Here is the text for Concrete2", audio: "explosion.wav", topic_id: 8)
-FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Concrete3", desc: "Here is the text for Concrete3", audio: "jump.wav", topic_id: 8)
-FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Concrete4Last", desc: "Here is the text for Concrete4", audio: "jump.wav", topic_id: 8)
-
-#slides for materials - Concrete
-FactoryGirl.create(:slide, image: "slideshow/steve1.jpg", title: "Metals, Mining and Metallurgy", desc: "Here is the text for Metals, Mining and Metallurgy", audio: "jump.wav", topic_id: 9)
-FactoryGirl.create(:slide, image: "slideshow/steve2.jpg", title: "Steve2", desc: "Here is the text for Steve2", audio: "explosion.wav", topic_id: 9)
-FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Steve3", desc: "Here is the text for Steve3", audio: "jump.wav", topic_id: 9)
-FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Steve4", desc: "Here is the text for Steve4", audio: "jump.wav", topic_id: 9)
-
-#slides for materials - Glass
-FactoryGirl.create(:slide, image: "slideshow/steve1.jpg", title: "Glass, Ceramic and Porcelain1", desc: "Here is the text for Glass, Ceramic and Porcelain1", audio: "jump.wav", topic_id: 10)
-FactoryGirl.create(:slide, image: "slideshow/steve2.jpg", title: "Glass, Ceramic and Porcelain2", desc: "Here is the text for Glass, Ceramic and Porcelain2", audio: "explosion.wav", topic_id: 10)
-FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Glass, Ceramic and Porcelain3", desc: "Here is the text for Glass, Ceramic and Porcelain3", audio: "jump.wav", topic_id: 10)
-FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Glass, Ceramic and Porcelain4", desc: "Here is the text for Glass, Ceramic and Porcelain4", audio: "jump.wav", topic_id: 10)
+FactoryGirl.create(:slide, image: "navgraphics/reverse_engineering.png", title: "Reverse Engineering1", desc: "Here is the text for Reverse Engineering1", audio: "jump.wav", catagory_id: catagory.id, topic_id: topic.id)
+FactoryGirl.create(:slide, image: "navgraphics/reverse_engineering.png", title: "Reverse Engineering2", desc: "Here is the text for Reverse Engineering2", audio: "explosion.wav", catagory_id: catagory.id, topic_id: topic.id)
+FactoryGirl.create(:slide, image: "navgraphics/reverse_engineering.png", title: "Reverse Engineering3", desc: "Here is the text for Reverse Engineering3", audio: "jump.wav", catagory_id: catagory.id, topic_id: topic.id)
+FactoryGirl.create(:slide, image: "navgraphics/reverse_engineering.png", title: "Reverse Engineering4Last", desc: "Here is the text for Reverse Engineering4", audio: "jump.wav", catagory_id: catagory.id, topic_id: topic.id)
 
 
-#slides for materials - Steel
-FactoryGirl.create(:slide, image: "slideshow/steve1.jpg", title: "Steel1", desc: "Here is the text for Steel1", audio: "jump.wav", topic_id: 11)
-FactoryGirl.create(:slide, image: "slideshow/steve2.jpg", title: "Steel2", desc: "Here is the text for Steel2", audio: "explosion.wav", topic_id: 11)
-FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Steel3", desc: "Here is the text for Steel3", audio: "jump.wav", topic_id: 11)
-FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Steel4Last", desc: "Here is the text for Steel4", audio: "jump.wav", topic_id: 11)
 
-#slides for materials - Silicon and Fiber Optics
-FactoryGirl.create(:slide, image: "slideshow/steve1.jpg", title: "Silicon and Fiber Optics1", desc: "Here is the text for Silicon and Fiber Optics1", audio: "jump.wav", topic_id: 12)
-FactoryGirl.create(:slide, image: "slideshow/steve2.jpg", title: "Silicon and Fiber Optics2", desc: "Here is the text for Silicon and Fiber Optics2", audio: "explosion.wav", topic_id: 12)
-FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Silicon and Fiber Optics3", desc: "Here is the text for Silicon and Fiber Optics3", audio: "jump.wav", topic_id: 12)
-FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Silicon and Fiber Optics4", desc: "Here is the text for Silicon and Fiber Optics4", audio: "jump.wav", topic_id: 12)
-
-#slides for structures - push and pull
-FactoryGirl.create(:slide, image: "slideshow/steve1.jpg", title: "PushandPull1", desc: "In the introduction to structures, you learned that structures are load bearing and that load is another word for force. In this section, we are going to look more closely at how structures react to the different forces that act on them, and how structures are able to stand up to those forces without permanently changing or breaking.", audio: "structuresandforces_audio/structuresandforces_slide1.wav", topic_id: 13)
-FactoryGirl.create(:slide, image: "slideshow/steve2.jpg", title: "PushandPull2", desc: "By definition, a force is a push or a pull on one object by another object. When you think about pushing or pulling an object, you might think about moving it. For example you might open a door by either pushing or pulling on it. But not all objects move when you push or pull on them. If you push on a wall, you are definitely exerting a force, but unlike the door, it isn't going to move. So objects have other ways of reacting to forces besides moving. Structures that don't break under a load react to forces in three different ways. Structures can be in a state of tension, compression, or torsion (or combinations of these three states). Let's take a look at each of these words to understand what they mean.", audio: "structuresandforces_audio/structuresandforces_slide2.wav", topic_id: 13)
-FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "PushandPull3", desc: "When a structure is being pulled, it is under tension. For example when you sit down on a swing, the force of your weight pulls down on the swing, creating tension in the swing. The chains on the swing act like a rubber band and stretch. Unlike a rubber band, you can't actually see the chain stretch because the amount of the stretch is incredibly small. Imagine instead that the chain links are made of rubber bands instead of metal. With rubber bands, you would definitely be able to see the stretch. But since the purpose of a swing is to allow you to swing, not to bounce or sink straight to the ground, it has to be built with something that stretches just a tiny amount under tension. ", audio: "structuresandforces_audio/structuresandforces_slide3.wav", topic_id: 13)
-FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "PushandPull4", desc: "When you get off the swing, the chains return to their normal length. If they didn't, the swing would eventually sink to the ground, and it wouldn't be able to fulfill its purpose of being a swing. The swing chains act just like a rubber band that returns to its original size once you stop pulling on it.  This ability of a structure, or any other object, to stretch and then return back to its original size is a behavior known as elasticity.", audio: "structuresandforces_audio/structuresandforces_slide4.wav", topic_id: 13)
-FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "PushandPull5", desc: "When a structure is being pushed, it is under compression. When you sit on a chair, the force of your weight pushes down on the chair, putting the chair under compression. Much as the chains on the swing got a little bit longer when your weight pulled down on them, the chair gets a little bit shorter when you push down on it. When you stand up, the chair goes back to its normal height. Just like the chains on the swing, the chair is showing its elastic behavior.", audio: "structuresandforces_audio/structuresandforces_slide5.wav", topic_id: 13)
-FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "PushandPull6", desc: "Torsion: When a structure is being twisted, it is experiencing torsion. If instead of swinging back and forth, you twist your swing up instead, then the swing is under torsion. You know what happens once you lift your feet off the ground: the chair spins right back to its resting position. Not only is the twisted swing a fun ride, it also demonstrates how a structure is able to return to its normal position without being permanently changed after being twisted.", audio: "structuresandforces_audio/structuresandforces_slide6.wav", topic_id: 13)
-FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "PushandPull7", desc: "You've already learned that structures and the materials they are built with have to be elastic, so they can return to their original size when forces are removed. When you exert a force on a structure, it exerts an equal and opposite force back on you. This idea is known as Newton's third law of motion. This means that if you are exerting a force down on a chair, the chair has to be exerting an equal force up back at you. If the chair wasn't exerting an equal force, you would crash through it. If it was exerting more force, you would fly off it. To get an idea for how this works, imagine that the legs of a chair have been replaced with giant, super stiff springs. When you push your finger down on a spring, you can feel it pushing back against your hand. That is exactly what the chair is doing; you just can't see it. ", audio: "structuresandforces_audio/structuresandforces_slide7.wav", topic_id: 13)
-FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "PushandPull8Last", desc: "We used small structures like swings and chairs to demonstrate how structures respond to different forces through tension, compression, and torsion. Larger structures like buildings and bridges react to forces the exact same ways. The cables on a suspension bridge experience tension as they help support the weight of the bridge and its users. The roof of your house experiences compression if there is a lot of snow on top of it. A skyscraper can experience torsion if it twists slightly in the wind. Structures can also experience a combination of these reactions. For example a twisted swing is experiencing both torsion from the twist and tension as you are still pulling down on the chains. Tension, compression and torsion (and combinations!) are three reactions that enable structures to support the different forces acting on them.", audio: "structuresandforces_audio/structuresandforces_slide8.wav", topic_id: 13)
-
-
-#slides for structures - bridges
-FactoryGirl.create(:slide, image: "slideshow/steve1.jpg", title: "Beams, Columns and Other Parts1", desc: "This is the text for Beams, Columns and Other Parts1", audio: "bridges1.wav", topic_id: 14)
-FactoryGirl.create(:slide, image: "slideshow/steve2.jpg", title: "Beams, Columns and Other Parts2", desc: "This is the text for Beams, Columns and Other Parts2", audio: "explosion.wav", topic_id: 14)
-FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Beams, Columns and Other Parts3", desc: "This is the text for Beams, Columns and Other Parts3", audio: "jump.wav", topic_id: 14)
-FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Beams, Columns and Other Parts4Last", desc: "This is the text for Beams, Columns and Other Parts4", audio: "jump.wav", topic_id: 14)
-
-#slides for structures - skyscrapers
-FactoryGirl.create(:slide, image: "slideshow/girlsatdesk.png", title: "Skyscraper1", desc: "This is the text for Skyscraper1", audio: "explosion.wav", topic_id: 15)
-FactoryGirl.create(:slide, image: "slideshow/girlsatdesk.png", title: "Skyscraper2", desc: "This is the text for Skyscraper2", audio: "explosion.wav", topic_id: 15)
-FactoryGirl.create(:slide, image: "slideshow/girlsatdesk.png", title: "Skyscraper3", desc: "This is the text for Skyscraper3", audio: "explosion.wav", topic_id: 15)
-FactoryGirl.create(:slide, image: "slideshow/girlsatdesk.png", title: "Skyscraper4Last", desc: "This is the text for Skyscraper4", audio: "explosion.wav", topic_id: 15)
-
-
-#slides for structures - bridges
-FactoryGirl.create(:slide, image: "slideshow/steve1.jpg", title: "Bridges1", desc: "This is the Text for Bridges1", audio: "jump.wav", topic_id: 16)
-FactoryGirl.create(:slide, image: "slideshow/steve2.jpg", title: "Bridges2", desc: "This is the Text for Bridges2", audio: "explosion.wav", topic_id: 16)
-FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Bridges3", desc: "This is the Text for Bridges3", audio: "jump.wav", topic_id: 16)
-FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Bridges4Last", desc: "This is the Text for Bridges4", audio: "jump.wav", topic_id: 16)
-
-#slides for structures - plumbing
-FactoryGirl.create(:slide, image: "slideshow/steve1.jpg", title: "Plumbing1", desc: "Plumbing1", audio: "jump.wav", topic_id: 17)
-FactoryGirl.create(:slide, image: "slideshow/steve2.jpg", title: "Plumbing2", desc: "Plumbing2", audio: "explosion.wav", topic_id: 17)
-FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Plumbing3", desc: "Plumbing3", audio: "jump.wav", topic_id: 17)
-FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Plumbing4Last", desc: "Plumbing4", audio: "jump.wav", topic_id: 17)
-
-#slides for structures - roads
-FactoryGirl.create(:slide, image: "slideshow/steve1.jpg", title: "Roads1", desc: "Here is the text for Roads1", audio: "jump.wav", topic_id: 18)
-FactoryGirl.create(:slide, image: "slideshow/steve2.jpg", title: "Roads2", desc: "Here is the text for Roads2", audio: "explosion.wav", topic_id: 18)
-FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Roads3", desc: "Here is the text for Roads3", audio: "jump.wav", topic_id: 18)
-FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Roads4Last", desc: "Here is the text for v4", audio: "jump.wav", topic_id: 18)
+#### Everything for Materials
+catagory = FactoryGirl.create(:catagory, name:"Materials", navgraphic: "navgraphics/materials.png", headergraphic: "materials", color: "materials")
+### Slides for materials main
+FactoryGirl.create(:slide, image: "navgraphics/materials.png", title: "Materials1", desc: "Here is the text for Materials1", audio: "jump.wav", catagory_id: catagory.id, topic_id:0)
+FactoryGirl.create(:slide, image: "slideshow/steve2.jpg", title: "Materials2", desc: "Here is the text for Materials2", audio: "explosion.wav", catagory_id: catagory.id, topic_id:0)
+FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Materials3", desc: "Here is the text for Materials3", audio: "jump.wav", catagory_id: catagory.id, topic_id:0)
+FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Materials4Last", desc: "Here is the text for Materials4", audio: "jump.wav", catagory_id: catagory.id, topic_id:0)
+## Topic and slides for materials - History of Materials
+topic = FactoryGirl.create(:topic, name:"History of Materials", navgraphic: "navgraphics/historyofmaterials.png", catagory_id: catagory.id)
+FactoryGirl.create(:slide, image: "slideshow/steve1.jpg", title: "History of Materials1", desc: "Here is the text for History of Materials1", audio: "jump.wav", catagory_id: catagory.id, topic_id: topic.id)
+FactoryGirl.create(:slide, image: "slideshow/steve2.jpg", title: "History of Materials2", desc: "Here is the text for History of Materials2", audio: "explosion.wav", catagory_id: catagory.id, topic_id: topic.id)
+FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "History of Materials3", desc: "Here is the text for History of Materials3", audio: "jump.wav", catagory_id: catagory.id, topic_id: topic.id)
+FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "History of Materials4Last", desc: "Here is the text for History of Materials4", audio: "jump.wav", catagory_id: catagory.id, topic_id: topic.id)
+##slides for materials - Concrete
+topic = FactoryGirl.create(:topic, name:"Concrete",  navgraphic: "navgraphics/materialsconcrete.png", catagory_id: catagory.id)
+FactoryGirl.create(:slide, image: "slideshow/steve1.jpg", title: "Concrete1", desc: "Here is the text for Concrete1", audio: "jump.wav", topic_id: topic.id, catagory_id: catagory.id)
+FactoryGirl.create(:slide, image: "slideshow/steve2.jpg", title: "Concrete2", desc: "Here is the text for Concrete2", audio: "explosion.wav", topic_id: topic.id, catagory_id: catagory.id)
+FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Concrete3", desc: "Here is the text for Concrete3", audio: "jump.wav", topic_id: topic.id, catagory_id: catagory.id)
+FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Concrete4Last", desc: "Here is the text for Concrete4", audio: "jump.wav", topic_id: topic.id, catagory_id: catagory.id)
+## Topic and slides for materials - Metal
+topic = FactoryGirl.create(:topic, name:"Metal",  navgraphic: "navgraphics/materialsmetal.png", catagory_id: catagory.id)
+FactoryGirl.create(:slide, image: "slideshow/steve1.jpg", title: "Metals, Mining and Metallurgy", desc: "Here is the text for Metals, Mining and Metallurgy", audio: "jump.wav", topic_id: topic.id, catagory_id: catagory.id)
+FactoryGirl.create(:slide, image: "slideshow/steve2.jpg", title: "Steve2", desc: "Here is the text for Steve2", audio: "explosion.wav", topic_id: topic.id, catagory_id: catagory.id)
+FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Steve3", desc: "Here is the text for Steve3", audio: "jump.wav", topic_id: topic.id, catagory_id: catagory.id)
+FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Steve4", desc: "Here is the text for Steve4", audio: "jump.wav", topic_id: topic.id, catagory_id: catagory.id)
+## Topic and slides for materials - Glass
+topic = FactoryGirl.create(:topic, name:"Glass",  navgraphic: "navgraphics/materialsglass.png", catagory_id: catagory.id)
+FactoryGirl.create(:slide, image: "slideshow/steve1.jpg", title: "Glass, Ceramic and Porcelain1", desc: "Here is the text for Glass, Ceramic and Porcelain1", audio: "jump.wav", topic_id: topic.id, catagory_id: catagory.id)
+FactoryGirl.create(:slide, image: "slideshow/steve2.jpg", title: "Glass, Ceramic and Porcelain2", desc: "Here is the text for Glass, Ceramic and Porcelain2", audio: "explosion.wav", topic_id: topic.id, catagory_id: catagory.id)
+FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Glass, Ceramic and Porcelain3", desc: "Here is the text for Glass, Ceramic and Porcelain3", audio: "jump.wav", topic_id: topic.id, catagory_id: catagory.id)
+FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Glass, Ceramic and Porcelain4", desc: "Here is the text for Glass, Ceramic and Porcelain4", audio: "jump.wav", topic_id: topic.id, catagory_id: catagory.id)
+## Topic and slides for materials - Steel
+topic = FactoryGirl.create(:topic, name:"Steel",  navgraphic: "navgraphics/materialssteel.png", catagory_id: catagory.id)
+FactoryGirl.create(:slide, image: "slideshow/steve1.jpg", title: "Steel1", desc: "Here is the text for Steel1", audio: "jump.wav", topic_id: topic.id, catagory_id: catagory.id)
+FactoryGirl.create(:slide, image: "slideshow/steve2.jpg", title: "Steel2", desc: "Here is the text for Steel2", audio: "explosion.wav", topic_id: topic.id, catagory_id: catagory.id)
+FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Steel3", desc: "Here is the text for Steel3", audio: "jump.wav", topic_id: topic.id, catagory_id: catagory.id)
+FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Steel4Last", desc: "Here is the text for Steel4", audio: "jump.wav", topic_id: topic.id, catagory_id: catagory.id)
+## Topic and slides for materials - Silicon and Fiber Optics
+topic = FactoryGirl.create(:topic, name:"Silion",  navgraphic: "navgraphics/materialssilicon.png", catagory_id: catagory.id)
+FactoryGirl.create(:slide, image: "slideshow/steve1.jpg", title: "Silicon and Fiber Optics1", desc: "Here is the text for Silicon and Fiber Optics1", audio: "jump.wav", topic_id: topic.id, catagory_id: catagory.id)
+FactoryGirl.create(:slide, image: "slideshow/steve2.jpg", title: "Silicon and Fiber Optics2", desc: "Here is the text for Silicon and Fiber Optics2", audio: "explosion.wav", topic_id: topic.id, catagory_id: catagory.id)
+FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Silicon and Fiber Optics3", desc: "Here is the text for Silicon and Fiber Optics3", audio: "jump.wav", topic_id: topic.id, catagory_id: catagory.id)
+FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Silicon and Fiber Optics4", desc: "Here is the text for Silicon and Fiber Optics4", audio: "jump.wav", topic_id: topic.id, catagory_id: catagory.id)
 
 
-#slides for machines - simple machines
-FactoryGirl.create(:slide, image: "slideshow/steve1.jpg", title: "Simple Machines1", desc: "Here is the text for Simple Machines1", audio: "jump.wav", topic_id: 19)
-FactoryGirl.create(:slide, image: "slideshow/steve2.jpg", title: "Simple Machines2", desc: "Here is the text for Simple Machines2", audio: "explosion.wav", topic_id: 19)
-FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Simple Machines3", desc: "Here is the text for Simple Machines3", audio: "jump.wav", topic_id: 19)
-FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Simple Machines4Last", desc: "Here is the text for Simple Machines4", audio: "jump.wav", topic_id: 19)
 
-#slides for machines - gears
-FactoryGirl.create(:slide, image: "slideshow/steve1.jpg", title: "Gears1", desc: "Here is the text for Gears1", audio: "jump.wav", topic_id: 20)
-FactoryGirl.create(:slide, image: "slideshow/steve2.jpg", title: "Gears2", desc: "Here is the text for Gears2", audio: "explosion.wav", topic_id: 20)
-FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Gears3", desc: "Here is the text for Gears3", audio: "jump.wav", topic_id: 20)
-FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Gears4Last", desc: "Here is the text for Gears4", audio: "jump.wav", topic_id: 20)
+#### Everything for Structures
+catagory = FactoryGirl.create(:catagory, name:"Structures", navgraphic: "navgraphics/structures.png", headergraphic: "structures", color: "structures")
+### Slides for structures main
+FactoryGirl.create(:slide, image: "slideshow/girlsatdesk.png", title: "Structure1", desc: "Are you at home sitting on a chair looking at your iPad? Or maybe you are at the library sitting at a desk watching on a computer. You might even be in a car or an airplane looking at a smartphone. Wherever you are, you  are likely sitting on a structure, like a chair, and sitting in a structure, like a building. If you are sitting in a vehicle like a car or an airplane, then you are in vehicle, which is machine with structural components, or parts. In this slideshow, you are going to learn what a structure is. ", audio: "structuresmain_audio/structuresmain_slide1.wav", catagory_id: catagory.id, topic_id: 0)
+FactoryGirl.create(:slide, image: "slideshow/CowboyJames.png", title: "Structure2", desc: "The simplest definition of a structure is that it's something with parts put together in a particular way. From an engineer's point of view, a structure is something that is 'load bearing'. Let's take a closer look at what each of these two words mean, so we can understand what it means to be 'load bearing'. ", audio: "structuresmain_audio/structuresmain_slide2.wav", catagory_id: catagory.id, topic_id: 0)
+FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Structure3", desc: "When you hear the word 'load', you might think about carrying a load, or a load of laundry. In the case of structures, load is another word for force. A force is a push or a pull on a structure or any other kind of object. 'Bearing' might be a word you've never heard before, and it can have a few different definitions (none of them having to do with bears!). In this case, bearing means to hold up or stay strong against something. Putting these two ideas together, a structure is something that can hold up or stay strong against one or more forces, which means it won't break apart, collapse, or otherwise fall down.", audio: "structuresmain_audio/structuresmain_slide3.wav", catagory_id: catagory.id, topic_id: 0)
+FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Structure4", desc: "Structures serve different purposes, but they are all load bearing. A chair's purpose is to be sat on (and maybe it's the place you put your backpack when you come home from school...). A house provides shelter. A bridge gives you a way to cross an obstacle. Each of these structures does something different, but they all have one load or force in common: their own weight. Before a chair can support the force of your weight, it has to support its own weight. The same thing is true for the house and the bridge. A structure's own weight is called its 'dead load.' Any other force the object supports (like you or your backpack) is called its 'live load'.", audio: "structuresmain_audio/structuresmain_slide4.wav", catagory_id: catagory.id, topic_id: 0)
+FactoryGirl.create(:slide, image: "slideshow/boysonswings.png", title: "Structure5", desc: "Some structures have to support more then the force of the weight of people and things that use it. For example, a bridge is designed to support the weight of the vehicles and people crossing it and also to resist the force of the wind blowing against it. It wouldn't be a very useful bridge if it could support a lot of users, but blew over in the first strong wind. Depending on where the bridge is located, it might also be designed to resist the movement of the earth during an earthquake. Earthquakes and wind are environmental forces that act on structures, and they are important considerations for large structures like buildings and bridges.", audio: "structuresmain_audio/structuresmain_slide5.wav", catagory_id: catagory.id, topic_id: 0)
+FactoryGirl.create(:slide, image: "slideshow/boysonchair.png", title: "Structure6", desc: "Engineers who work with structures are called structural engineers. They help to make sure that buildings and other large structures are safe to use. Structural engineers also work with machines and other objects in which their structure is critical to making sure that the object works and is safe. For example, a structural engineer would help to make sure that the frame (a structural component) of your car can support the weight of the car, your family, and your stuff. The structural engineer will also make sure that the frame doesn't collapse if you get in an accident.", audio: "structuresmain_audio/structuresmain_slide6.wav", catagory_id: 3, topic_id: 0)
+FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Structure7Last", desc: "We are surrounded by structures. What structures do you see around you?", audio: "structuresmain_audio/structuresmain_slide7.wav", catagory_id: catagory.id, topic_id: 0)
+## Topic and slides for structures: Push and Pull
+topic = FactoryGirl.create(:topic, name:"Push and Pull",  navgraphic: "navgraphics/push_and_pull.png", catagory_id: catagory.id)
+FactoryGirl.create(:slide, image: "slideshow/steve1.jpg", title: "PushandPull1", desc: "In the introduction to structures, you learned that structures are load bearing and that load is another word for force. In this section, we are going to look more closely at how structures react to the different forces that act on them, and how structures are able to stand up to those forces without permanently changing or breaking.", audio: "structuresandforces_audio/structuresandforces_slide1.wav", topic_id: topic.id, catagory_id: catagory.id)
+FactoryGirl.create(:slide, image: "slideshow/steve2.jpg", title: "PushandPull2", desc: "By definition, a force is a push or a pull on one object by another object. When you think about pushing or pulling an object, you might think about moving it. For example you might open a door by either pushing or pulling on it. But not all objects move when you push or pull on them. If you push on a wall, you are definitely exerting a force, but unlike the door, it isn't going to move. So objects have other ways of reacting to forces besides moving. Structures that don't break under a load react to forces in three different ways. Structures can be in a state of tension, compression, or torsion (or combinations of these three states). Let's take a look at each of these words to understand what they mean.", audio: "structuresandforces_audio/structuresandforces_slide2.wav", topic_id: topic.id, catagory_id: catagory.id)
+FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "PushandPull3", desc: "When a structure is being pulled, it is under tension. For example when you sit down on a swing, the force of your weight pulls down on the swing, creating tension in the swing. The chains on the swing act like a rubber band and stretch. Unlike a rubber band, you can't actually see the chain stretch because the amount of the stretch is incredibly small. Imagine instead that the chain links are made of rubber bands instead of metal. With rubber bands, you would definitely be able to see the stretch. But since the purpose of a swing is to allow you to swing, not to bounce or sink straight to the ground, it has to be built with something that stretches just a tiny amount under tension. ", audio: "structuresandforces_audio/structuresandforces_slide3.wav", topic_id: topic.id, catagory_id: catagory.id)
+FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "PushandPull4", desc: "When you get off the swing, the chains return to their normal length. If they didn't, the swing would eventually sink to the ground, and it wouldn't be able to fulfill its purpose of being a swing. The swing chains act just like a rubber band that returns to its original size once you stop pulling on it.  This ability of a structure, or any other object, to stretch and then return back to its original size is a behavior known as elasticity.", audio: "structuresandforces_audio/structuresandforces_slide4.wav", topic_id: topic.id, catagory_id: catagory.id)
+FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "PushandPull5", desc: "When a structure is being pushed, it is under compression. When you sit on a chair, the force of your weight pushes down on the chair, putting the chair under compression. Much as the chains on the swing got a little bit longer when your weight pulled down on them, the chair gets a little bit shorter when you push down on it. When you stand up, the chair goes back to its normal height. Just like the chains on the swing, the chair is showing its elastic behavior.", audio: "structuresandforces_audio/structuresandforces_slide5.wav", topic_id: topic.id, catagory_id: catagory.id)
+FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "PushandPull6", desc: "Torsion: When a structure is being twisted, it is experiencing torsion. If instead of swinging back and forth, you twist your swing up instead, then the swing is under torsion. You know what happens once you lift your feet off the ground: the chair spins right back to its resting position. Not only is the twisted swing a fun ride, it also demonstrates how a structure is able to return to its normal position without being permanently changed after being twisted.", audio: "structuresandforces_audio/structuresandforces_slide6.wav", topic_id: topic.id, catagory_id: catagory.id)
+FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "PushandPull7", desc: "You've already learned that structures and the materials they are built with have to be elastic, so they can return to their original size when forces are removed. When you exert a force on a structure, it exerts an equal and opposite force back on you. This idea is known as Newton's third law of motion. This means that if you are exerting a force down on a chair, the chair has to be exerting an equal force up back at you. If the chair wasn't exerting an equal force, you would crash through it. If it was exerting more force, you would fly off it. To get an idea for how this works, imagine that the legs of a chair have been replaced with giant, super stiff springs. When you push your finger down on a spring, you can feel it pushing back against your hand. That is exactly what the chair is doing; you just can't see it. ", audio: "structuresandforces_audio/structuresandforces_slide7.wav", topic_id: topic.id, catagory_id: catagory.id)
+FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "PushandPull8Last", desc: "We used small structures like swings and chairs to demonstrate how structures respond to different forces through tension, compression, and torsion. Larger structures like buildings and bridges react to forces the exact same ways. The cables on a suspension bridge experience tension as they help support the weight of the bridge and its users. The roof of your house experiences compression if there is a lot of snow on top of it. A skyscraper can experience torsion if it twists slightly in the wind. Structures can also experience a combination of these reactions. For example a twisted swing is experiencing both torsion from the twist and tension as you are still pulling down on the chains. Tension, compression and torsion (and combinations!) are three reactions that enable structures to support the different forces acting on them.", audio: "structuresandforces_audio/structuresandforces_slide8.wav", topic_id: topic.id, catagory_id: catagory.id)
+## Topic and slides for structures - beams
+topic = FactoryGirl.create(:topic, name:"Beams",  navgraphic: "navgraphics/beams.png", catagory_id: catagory.id)
+FactoryGirl.create(:slide, image: "slideshow/steve1.jpg", title: "Beams, Columns and Other Parts1", desc: "This is the text for Beams, Columns and Other Parts1", audio: "bridges1.wav", topic_id: topic.id, catagory_id: catagory.id)
+FactoryGirl.create(:slide, image: "slideshow/steve2.jpg", title: "Beams, Columns and Other Parts2", desc: "This is the text for Beams, Columns and Other Parts2", audio: "explosion.wav", topic_id: topic.id, catagory_id: catagory.id)
+FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Beams, Columns and Other Parts3", desc: "This is the text for Beams, Columns and Other Parts3", audio: "jump.wav", topic_id: topic.id, catagory_id: catagory.id)
+FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Beams, Columns and Other Parts4Last", desc: "This is the text for Beams, Columns and Other Parts4", audio: "jump.wav", topic_id: topic.id, catagory_id: catagory.id)
+## Topic and slides for structures - bridges
+topic = FactoryGirl.create(:topic, name:"Bridges", navgraphic: "navgraphics/bridges.png", catagory_id: catagory.id)
+FactoryGirl.create(:slide, image: "slideshow/steve1.jpg", title: "Bridges1", desc: "This is the Text for Bridges1", audio: "jump.wav", topic_id: topic.id, catagory_id: catagory.id)
+FactoryGirl.create(:slide, image: "slideshow/steve2.jpg", title: "Bridges2", desc: "This is the Text for Bridges2", audio: "explosion.wav", topic_id: topic.id, catagory_id: catagory.id)
+# Topic and slides for structures - skyscrapers
+topic = FactoryGirl.create(:topic, name:"Skyscrapers",  navgraphic: "navgraphics/skyscrapers.png", catagory_id: catagory.id)
+FactoryGirl.create(:slide, image: "slideshow/girlsatdesk.png", title: "Skyscraper1", desc: "This is the text for Skyscraper1", audio: "explosion.wav", topic_id: topic.id, catagory_id: catagory.id)
+FactoryGirl.create(:slide, image: "slideshow/girlsatdesk.png", title: "Skyscraper2", desc: "This is the text for Skyscraper2", audio: "explosion.wav", topic_id: topic.id, catagory_id: catagory.id)
+FactoryGirl.create(:slide, image: "slideshow/girlsatdesk.png", title: "Skyscraper3", desc: "This is the text for Skyscraper3", audio: "explosion.wav", topic_id: topic.id, catagory_id: catagory.id)
+FactoryGirl.create(:slide, image: "slideshow/girlsatdesk.png", title: "Skyscraper4Last", desc: "This is the text for Skyscraper4", audio: "explosion.wav", topic_id: topic.id, catagory_id: catagory.id)
+## Topic and slides for structures - plumbing
+topic = FactoryGirl.create(:topic, name:"Plumbing",  navgraphic: "navgraphics/plumbing.png", catagory_id: catagory.id)
+FactoryGirl.create(:slide, image: "slideshow/steve1.jpg", title: "Plumbing1", desc: "Plumbing1", audio: "jump.wav", topic_id: topic.id, catagory_id: catagory.id)
+FactoryGirl.create(:slide, image: "slideshow/steve2.jpg", title: "Plumbing2", desc: "Plumbing2", audio: "explosion.wav", topic_id: topic.id, catagory_id: catagory.id)
+FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Plumbing3", desc: "Plumbing3", audio: "jump.wav", topic_id: topic.id, catagory_id: catagory.id)
+FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Plumbing4Last", desc: "Plumbing4", audio: "jump.wav", topic_id: topic.id, catagory_id: catagory.id)
+## Topic and slides for structures - roads
+topic = FactoryGirl.create(:topic, name:"Roads",  navgraphic: "navgraphics/roads.png", catagory_id: catagory.id)
+FactoryGirl.create(:slide, image: "slideshow/steve1.jpg", title: "Roads1", desc: "Here is the text for Roads1", audio: "jump.wav", topic_id: topic.id, catagory_id: catagory.id)
+FactoryGirl.create(:slide, image: "slideshow/steve2.jpg", title: "Roads2", desc: "Here is the text for Roads2", audio: "explosion.wav", topic_id: topic.id, catagory_id: catagory.id)
 
-#slides for machines - motors
-FactoryGirl.create(:slide, image: "slideshow/steve1.jpg", title: "Motors1", desc: "Here is the text for Motors1", audio: "jump.wav", topic_id: 21)
-FactoryGirl.create(:slide, image: "slideshow/steve2.jpg", title: "Motors2", desc: "Here is the text for Motors2", audio: "explosion.wav", topic_id: 21)
-FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Motors3", desc: "Here is the text for Motors3", audio: "jump.wav", topic_id: 21)
-FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Motors4Last", desc: "Here is the text for Motors4", audio: "jump.wav", topic_id: 21)
 
-#slides for machines - engines
-FactoryGirl.create(:slide, image: "slideshow/steve1.jpg", title: "Engines1", desc: "Here is the text for Engines1", audio: "jump.wav", topic_id: 22)
-FactoryGirl.create(:slide, image: "slideshow/steve2.jpg", title: "Engines2", desc: "Here is the text for Engines2", audio: "explosion.wav", topic_id: 22)
-FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Engines3", desc: "Here is the text for Engines3", audio: "jump.wav", topic_id: 22)
-FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Engines4Last", desc: "Here is the text for Engines4", audio: "jump.wav", topic_id: 22)
 
-#slides for machines - electronics
-FactoryGirl.create(:slide, image: "slideshow/steve1.jpg", title: "Electronics1", desc: "Here is the text for Electronics1", audio: "jump.wav", topic_id: 23)
-FactoryGirl.create(:slide, image: "slideshow/steve2.jpg", title: "Electronics2", desc: "Here is the text for Electronics2", audio: "explosion.wav", topic_id: 23)
-FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Electronics3", desc: "Here is the text for Electronics3", audio: "jump.wav", topic_id: 23)
-FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Electronics4Last", desc: "Here is the text for Electronics4", audio: "jump.wav", topic_id: 23)
+#### Everything for Machines
+catagory = FactoryGirl.create(:catagory, name:"Machines", navgraphic: "navgraphics/machines.png", headergraphic: "machines", color: "machines")
+### Slides for machines main
+FactoryGirl.create(:slide, image: "navgraphics/machines.png", title: "Machines1", desc: "Here is the text for Machines1", audio: "jump.wav", catagory_id: catagory.id, topic_id: 0)
+FactoryGirl.create(:slide, image: "slideshow/steve2.jpg", title: "Machines2", desc: "Here is the text for Machines2", audio: "explosion.wav", catagory_id: catagory.id, topic_id: 0)
+FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Machines3", desc: "Here is the text for Machines3", audio: "jump.wav", catagory_id: catagory.id, topic_id: 0)
+FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Machines4Last", desc: "Here is the text for Machines4", audio: "jump.wav", catagory_id: catagory.id, topic_id: 0)
+## Topic and slides for machines: simple machines
+topic = FactoryGirl.create(:topic, name:"Simple Machines", navgraphic: "navgraphics/machinessimplemachines.png", catagory_id: catagory.id)
+FactoryGirl.create(:slide, image: "slideshow/steve1.jpg", title: "Simple Machines1", desc: "Here is the text for Simple Machines1", audio: "jump.wav", topic_id: topic.id, catagory_id: catagory.id)
+FactoryGirl.create(:slide, image: "slideshow/steve2.jpg", title: "Simple Machines2", desc: "Here is the text for Simple Machines2", audio: "explosion.wav", topic_id: topic.id, catagory_id: catagory.id)
+## Topic and slides for machines - gears
+topic = FactoryGirl.create(:topic, name:"Gears",  navgraphic: "navgraphics/gears.png", catagory_id: catagory.id)
+FactoryGirl.create(:slide, image: "slideshow/steve1.jpg", title: "Gears1", desc: "Here is the text for Gears1", audio: "jump.wav", topic_id: topic.id, catagory_id: catagory.id)
+FactoryGirl.create(:slide, image: "slideshow/steve2.jpg", title: "Gears2", desc: "Here is the text for Gears2", audio: "explosion.wav", topic_id: topic.id, catagory_id: catagory.id)
+## Topic and slides for machines - motors
+topic = FactoryGirl.create(:topic, name:"Motors",  navgraphic: "navgraphics/machinesmotors.png", catagory_id: catagory.id)
+FactoryGirl.create(:slide, image: "slideshow/steve1.jpg", title: "Motors1", desc: "Here is the text for Motors1", audio: "jump.wav", topic_id: topic.id, catagory_id: catagory.id)
+FactoryGirl.create(:slide, image: "slideshow/steve2.jpg", title: "Motors2", desc: "Here is the text for Motors2", audio: "explosion.wav", topic_id: topic.id, catagory_id: catagory.id) 
+## Topic and slides for machines - engines
+topic = FactoryGirl.create(:topic, name:"Engines",  navgraphic: "navgraphics/machinesengines.png", catagory_id: catagory.id)
+FactoryGirl.create(:slide, image: "slideshow/steve1.jpg", title: "Engines1", desc: "Here is the text for Engines1", audio: "jump.wav", topic_id: topic.id, catagory_id: catagory.id)
+FactoryGirl.create(:slide, image: "slideshow/steve2.jpg", title: "Engines2", desc: "Here is the text for Engines2", audio: "explosion.wav", topic_id: topic.id, catagory_id: catagory.id)
+## Topic and slides for machines - electronics
+topic = FactoryGirl.create(:topic, name:"Electronics",  navgraphic: "navgraphics/machineselectronics.png", catagory_id: catagory.id)
+FactoryGirl.create(:slide, image: "slideshow/steve1.jpg", title: "Electronics1", desc: "Here is the text for Electronics1", audio: "jump.wav", topic_id: topic.id, catagory_id: catagory.id)
+FactoryGirl.create(:slide, image: "slideshow/steve2.jpg", title: "Electronics2", desc: "Here is the text for Electronics2", audio: "explosion.wav", topic_id: topic.id, catagory_id: catagory.id)
+## Topic and slides for machines - robotics
+topic = FactoryGirl.create(:topic, name:"Robotics",  navgraphic: "navgraphics/machinesrobotics.png", catagory_id: catagory.id)
+FactoryGirl.create(:slide, image: "slideshow/steve1.jpg", title: "Robotics1", desc: "Here is the text for Robotics1", audio: "jump.wav", topic_id: topic.id, catagory_id: catagory.id)
+FactoryGirl.create(:slide, image: "slideshow/steve2.jpg", title: "Robotics2", desc: "Here is the text for Robotics2", audio: "explosion.wav", topic_id: topic.id, catagory_id: catagory.id)
 
-#slides for machines - robotics
-FactoryGirl.create(:slide, image: "slideshow/steve1.jpg", title: "Robotics1", desc: "Here is the text for Robotics1", audio: "jump.wav", topic_id: 24)
-FactoryGirl.create(:slide, image: "slideshow/steve2.jpg", title: "Robotics2", desc: "Here is the text for Robotics2", audio: "explosion.wav", topic_id: 24)
-FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Robotics3", desc: "Here is the text for Robotics3", audio: "jump.wav", topic_id: 24)
-FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Robotics4Last", desc: "Here is the text for Robotics4", audio: "jump.wav", topic_id: 24)
 
-#slides for energy - history of energy
-FactoryGirl.create(:slide, image: "slideshow/steve1.jpg", title: "History of Energy1", desc: "Here is the text for History of Energy1", audio: "jump.wav", topic_id: 25)
-FactoryGirl.create(:slide, image: "slideshow/steve2.jpg", title: "History of Energy2", desc: "Here is the text for History of Energy2", audio: "explosion.wav", topic_id: 25)
-FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "History of Energy3", desc: "Here is the text for History of Energy3", audio: "jump.wav", topic_id: 25)
-FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "History of Energy4Last", desc: "Here is the text for History of Energy4", audio: "jump.wav", topic_id: 25)
 
-#slides for energy - renewable energy
-FactoryGirl.create(:slide, image: "slideshow/steve1.jpg", title: "Renewable Energy1", desc: "Here is the text for Renewable Energy1", audio: "jump.wav", topic_id: 26)
-FactoryGirl.create(:slide, image: "slideshow/steve2.jpg", title: "Renewable Energy2", desc: "Here is the text for Renewable Energy2", audio: "explosion.wav", topic_id: 26)
-FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Renewable Energy3", desc: "Here is the text for Renewable Energy3", audio: "jump.wav", topic_id: 26)
-FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Renewable Energy4Last", desc: "Here is the text for Renewable Energy4", audio: "jump.wav", topic_id: 26)
+#### Everything for Energy
+catagory = FactoryGirl.create(:catagory, name:"Energy", navgraphic: "navgraphics/energy.png", headergraphic: "energy", color: "energy")
+### Slides for energy main
+FactoryGirl.create(:slide, image: "navgraphics/energy.png", title: "Energy1", desc: "Here is the text for Energy1", audio: "jump.wav", catagory_id: catagory.id, topic_id: 0)
+FactoryGirl.create(:slide, image: "slideshow/steve2.jpg", title: "Energy2", desc: "Here is the text for Energy2", audio: "explosion.wav", catagory_id: catagory.id, topic_id: 0)
+FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Energy3", desc: "Here is the text for Energy3", audio: "jump.wav", catagory_id: catagory.id, topic_id: 0)
+FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Energy4Last", desc: "Here is the text for Energy4", audio: "jump.wav", catagory_id: catagory.id, topic_id: 0)
+## Topic and slides for energy: history of energy
+topic = FactoryGirl.create(:topic, name:"History of Energy", navgraphic: "navgraphics/historyofenergy.png", catagory_id: catagory.id)
+FactoryGirl.create(:slide, image: "slideshow/steve1.jpg", title: "History of Energy1", desc: "Here is the text for History of Energy1", audio: "jump.wav", topic_id: topic.id, catagory_id: catagory.id)
+FactoryGirl.create(:slide, image: "slideshow/steve2.jpg", title: "History of Energy2", desc: "Here is the text for History of Energy2", audio: "explosion.wav", topic_id: topic.id, catagory_id: catagory.id)
+## Topic and slides for energy - renewable energy
+topic = FactoryGirl.create(:topic, name:"Renewable Energy",  navgraphic: "navgraphics/renewableenergy.png", catagory_id: catagory.id)
+FactoryGirl.create(:slide, image: "slideshow/steve1.jpg", title: "Renewable Energy1", desc: "Here is the text for Renewable Energy1", audio: "jump.wav", topic_id: topic.id, catagory_id: catagory.id)
+FactoryGirl.create(:slide, image: "slideshow/steve2.jpg", title: "Renewable Energy2", desc: "Here is the text for Renewable Energy2", audio: "explosion.wav", topic_id: topic.id, catagory_id: catagory.id)
+## Topic and slides for energy - nonrenewable energy
+topic = FactoryGirl.create(:topic, name:"Nonrenewable Energy",  navgraphic: "navgraphics/nonrenewableenergy.png", catagory_id: catagory.id)
+FactoryGirl.create(:slide, image: "slideshow/steve1.jpg", title: "Nonrenewable Energy1", desc: "Here is the text for Nonrenewable Energy1", audio: "jump.wav", topic_id: topic.id, catagory_id: catagory.id)
+FactoryGirl.create(:slide, image: "slideshow/steve2.jpg", title: "Nonrenewable Energy2", desc: "Here is the text for Nonrenewable Energy2", audio: "explosion.wav", topic_id: topic.id, catagory_id: catagory.id)
+## Topic and slides for energy - energy transmission
+topic = FactoryGirl.create(:topic, name:"Energy Transmission",  navgraphic: "navgraphics/energytransmission.png", catagory_id: catagory.id)
+FactoryGirl.create(:slide, image: "slideshow/steve1.jpg", title: "Energy Transmission1", desc: "Here is the text for Energy Transmission1", audio: "jump.wav", topic_id: topic.id, catagory_id: catagory.id)
+FactoryGirl.create(:slide, image: "slideshow/steve2.jpg", title: "Energy Transmission2", desc: "Here is the text for Energy Transmission2", audio: "explosion.wav", topic_id: topic.id, catagory_id: catagory.id)
+## Topic and slides for energy - energy storage
+topic = FactoryGirl.create(:topic, name:"Energy Storage",  navgraphic: "navgraphics/energystorage.png", catagory_id: catagory.id)
+FactoryGirl.create(:slide, image: "slideshow/steve1.jpg", title: "Energy Storage1", desc: "Here is the text for Energy Storage1", audio: "jump.wav", topic_id: topic.id, catagory_id: catagory.id)
+FactoryGirl.create(:slide, image: "slideshow/steve2.jpg", title: "Energy Storage2", desc: "Here is the text for Energy Storage2", audio: "explosion.wav", topic_id: topic.id, catagory_id: catagory.id)
+## Topic and slides for energy - energy consumption
+topic = FactoryGirl.create(:topic, name:"Energy Consumption",  navgraphic: "navgraphics/energyconsumption.png", catagory_id: catagory.id)
+FactoryGirl.create(:slide, image: "slideshow/steve1.jpg", title: "Energy Consumption1", desc: "Here is the text for Energy Consumption1", audio: "jump.wav", topic_id: topic.id, catagory_id: catagory.id)
+FactoryGirl.create(:slide, image: "slideshow/steve2.jpg", title: "Energy Consumption2", desc: "Here is the text for Energy Consumption2", audio: "explosion.wav", topic_id: topic.id, catagory_id: catagory.id)
 
-#slides for energy - nonrenewable energy
-FactoryGirl.create(:slide, image: "slideshow/steve1.jpg", title: "Nonrenewable Energy1", desc: "Here is the text for Nonrenewable Energy1", audio: "jump.wav", topic_id: 27)
-FactoryGirl.create(:slide, image: "slideshow/steve2.jpg", title: "Nonrenewable Energy2", desc: "Here is the text for Nonrenewable Energy2", audio: "explosion.wav", topic_id: 27)
-FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Nonrenewable Energy3", desc: "Here is the text for Nonrenewable Energy3", audio: "jump.wav", topic_id: 27)
-FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Nonrenewable Energy4", desc: "Here is the text for Nonrenewable Energy4", audio: "jump.wav", topic_id: 27)
 
-#slides for energy - energy transmission
-FactoryGirl.create(:slide, image: "slideshow/steve1.jpg", title: "Energy Transmission1", desc: "Here is the text for Energy Transmission1", audio: "jump.wav", topic_id: 28)
-FactoryGirl.create(:slide, image: "slideshow/steve2.jpg", title: "Energy Transmission2", desc: "Here is the text for Energy Transmission2", audio: "explosion.wav", topic_id: 28)
-FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Energy Transmission3", desc: "Here is the text for Energy Transmission3", audio: "jump.wav", topic_id: 28)
-FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Energy Transmission4Last", desc: "Here is the text for Energy Transmission4", audio: "jump.wav", topic_id: 28)
 
-#slides for energy - energy storage
-FactoryGirl.create(:slide, image: "slideshow/steve1.jpg", title: "Energy Storage1", desc: "Here is the text for Energy Storage1", audio: "jump.wav", topic_id: 29)
-FactoryGirl.create(:slide, image: "slideshow/steve2.jpg", title: "Energy Storage2", desc: "Here is the text for Energy Storage2", audio: "explosion.wav", topic_id: 29)
-FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Energy Storage3", desc: "Here is the text for Energy Storage3", audio: "jump.wav", topic_id: 29)
-FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Energy Storage4Last", desc: "Here is the text for Energy Storage4", audio: "jump.wav", topic_id: 29)
-
-#slides for energy - energy consumption
-FactoryGirl.create(:slide, image: "slideshow/steve1.jpg", title: "Energy Consumption1", desc: "Here is the text for Energy Consumption1", audio: "jump.wav", topic_id: 30)
-FactoryGirl.create(:slide, image: "slideshow/steve2.jpg", title: "Energy Consumption2", desc: "Here is the text for Energy Consumption2", audio: "explosion.wav", topic_id: 30)
-FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Energy Consumption3", desc: "Here is the text for Energy Consumption3", audio: "jump.wav", topic_id: 30)
-FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Energy Consumption4Last", desc: "Here is the text for Energy Consumption4", audio: "jump.wav", topic_id: 30)
-
-#slides for computing - hardware
-FactoryGirl.create(:slide, image: "slideshow/steve1.jpg", title: "Hardware1", desc: "Here is the text for Hardware1", audio: "jump.wav", topic_id: 31)
-FactoryGirl.create(:slide, image: "slideshow/steve2.jpg", title: "Hardware2", desc: "Here is the text for Hardware2", audio: "explosion.wav", topic_id: 31)
-FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Hardware3", desc: "Here is the text for Hardware3", audio: "jump.wav", topic_id: 31)
-FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Hardware4Last", desc: "Here is the text for Hardware4", audio: "jump.wav", topic_id: 31)
-
-#slides for computing - software
-FactoryGirl.create(:slide, image: "slideshow/steve1.jpg", title: "Software1", desc: "Here is the text for Software1", audio: "jump.wav", topic_id: 32)
-FactoryGirl.create(:slide, image: "slideshow/steve2.jpg", title: "Software2", desc: "Here is the text for Software2", audio: "explosion.wav", topic_id: 32)
-FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Software3", desc: "Here is the text for Software3", audio: "jump.wav", topic_id: 32)
-FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Software4Last", desc: "Here is the text for Software4", audio: "jump.wav", topic_id: 32)
-
-#slides for computing - networks
-FactoryGirl.create(:slide, image: "slideshow/steve1.jpg", title: "Networks1", desc: "Here is the text for Networks1", audio: "jump.wav", topic_id: 33)
-FactoryGirl.create(:slide, image: "slideshow/steve2.jpg", title: "Networks2", desc: "Here is the text for Networks2", audio: "explosion.wav", topic_id: 33)
-FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Networks3", desc: "Here is the text for Networks3", audio: "jump.wav", topic_id: 33)
-FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Networks4Last", desc: "Here is the text for Networks4", audio: "jump.wav", topic_id: 33)
-
-#slides for computing - routing
-FactoryGirl.create(:slide, image: "slideshow/steve1.jpg", title: "Routing1", desc: "Here is the text for Routing1", audio: "jump.wav", topic_id: 34)
-FactoryGirl.create(:slide, image: "slideshow/steve2.jpg", title: "Routing2", desc: "Here is the text for Routing2", audio: "explosion.wav", topic_id: 34)
-FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Routing3", desc: "Here is the text for Routing3", audio: "jump.wav", topic_id: 34)
-FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Routing4Last", desc: "Here is the text for Routing4", audio: "jump.wav", topic_id: 34)
-
-#slides for computing - challenges
-FactoryGirl.create(:slide, image: "slideshow/steve1.jpg", title: "Challenges in Computing1", desc: "Here is the text for Chalenges in Computing1", audio: "jump.wav", topic_id: 35)
-FactoryGirl.create(:slide, image: "slideshow/steve2.jpg", title: "Challenges in Computing2", desc: "Here is the text for Challenges in Computing2", audio: "explosion.wav", topic_id: 35)
-FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Challenges in Computing3", desc: "Here is the text for Challenges in Computing3", audio: "jump.wav", topic_id: 35)
-FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Challenges in Computing4Last", desc: "Here is the text for Challenges in Computing4", audio: "jump.wav", topic_id: 35)
-
-#slides for computing - future
-FactoryGirl.create(:slide, image: "slideshow/steve1.jpg", title: "Future of Computing1", desc: "Here is the text for Future of Computing1", audio: "jump.wav", topic_id: 36)
-FactoryGirl.create(:slide, image: "slideshow/steve2.jpg", title: "Future of Computing12", desc: "Here is the text for Future of Computing12", audio: "explosion.wav", topic_id: 36)
-FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Future of Computing13", desc: "Here is the text for Future of Computing13", audio: "jump.wav", topic_id: 36)
-FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Future of Computing14Last", desc: "Here is the text for Future of Computing14", audio: "jump.wav", topic_id: 36)
+#### Everything for Computing
+catagory = FactoryGirl.create(:catagory, name:"Computing", navgraphic: "navgraphics/computing.png", headergraphic: "computing", color: "computing")
+### Slides for computing main
+FactoryGirl.create(:slide, image: "navgraphics/computing.png", title: "Computing1", desc: "Here is the text for Computing1", audio: "jump.wav", catagory_id: catagory.id, topic_id: 0)
+FactoryGirl.create(:slide, image: "slideshow/steve2.jpg", title: "Computing2", desc: "Here is the text for computing2", audio: "explosion.wav", catagory_id: catagory.id, topic_id: 0)
+FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Computing3", desc: "Here is the text for computing3", audio: "jump.wav", catagory_id: catagory.id, topic_id: 0)
+FactoryGirl.create(:slide, image: "slideshow/steve3.jpg", title: "Computing4Last", desc: "Here is the text for computing4", audio: "jump.wav", catagory_id: catagory.id, topic_id: 0)
+## Topic and slides for computing - hardware
+topic = FactoryGirl.create(:topic, name:"Hardware", navgraphic: "navgraphics/computinghardware.png", catagory_id: catagory.id)
+FactoryGirl.create(:slide, image: "slideshow/steve1.jpg", title: "Hardware1", desc: "Here is the text for Hardware1", audio: "jump.wav", topic_id: topic.id, catagory_id: catagory.id)
+FactoryGirl.create(:slide, image: "slideshow/steve2.jpg", title: "Hardware2", desc: "Here is the text for Hardware2", audio: "explosion.wav", topic_id: topic.id, catagory_id: catagory.id)
+## Topic and slides for computing - software
+topic = FactoryGirl.create(:topic, name:"Software",  navgraphic: "navgraphics/computingsoftware.png", catagory_id: catagory.id)
+FactoryGirl.create(:slide, image: "slideshow/steve1.jpg", title: "Software1", desc: "Here is the text for Software1", audio: "jump.wav", topic_id: topic.id, catagory_id: catagory.id)
+FactoryGirl.create(:slide, image: "slideshow/steve2.jpg", title: "Software2", desc: "Here is the text for Software2", audio: "explosion.wav", topic_id: topic.id, catagory_id: catagory.id)
+## Topic and slides for computing - networks
+topic = FactoryGirl.create(:topic, name:"Networks",  navgraphic: "navgraphics/computingnetworks.png", catagory_id: catagory.id)
+FactoryGirl.create(:slide, image: "slideshow/steve1.jpg", title: "Networks1", desc: "Here is the text for Networks1", audio: "jump.wav", topic_id: topic.id, catagory_id: catagory.id)
+FactoryGirl.create(:slide, image: "slideshow/steve2.jpg", title: "Networks2", desc: "Here is the text for Networks2", audio: "explosion.wav", topic_id: topic.id, catagory_id: catagory.id)
+## Topic and slides for computing - routing
+topic = FactoryGirl.create(:topic, name:"Routing",  navgraphic: "navgraphics/computingrouting.png", catagory_id: catagory.id)
+FactoryGirl.create(:slide, image: "slideshow/steve1.jpg", title: "Routing1", desc: "Here is the text for Routing1", audio: "jump.wav", topic_id: topic.id, catagory_id: catagory.id)
+FactoryGirl.create(:slide, image: "slideshow/steve2.jpg", title: "Routing2", desc: "Here is the text for Routing2", audio: "explosion.wav", topic_id: topic.id, catagory_id: catagory.id)
+## Topic and slides for computing - challenges
+topic = FactoryGirl.create(:topic, name:"Challenges",  navgraphic: "navgraphics/computingchallenges.png", catagory_id: catagory.id)
+FactoryGirl.create(:slide, image: "slideshow/steve1.jpg", title: "Challenges in Computing1", desc: "Here is the text for Chalenges in Computing1", audio: "jump.wav", topic_id: topic.id, catagory_id: catagory.id)
+FactoryGirl.create(:slide, image: "slideshow/steve2.jpg", title: "Challenges in Computing2", desc: "Here is the text for Challenges in Computing2", audio: "explosion.wav", topic_id: topic.id, catagory_id: catagory.id)
+## Topic and slides for computing - future
+topic = FactoryGirl.create(:topic, name:"Future",  navgraphic: "navgraphics/computingfuture.png", catagory_id: catagory.id)
+FactoryGirl.create(:slide, image: "slideshow/steve1.jpg", title: "Future of Computing1", desc: "Here is the text for Future of Computing1", audio: "jump.wav", topic_id: topic.id, catagory_id: catagory.id)
+FactoryGirl.create(:slide, image: "slideshow/steve2.jpg", title: "Future of Computing12", desc: "Here is the text for Future of Computing12", audio: "explosion.wav", topic_id: topic.id, catagory_id: catagory.id)
