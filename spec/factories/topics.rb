@@ -10,6 +10,7 @@ factory :topic do
     video "MyString"
     navgraphic "MyString"
     headergraphic "MyString"
+    topicname "MyString"
     catagory_id  0
 
   #factory :topic_with_slideshow do

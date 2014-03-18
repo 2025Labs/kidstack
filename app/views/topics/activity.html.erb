@@ -1,15 +1,11 @@
 <div class="row-fluid">
-	<%= link_to image_tag("kidstack65x65alternate4.png", :alt =>"kidstack logo", :class => "topnav"), root_path %>
-	<h1>
-		<div class = "cattext">
-			<a class="<%= @catagory.color %>" <%= link_to @catagory.headergraphic, catagory_path(@catagory.name) %></a>
-		</div>
-	</h1>
-</div>
-		
-		
-<div class="row-fluid">
 	<div class="span2">
+		<div class="row-fluid">
+		<%= link_to image_tag("kidstack65x65alternate4.png", :alt =>"kidstack logo", :class => "topnav"), root_path %>
+		</div>
+		
+
+		
 		<% @topics.each do |topic| %>
 			<div class="row-fluid">
 		
@@ -26,9 +22,15 @@
 			</div>
 		<% end %>
 	</div>
-	
 	<div class="span10">
-
+		<div class="row-fluid">
+			<div class = "cattext">
+				<h2>
+					<a class="<%= @catagory.color %>" <%= link_to @catagory.headergraphic, catagory_path(@catagory.name) %></a>
+				</h2>
+   
+			</div>
+		</div>
 		  
 
 		
@@ -36,9 +38,7 @@
 		<div class="row-fluid">	
 			<%= render 'contentnav'%>	
 			<h3 class="<%= @catagory.color %>"><%= @topic.name %></h3>	
-			<div id="show_content">
-				<%=  render( :partial => "slide", :locals => { :slide => @slide} ) %>
-			</div>
+			awesome activity stuff!
 		</div>
 		
 

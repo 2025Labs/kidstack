@@ -6,12 +6,17 @@ Kidstack::Application.routes.draw do
     member do
       get 'catslide'
       get 'audio'
+    
+      
     end
     
   end
   resources :topics do
     member do
       get 'slide'
+      get 'activity'
+      get 'quiz'
+      get 'learnmore'
     end
   end
 

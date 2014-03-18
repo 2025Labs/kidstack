@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 20140120222259) do
     t.text     "desc"
     t.string   "audio"
     t.integer  "sort_id"
+    t.string   "topicname"
     t.integer  "topic_id"
     t.integer  "catagory_id"
     t.datetime "created_at"
@@ -39,6 +40,7 @@ ActiveRecord::Schema.define(version: 20140120222259) do
   end
 
   create_table "topics", force: true do |t|
+    t.string   "topicname"
     t.string   "name"
     t.string   "video"
     t.string   "navgraphic"

@@ -9,5 +9,6 @@ factory :slide do
     sort_id 1
     topic_id 0
     catagory_id  0
+    topicname "MyString"
   end
 end
