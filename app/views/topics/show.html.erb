@@ -13,15 +13,17 @@
 		<% @topics.each do |topic| %>
 			<div class="row-fluid">
 		
-				<div class="span9">
-					<%= link_to image_tag(topic.navgraphic, :class => "navgraph"), topic_path(topic.name) %>
-				</div>
-				
 				<div class="span3">
 					<% if topic == @topic %>
 						<%= image_tag("pointingfigure.png") %>
 					<% end %>
 				</div>
+		
+				<div class="span9">
+					<%= link_to image_tag(topic.navgraphic, :class => "navgraph"), topic_path(topic.name) %>
+				</div>
+				
+				
 				
 			</div>
 		<% end %>
