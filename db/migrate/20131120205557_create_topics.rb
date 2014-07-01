@@ -7,6 +7,7 @@ class CreateTopics < ActiveRecord::Migration
       t.string :navgraphic
       t.string :headergraphic
       t.integer :catagory_id
+      t.text :keypoints
 
       t.timestamps
     end

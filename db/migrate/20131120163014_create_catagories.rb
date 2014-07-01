@@ -6,6 +6,8 @@ class CreateCatagories < ActiveRecord::Migration
       t.string :color
       t.string :timeline
       t.string :headergraphic
+      t.string :video
+      t.text :keypoints
 
       t.timestamps
     end
