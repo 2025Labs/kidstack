@@ -30,41 +30,24 @@ $computing_color: #F74D9C;
 	padding-bottom:7px;
 }
 
-
-/* this is the color of the gray txt on home page*/
-.toptext{
-
-	color: #c6c6c6;
-	font-size: 26px;
-	line-height: 30px;
-
+.top_nav{
+	padding-right:10px;
 }
 
-.cattext{
 
-	float:right;
-	padding-top:7px;
-	padding-bottom:7px;
-
-}
+/* this is background for the content videos*/
 
 .slidearea{
-	background-color: #f2f2f2;
-	padding:20px;
+	background-color: #f9f9f9;
+	padding: 20px;
 }
 
 
-
-/* these are the styles for the slide shows*/
-.title {
-	font-size: 24px;
-	line-height: 35px;
-}
+/* style for main idea txt*/
 
 .desc {
-	color: $slide_text ;
-	font-size: 16px;
-	line-height: 24px;
+	font-size: 12px;
+	line-height: 16px;
 }
 
 /* colors for text to align with catagories*/
@@ -93,7 +76,7 @@ $computing_color: #F74D9C;
 }
 
 
-/* In order to get the links to be colored with the catagory colors you have to use the a link formatting, so that's what this sectin is all about*/
+/* In order to get the links to be colored with the catagory colors you have to use the a link formatting, so that's what this section is all about*/
 a:link {
 	text-decoration:none;
 	color: #0099cc;
@@ -132,6 +115,7 @@ a.computing:link {
 }
 
 
+/* This section allows for the video size to be responsive */
 /* Copyright (c) 2011 ZURB, http://www.zurb.com/ */	
 .flex-video {
 	position: relative;
@@ -159,3 +143,18 @@ a.computing:link {
 	  .flex-video { padding-top: 0; }
 	}
 	
+	
+#footer {
+	/*height: 50px;*/
+	background-color: #d9d9d9;
+	text-align: center;
+	/*padding-left:40px;*/
+	/*padding-top:20px;*/
+	/*padding-bottom:20px;*/
+	/*padding-right:40px;*/
+	/*	margin-top:40px;*/
+}
+
+
+/* This section allows you to change the spacing on the header nav graphics so you aren't stuck with 20 px */
+.row-fluid .span2NoGutter { width:16%; margin-left:.66667%} // 100% / 6 col

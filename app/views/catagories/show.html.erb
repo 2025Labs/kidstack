@@ -1,32 +1,26 @@
-<div class="row-fluid">
-	<%= link_to image_tag("kidstack_logo165x30.png", :alt =>"kidstack logo", :class => "topnav"), root_path %>
-
-</div>
+<div class = "slidearea">
+	<div class="row-fluid">
+		<div class="span10" style="padding-right:20px; border-right: 1px solid #e5e5e5;">	
 		
-		
-<div class="row-fluid">
-
-	
-	<div class="span10">
-		<div class = "slidearea">
-			<h3 class="<%= @catagory.color %>"><%= @catagory.headergraphic %></h3>	
-			<div class="row-fluid">			
-				<div class="span8">
+			<div class="row-fluid">
+				<div class="span9">
 					<div class="flex-video widescreen"><iframe src="<%= @catagory.video %>" frameborder="0" allowfullscreen=""></iframe></div>
 				</div>
-				<div class="span4">
-					<span class="title"><span class= "<%= @catagory.color %>" >main ideas:</br></span></span>
-					
+				
+				<div class="span3">
+					<h4><span class= "<%= @catagory.color %>" ><a class="<%= @catagory.color %>" <%= link_to @catagory.headergraphic, catagory_path(@catagory.name) %></a> ></span></h4>
+					<h6 span class= "<%= @catagory.color %>" >main ideas:</br></span></h6>
+				
 					<span class="desc"><%= @catagory.keypoints.html_safe %></br></span>		
 				</div>
-			</div> 
+			</div>
+		</div>
+
+	
+		<div class="span2">
+			<% @catagory.topics.each do |topic| %>
+				<%= link_to image_tag(topic.navgraphic, :class => "navgraph"), topic_path(topic.name) %>
+			<% end %>
 		</div>
 	</div>
-	
-	<div class="span2">		
-		<% @catagory.topics.each do |topic| %>
-			<%= link_to image_tag(topic.navgraphic, :class => "navgraph"), topic_path(topic.name) %>
-		<% end %>
-	</div>
-			
 </div>
