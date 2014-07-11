@@ -4,23 +4,34 @@
 
 <div class="row-fluid">	
 	<div class="span2NoGutter" >
-		<%= link_to image_tag("navgraphics/engineering_process.png", :class => "top_nav"), catagory_path("Engineering Process") %>
+		<ul id="menu">
+			<li><%= link_to image_tag("navgraphics/engineering_process.png"), catagory_path("Engineering Process") %>
+			</li>
+		</ul>
 	</div>
+
 	<div class="span2NoGutter">
+		<ul id="menu">
 		<%= link_to image_tag("navgraphics/materialscomingsoon.png"), "#" %> 
+		</ul>
 	</div>
+	
 	<div class="span2NoGutter ">
 		<%= link_to image_tag("navgraphics/structurescomingsoon.png"), "#" %> 
 	</div>
+	
 	<div class="span2NoGutter ">
 		<%= link_to image_tag("navgraphics/machinescomingsoon.png"), "#" %> 
 	</div>
+	
 	<div class="span2NoGutter ">		
 		<%= link_to image_tag("navgraphics/energycomingsoon.png"), "#" %>
 	</div>
+	
 	<div class="span2NoGutter ">
 		<%= link_to image_tag("navgraphics/computingcomingsoon.png"), "#" %> 
 	</div>
+	
 
 </div>
 

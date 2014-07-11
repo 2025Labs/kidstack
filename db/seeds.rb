@@ -8,7 +8,7 @@
 
 
 #### Everything for Engineering Process
-catagory = Catagory.create(name:"Engineering Process", navgraphic: "navgraphics/engineering_process.png", headergraphic: "engineering process", color: "engineering_process", video:"//www.youtube.com/embed/klNCvGRzsnE", keypoints: "What is an Engineer? <p> Engineers design things and build things<p>Engineers figure out how things work, or why they don't work<p>Engineers experiment to find out what things are, what they can do, or how well they do them<p>Engineers think of new ways to use things<p>Engineers invent new things")
+catagory = Catagory.create(name:"Engineering Process", navgraphic: "navgraphics/engineering_process.png", headergraphic: "engineering process", color: "engineering_process", video:"//www.youtube.com/embed/UiaXl0giP78", keypoints: "What is an Engineer? <p> Engineers design things and build things<p>Engineers figure out how things work, or why they don't work<p>Engineers experiment to find out what things are, what they can do, or how well they do them<p>Engineers think of new ways to use things<p>Engineers invent new things")
 
 ## Topic and slides for EP: Innovation
 #topic = FactoryGirl.create(:topic, name:"Exploration and Innovation",  navgraphic: "navgraphics/explorationinnovation.png", catagory_id: catagory.id, video:"//www.youtube.com/embed/klNCvGRzsnE", keypoints: "It can take many people, many years to invent something new<p>" )

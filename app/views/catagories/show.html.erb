@@ -8,7 +8,7 @@
 				</div>
 				
 				<div class="span3">
-					<h4><span class= "<%= @catagory.color %>" ><a class="<%= @catagory.color %>" <%= link_to @catagory.headergraphic, catagory_path(@catagory.name) %></a> ></span></h4>
+					<h4><span class= "<%= @catagory.color %>" ><a class="<%= @catagory.color %>" <%= link_to @catagory.headergraphic, catagory_path(@catagory.name) %></a></span></h4>
 					<h6 span class= "<%= @catagory.color %>" >main ideas:</br></span></h6>
 				
 					<span class="desc"><%= @catagory.keypoints.html_safe %></br></span>		
