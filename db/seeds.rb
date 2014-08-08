@@ -15,11 +15,14 @@ catagory = Catagory.create(name:"Engineering Process", navgraphic: "navgraphics/
 
 
 ## Everything for EP: Design
-topic = FactoryGirl.create(:topic, name:"design process",  navgraphic: "navgraphics/design_process.png", catagory_id: catagory.id, video:"//www.youtube.com/embed/klNCvGRzsnE", keypoints: "And here are some key points<p>" )
+topic = FactoryGirl.create(:topic, name:"design process",  navgraphic: "navgraphics/design_process.png", catagory_id: catagory.id, video:"//www.youtube.com/embed/r0dMu9GJCk8", keypoints: "" )
 
 
-## Everything for EP: R&D
-#FactoryGirl.create(:topic, name:"research and development",  navgraphic: "navgraphics/r_and_d.png", catagory_id: 1)
+## Everything for EP: Innovation
+topic = FactoryGirl.create(:topic, name:"innovation process",  navgraphic: "navgraphics/innovation_process.png", catagory_id: catagory.id, video:"//www.youtube.com/embed/ozXquvURKlg", keypoints: "" )
+
+## Everything for EP: PI
+#FactoryGirl.create(:topic, name:"innovation",  navgraphic: "navgraphics/innovation_process.png", catagory_id: 1)
 #topic = Topic.create(name:"Research and Development",  navgraphic: "navgraphics/r_and_d.png", catagory_id: catagory.id, video:"//www.youtube.com/embed/klNCvGRzsnE", keypoints: "And here are some key points<p>" )
 
 ## Everything for EP: Failure Analysis 
