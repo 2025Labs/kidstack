@@ -9,6 +9,8 @@ class CatagoriesController < ApplicationController
   
   def show
     @catagory = Catagory.find_by_name(params[:id])
+    @sections = @catagory.sections.all  
+    
   end
   
 end

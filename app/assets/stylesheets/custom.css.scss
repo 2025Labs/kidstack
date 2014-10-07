@@ -43,11 +43,37 @@ $computing_color: #F74D9C;
 }
 
 
-/* style for main idea txt*/
+/* text styles */
 
-.desc {
-	font-size: 12px;
-	line-height: 16px;
+.main_text {
+	font-size: 16px;
+	line-height: 22px;
+
+}
+
+.header_text {
+	font-size: 20px;
+	line-height: 24px;
+}
+	
+.accent1 {
+	font-size: 32px;
+	color: $logo_color;
+	font-style: italic;
+	font-family:"Times New Roman", Times, serif;
+}
+
+.accent2 {
+	font-size: 26px;
+	color: $logo_color;
+	font-family: Impact, Charcoal, sans-serif;
+}
+
+
+.accent3 {
+	font-size: 26px;
+	color: $logo_color;
+	font-family: "Comic Sans MS", cursive, sans-serif;
 }
 
 /* colors for text to align with catagories*/
@@ -79,6 +105,92 @@ $computing_color: #F74D9C;
 	color:$logo_color;
 }
 
+
+/* colors for backgrounds to align with catagories*/
+.engineering_process_bkgd{
+	background-color:$engineering_process_color;
+	font-size: 13px;
+	line-height: 18px;
+	color:#fff;
+	padding-left:10px;
+	padding-right:10px;
+	padding-bottom:50px;
+	padding-top:10px;
+}
+
+.materials_bkgd{
+	background-color:$materials_color;
+	font-size: 13px;
+	line-height: 18px;
+	color: #fff;
+	padding-left:10px;
+	padding-right:10px;
+	padding-bottom:50px;
+	padding-top:10px;
+}
+
+.structures_bkgd{
+	background-color:$structures_color;
+	font-size: 13px;
+	line-height: 18px;
+	color: #fff;
+	padding-left:10px;
+	padding-right:10px;
+	padding-bottom:50px;
+	padding-top:10px;
+}
+
+.machines_bkgd{
+	background-color:$machines_color;
+	font-size: 13px;
+	line-height: 18px;
+	color: #fff;
+	padding-left:10px;
+	padding-right:10px;
+	padding-bottom:50px;
+	padding-top:10px;
+}
+
+.energy_bkgd{
+	background-color:$energy_color;
+	font-size: 13px;
+	line-height: 18px;
+	color: #fff;
+	padding-left:10px;
+	padding-right:10px;
+	padding-bottom:50px;
+	padding-top:10px;
+}
+
+.computing_bkgd{
+	background-color:$computing_color;
+	font-size: 13px;
+	line-height: 18px;
+	color: #fff;
+	padding-left:10px;
+	padding-right:10px;
+	padding-bottom:50px;
+	padding-top:10px;
+}
+
+/* In order to get the links to be colored with the catagory colors you have to use the a link formatting, so that's what this section is all about*/
+
+/* this is here to override the link defaults and make them white in the main ideas section*/
+
+
+a.mainideas:link {
+	color:#fff;
+}
+
+a.mainideas:visited {
+	color:#fff;
+}
+a.mainideas:hover {
+	color:#fff;
+}
+a.mainideas:active {
+	color:#fff;
+}
 
 /* In order to get the links to be colored with the catagory colors you have to use the a link formatting, so that's what this section is all about*/
 a:link {
