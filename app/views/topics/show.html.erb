@@ -8,14 +8,13 @@
 			</div>
 		
 			<div class="row-fluid">	
-				
 				<div class="span3">
 					<div class="<%= @catagory.color %>_bkgd">
-							<span class="mainideasheader">main ideas:</span></br></br>
-							<% @sections.each do |section| %>
-								<a class="mainideas" <%= link_to section.main_idea, anchor: section.linking %></a>
-								<br><br>
-								<% end %>
+						<span class="mainideasheader">main ideas:</span></br></br>
+						<% @sections.each do |section| %>
+							<a class="mainideas" <%= link_to section.main_idea, anchor: section.linking %></a>
+							<br><br>
+						<% end %>
 					</div>				
 				</div>
 				
