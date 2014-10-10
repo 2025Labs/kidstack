@@ -41,16 +41,17 @@ section = FactoryGirl.create(:section, topic_id: topic.id, linking: "fourth", ma
 ## Everything for EP: Innovation
 topic = FactoryGirl.create(:topic, name:"innovation process",  navgraphic: "navgraphics/innovation_process.png", catagory_id: catagory.id, video:"//www.youtube.com/embed/ozXquvURKlg", keypoints: "" )
 
-## Everything for EP: PI
-#FactoryGirl.create(:topic, name:"innovation",  navgraphic: "navgraphics/innovation_process.png", catagory_id: 1)
-#topic = Topic.create(name:"Research and Development",  navgraphic: "navgraphics/r_and_d.png", catagory_id: catagory.id, video:"//www.youtube.com/embed/klNCvGRzsnE", keypoints: "And here are some key points<p>" )
+section = FactoryGirl.create(:section, topic_id: topic.id, linking: "first", main_idea:"innovation idea 1", header:"innovation idea 1", content: "innovation content 1")
 
-## Everything for EP: Failure Analysis 
-#topic = FactoryGirl.create(:topic, name:"failure analysis",  navgraphic: "navgraphics/failure_analysis.png", catagory_id: catagory.id, video: "EPDesign.m4v", keypoints: "And here are some key points<p>"  )
-#slides for engineering process - Failure Analysis
+## Everything for EP: FA
+topic = FactoryGirl.create(:topic, name:"failure analysis",  navgraphic: "navgraphics/failure_analysis_coming_soon.png", catagory_id: catagory.id, video:"", keypoints: "these are some key points" )
+section = FactoryGirl.create(:section, topic_id: topic.id, linking: "first", main_idea:"FA idea 1", header:"FA idea 1", content: "FA content 1")
+
 
 ## Everything for EP: Reverse Engineering
-#topic = FactoryGirl.create(:topic, name:"reverse engineering", navgraphic: "navgraphics/reverse_engineering.png", catagory_id: catagory.id, video: "EPDesign.m4v", keypoints: "And here are some key points<p>"  )
+topic = FactoryGirl.create(:topic, name:"reverse engineering",  navgraphic: "navgraphics/reverse_engineering_coming_soon.png", catagory_id: catagory.id, video:"", keypoints: "these are some key points" )
+section = FactoryGirl.create(:section, topic_id: topic.id, linking: "first", main_idea:"RE idea 1", header:"RE idea 1", content: "RE content 1")
+
 
 #### Everything for Materials
 #catagory = FactoryGirl.create(:catagory, name:"materials", navgraphic: "navgraphics/materials.png", headergraphic: "materials", color: "materials", keypoints: "And here are some key points<p>" )
