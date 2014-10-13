@@ -12,6 +12,7 @@ $structures_color: #139F9D;
 $machines_color: #A3D147;
 $energy_color: #F59A00;
 $computing_color: #F74D9C;
+$video_area: #f4f4f4;
 
 
 /* padding used throughout to get spacing correct*/
@@ -34,11 +35,19 @@ $computing_color: #F74D9C;
 	padding-right:10px;
 }
 
+.footer{
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.bottomsquares{
+	float:right;
+}
 
 /* this is background for the content videos*/
 
 .slidearea{
-	background-color: #f9f9f9;
+	background-color: $video_area;
 	padding: 20px;
 }
 
@@ -261,16 +270,7 @@ a.computing:link {
 	}
 	
 	
-#footer {
-	/*height: 50px;*/
-	background-color: #d9d9d9;
-	/*text-align: center;*/
-	padding-left:40px;
-	padding-top:20px;
-	padding-bottom:20px;
-	padding-right:40px;
-	/*	margin-top:40px;*/
-}
+
 
 
 /* This section allows you to change the spacing on the header nav graphics so you aren't stuck with 20 px */
