@@ -22,8 +22,6 @@
 					<div class="flex-video widescreen"><iframe src="<%= @topic.video %>" frameborder="0" allowfullscreen=""></iframe></div>
 					
 					<% @sections.each do |section| %>
-
-						<br>
 						<a id="<%=section.linking %>"><h4 span class= "<%= @catagory.color %>" > <%=section.header.html_safe %></span></h4></a>
 
 						<%=section.content.html_safe%>

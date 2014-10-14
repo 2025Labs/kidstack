@@ -44,6 +44,12 @@ $video_area: #f4f4f4;
 	float:right;
 }
 
+
+.center_text{
+	text-align: center;
+}
+
+
 /* this is background for the content videos*/
 
 .slidearea{
@@ -53,17 +59,6 @@ $video_area: #f4f4f4;
 
 
 /* text styles */
-
-.main_text {
-	font-size: 16px;
-	line-height: 22px;
-
-}
-
-.header_text {
-	font-size: 20px;
-	line-height: 24px;
-}
 	
 .accent1 {
 	font-size: 26px;
@@ -78,11 +73,17 @@ $video_area: #f4f4f4;
 	font-family: Impact, Charcoal, sans-serif;
 }
 
-
 .accent3 {
 	font-size: 22px;
 	color: $logo_color;
 	font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+.mainideasheader {
+	
+	font-weight: bold;
+	font-size: 15px;
+	
 }
 
 /* colors for text to align with catagories*/
@@ -123,7 +124,7 @@ $video_area: #f4f4f4;
 	color:#fff;
 	padding-left:10px;
 	padding-right:10px;
-	padding-bottom:50px;
+	padding-bottom:10px;
 	padding-top:10px;
 }
 
@@ -134,7 +135,7 @@ $video_area: #f4f4f4;
 	color: #fff;
 	padding-left:10px;
 	padding-right:10px;
-	padding-bottom:50px;
+	padding-bottom:10px;
 	padding-top:10px;
 }
 
@@ -145,7 +146,7 @@ $video_area: #f4f4f4;
 	color: #fff;
 	padding-left:10px;
 	padding-right:10px;
-	padding-bottom:50px;
+	padding-bottom:10px;
 	padding-top:10px;
 }
 
@@ -156,7 +157,7 @@ $video_area: #f4f4f4;
 	color: #fff;
 	padding-left:10px;
 	padding-right:10px;
-	padding-bottom:50px;
+	padding-bottom:10px;
 	padding-top:10px;
 }
 
@@ -167,7 +168,7 @@ $video_area: #f4f4f4;
 	color: #fff;
 	padding-left:10px;
 	padding-right:10px;
-	padding-bottom:50px;
+	padding-bottom:10px;
 	padding-top:10px;
 }
 
@@ -178,7 +179,7 @@ $video_area: #f4f4f4;
 	color: #fff;
 	padding-left:10px;
 	padding-right:10px;
-	padding-bottom:50px;
+	padding-bottom:10px;
 	padding-top:10px;
 }
 
