@@ -19,10 +19,15 @@
 				</div>
 				
 				<div class="span9">
-					<div class="flex-video widescreen"><iframe src="<%= @catagory.video %>" frameborder="0" allowfullscreen=""></iframe></div>
+					<% unless @catagory.video.nil? %>
+			
+						<div class="flex-video widescreen"><iframe src="<%= @catagory.video %>" frameborder="0" allowfullscreen=""></iframe></div>
+					<% end %>
+					
 					<% @sections.each do |section| %>
-						<a id="<%=section.linking %>"><h4 span class= "<%= @catagory.color %>" > <%=section.header.html_safe %></span></h5></a>
+					<a id="<%=section.linking %>"><h4 span class= "<%= @catagory.color %>" > <%=section.header.html_safe %></span></h4></a>
 						<%=section.content.html_safe%>	
+						<br><br>
 					<% end %>
 				</div>
 			</div>
