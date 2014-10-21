@@ -22,7 +22,38 @@ section = FactoryGirl.create(:section, catagory_id: catagory.id, linking: "third
 topic = FactoryGirl.create(:topic, name:"behaviors and properties",  navgraphic: "navgraphics/behaviors_and_properties.png", catagory_id: catagory.id, available: "yes")
 section = FactoryGirl.create(:section, topic_id: topic.id, linking: "first", main_idea:"Materials have properties, which describe how they behave under different conditions", header:"Materials have <span class='accent1'>properties</span>, which describe how they <span class='accent1'>behave</span> under different <span class='accent1'>conditions</span>", content: "If you drop a glass object, it is likely to break. If you drop a pencil, it usually won't. If you stretch a rubber band out a few inches, it will snap right back. If you try to stretch out a pencil a few inches, it won’t stretch (noticeably). If you keep trying, and pull <i>really</i> hard, it will break instead of stretching and recovering like a rubber band would. These types of properties have names. <br><br>Materials have properties, but these properties can be changed by heating, cooling, hammering, or adding other things to the material. For example, if you add a tiny bit of carbon to iron, you can make steel - a different material that has different properties than iron. Iron is very soft and prone to rusting; steel is stronger and harder - these properties are very different, even though most of what makes up steel actually is iron.")
 section = FactoryGirl.create(:section, topic_id: topic.id, linking: "second", main_idea:"A property is something about the material that is true regardless of its size or shape", header:"A property is something about the material that is <span class='accent1'>true regardless</span> of its <span class='accent1'>size</span> or <span class='accent1'>shape</span>", content: "For example, <i>Density</i> is the amount of mass per unit volume. Think of density as the amount of heaviness of something as compared to its size: a marble is denser than a cotton ball, because it is pretty heavy for its size. However, the density of a small ice cube is the same as the density of a very large block of ice. <br><br>A material's <i>Melting Point</i> is the temperature at which the material will melt; for example, 32° (Fahrenheit, or F) for ice, but 2600° for low carbon steel. The melting point of mercury is about -38° F, which is why mercury is liquid at room temperature.<br><br>There is a property called <i>Yield Strength</i>, which is how much a material can yield - or stretch - without breaking. One that can stretch before it breaks is <i>ductile</i>; one that breaks right away is called <i>brittle</i>. Rubber and copper are ductile; glass is brittle. Copper is made into wiring because it is both ductile and conducts electricity - it has to be ductile to be made into copper wiring; otherwise it would just break when stretched out into thin wire (which would make for lousy circuits!). And, the ductility of rubber is the reason that a rubber ball bounces - it deforms upon contact with the ground, and the reaction to snap back to a fully round shape is what creates the upward movement. That's why a ball will bounce higher off a hard surface, like concrete, than a soft surface, like carpet - a hard surface creates more deformity in the ball. Try that with a glass basketball!")
-section = FactoryGirl.create(:section, topic_id: topic.id, linking: "second", main_idea:"Strength and Stiffness are important - but different - properties", header:"<span class='accent1'>Strength</span> and <span class='accent1'>Stiffness</span> are important - but different - properties", content: "Strength is different from stiffness. <i>Strength</i> refers to the amount of force or stress required to break something. Rubber is strong - what happens if you construct a bridge from it? The rubber bridge may not break - but that doesn't make it a good bridge! Can you imagine a rubber bridge fully loaded with cars? Perhaps - if the rubber bridge were over a fast-moving river - the bridge would bend down so much that the cars are immersed in the water and left to float downstream. Instead, you want a bridge made of a material or materials that will be stiffer.<br><br><i>Stiffness</i> is a measure of the inherent elasticity (or stretchiness) of a material. For example, rubber has a very low measure of stiffness - it's not very stiff at all - while diamond has a very high measure of stiffness. We build bridges and buildings out of stiff materials. <br><br>Rubber may be strong and not stiff - but strength and stiffness are not opposites. 	<br> <img alt='Representation of atoms or molecules in a solid under tension and compression' class='picpadding' src='/assets/navgraphics/history_of_materials_coming_soon.png' /><br><br>")
+section = FactoryGirl.create(:section, topic_id: topic.id, linking: "second", main_idea:"Strength and Stiffness are important - but different - properties", header:"<span class='accent1'>Strength</span> and <span class='accent1'>Stiffness</span> are important - but different - properties", content: "Strength is different from stiffness. <i>Strength</i> refers to the amount of force or stress required to break something. Rubber is strong - what happens if you construct a bridge from it? The rubber bridge may not break - but that doesn't make it a good bridge! Can you imagine a rubber bridge fully loaded with cars? Perhaps - if the rubber bridge were over a fast-moving river - the bridge would bend down so much that the cars are immersed in the water and left to float downstream. Instead, you want a bridge made of a material or materials that will be stiffer.<br><br><i>Stiffness</i> is a measure of the inherent elasticity (or stretchiness) of a material. For example, rubber has a very low measure of stiffness - it's not very stiff at all - while diamond has a very high measure of stiffness. We build bridges and buildings out of stiff materials. <br><br>Rubber may be strong and not stiff - but strength and stiffness are not opposites. Here are some examples:<br><br><table>
+				<tr>
+				    <td></td>
+				    <td width='50''><b><u>Material</b></u></td>
+				    <td width='120'><b><u>Stiffness</b></u></td>
+					<td><b><u>Strength</b></u></td>
+				</tr><tr>
+				    <td width='40'></td>
+				    <td width='100'>Steel:</td>
+				    <td width='130'>Stiff</td>
+					<td>Strong</td>
+				</tr>
+				<tr>
+				    <td></td>
+					<td>Jelly:</td>
+			     	<td>Flexible (un-Stiff)</td>
+					<td>Weak</td>
+				</tr>
+				<tr>
+				    <td></td>
+					<td>Nylon:</td>
+			     	<td>Flexible (un-Stiff)</td>
+					<td>Strong</td>
+				</tr>
+				<tr>
+				    <td></td>
+					<td>Cracker:</td>
+			     	<td>Stiff</td>
+					<td>Weak</td>
+				</tr>
+
+				</table>	<br> <img alt='Representation of atoms or molecules in a solid under tension and compression' class='picpadding' src='/assets/springs.png' /><br><br>")
 
 topic = FactoryGirl.create(:topic, name:"history of materials",  navgraphic: "navgraphics/history_of_materials_coming_soon.png", catagory_id: catagory.id, available: "no")
 topic = FactoryGirl.create(:topic, name:"steel",  navgraphic: "navgraphics/steel_coming_soon.png", catagory_id: catagory.id, available: "no")
