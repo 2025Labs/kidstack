@@ -25,4 +25,5 @@ topic = FactoryGirl.create(:topic, name:"steel",  navgraphic: "navgraphics/steel
 topic = FactoryGirl.create(:topic, name:"concrete",  navgraphic: "navgraphics/concrete_coming_soon.png", catagory_id: catagory.id, available: "no")
 topic = FactoryGirl.create(:topic, name:"plastics",  navgraphic: "navgraphics/plastics_coming_soon.png", catagory_id: catagory.id, available: "no")
 topic = FactoryGirl.create(:topic, name:"glass",  navgraphic: "navgraphics/glass_coming_soon.png", catagory_id: catagory.id, available: "no")
+topic = FactoryGirl.create(:topic, name:"semiconductors",  navgraphic: "navgraphics/semiconductors_coming_soon.png", catagory_id: catagory.id, available: "no")
 topic = FactoryGirl.create(:topic, name:"metal alloys",  navgraphic: "navgraphics/metal_alloys_coming_soon.png", catagory_id: catagory.id, available: "no")
