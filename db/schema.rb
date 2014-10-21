@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 20141006154900) do
     t.string   "headergraphic"
     t.integer  "catagory_id"
     t.text     "keypoints"
+    t.string   "available"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

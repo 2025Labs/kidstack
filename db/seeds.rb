@@ -91,6 +91,15 @@ section = FactoryGirl.create(:section, catagory_id: catagory.id, linking: "fourt
 
 section = FactoryGirl.create(:section, catagory_id: catagory.id, linking: "fifth", main_idea:"Structural Engineers help to ensure structures are safe", header:"Structural Engineers help to ensure structures are safe", content: "Engineers who work with structures are called structural engineers. They help to make sure that buildings and other large structures are safe to use. Structural engineers also work with machines and other objects in which their structure is critical to making sure that the object works and is safe. For example, a structural engineer would help to make sure that the frame (a structural component) of your car can support the weight of the car, your family, and your stuff. The structural engineer will also make sure that the frame protects you if you get in an accident.<br><br> We are surrounded by structures. What structures do you see around you?")
 
+topic = FactoryGirl.create(:topic, name:"forces",  navgraphic: "navgraphics/forces_coming_soon.png", catagory_id: catagory.id, available: "no")
+
+topic = FactoryGirl.create(:topic, name:"forces",  navgraphic: "navgraphics/arches_coming_soon.png", catagory_id: catagory.id, available: "no")
+
+topic = FactoryGirl.create(:topic, name:"forces",  navgraphic: "navgraphics/bridges_coming_soon.png", catagory_id: catagory.id, available: "no")
+
+topic = FactoryGirl.create(:topic, name:"forces",  navgraphic: "navgraphics/skyscrapers_coming_soon.png", catagory_id: catagory.id, available: "no")
+
+topic = FactoryGirl.create(:topic, name:"infrastructure",  navgraphic: "navgraphics/infrastructure_coming_soon.png", catagory_id: catagory.id, available: "no")
 
 
 #catagory = FactoryGirl.create(:catagory, name:"structures", navgraphic: "navgraphics/structures.png", headergraphic: "structures", color: "structures", video: "StructuresMain.m4v", keypoints: "The chair you are sitting on...is a structure<p> The building you're sitting in...is a structure<p>A structure is something that is 'load bearing'" )
