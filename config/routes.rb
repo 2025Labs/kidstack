@@ -1,14 +1,10 @@
 Kidstack::Application.routes.draw do
   
 
-  resources :slides
   resources :sections
   resources :catagories do
     member do
-      get 'catslide'
-      get 'audio'
-    
-      
+      get 'project'
     end
     
   end

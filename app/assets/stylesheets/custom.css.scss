@@ -12,7 +12,7 @@ $structures_color: #139F9D;
 $machines_color: #A3D147;
 $energy_color: #F59A00;
 $computing_color: #F74D9C;
-$video_area: #f4f4f4;
+$video_area: #f6f6f6;
 
 
 /* padding used throughout to get spacing correct*/
@@ -25,6 +25,11 @@ $video_area: #f4f4f4;
 	padding-bottom:15px;
 }
 
+.navbuttons{
+	
+	padding-right: 20px;
+	float:right;
+}
 .topnav{
 	float:left;
 	padding-top:7px;
@@ -78,12 +83,14 @@ $video_area: #f4f4f4;
 	font-family: "Comic Sans MS", cursive, sans-serif;
 }
 
+
+
 .mainideasheader {
-	
 	font-weight: bold;
 	font-size: 15px;
-	
+	color: #fff;
 }
+
 
 /* colors for text to align with catagories*/
 .engineering_process{
@@ -118,9 +125,7 @@ $video_area: #f4f4f4;
 /* colors for backgrounds to align with catagories*/
 .engineering_process_bkgd{
 	background-color:$engineering_process_color;
-	font-size: 13px;
-	line-height: 18px;
-	color:#fff;
+	opacity: .7;
 	padding-left:10px;
 	padding-right:10px;
 	padding-bottom:10px;
@@ -129,9 +134,7 @@ $video_area: #f4f4f4;
 
 .materials_bkgd{
 	background-color:$materials_color;
-	font-size: 13px;
-	line-height: 18px;
-	color: #fff;
+	opacity: .7;
 	padding-left:10px;
 	padding-right:10px;
 	padding-bottom:10px;
@@ -140,9 +143,7 @@ $video_area: #f4f4f4;
 
 .structures_bkgd{
 	background-color:$structures_color;
-	font-size: 13px;
-	line-height: 18px;
-	color: #fff;
+	opacity: .7;
 	padding-left:10px;
 	padding-right:10px;
 	padding-bottom:10px;
@@ -151,9 +152,7 @@ $video_area: #f4f4f4;
 
 .machines_bkgd{
 	background-color:$machines_color;
-	font-size: 13px;
-	line-height: 18px;
-	color: #fff;
+	opacity: .8;
 	padding-left:10px;
 	padding-right:10px;
 	padding-bottom:10px;
@@ -162,20 +161,17 @@ $video_area: #f4f4f4;
 
 .energy_bkgd{
 	background-color:$energy_color;
-	font-size: 13px;
-	line-height: 18px;
-	color: #fff;
+	opacity: .7;
 	padding-left:10px;
 	padding-right:10px;
 	padding-bottom:10px;
 	padding-top:10px;
+	
 }
 
 .computing_bkgd{
 	background-color:$computing_color;
-	font-size: 13px;
-	line-height: 18px;
-	color: #fff;
+	opacity: .7 ;
 	padding-left:10px;
 	padding-right:10px;
 	padding-bottom:10px;
@@ -189,16 +185,111 @@ $video_area: #f4f4f4;
 
 a.mainideas:link {
 	color:#fff;
+	font-size: 14px;
+	line-height: 18px;
+	
 }
 
 a.mainideas:visited {
 	color:#fff;
+	font-size: 14px;
+	line-height: 18px;
+
 }
+
 a.mainideas:hover {
 	color:#fff;
+	font-size: 14px;
+	line-height: 18px;
+	
 }
 a.mainideas:active {
 	color:#fff;
+	font-size: 14px;
+	line-height: 18px;
+	
+}
+
+/*these are the links for the catagory and topic names that apper right below the header*/
+
+.catagoryandtopic {
+	color:#fff;
+	font-size: 22px;
+	line-height: 40px;
+}
+
+a.catagoryandtopic:link {
+	color:#fff;
+	font-size: 22px;
+	line-height: 40px;
+}
+
+a.catagoryandtopic:visited {
+	color:#fff;
+	font-size: 22px;
+	line-height: 40px;
+}
+
+a.catagoryandtopic:hover {
+	color:#fff;
+	font-size: 22px;
+	line-height: 40px;
+}
+a.catagoryandtopic:active {
+	color:#fff;
+	font-size: 22x;
+	line-height: 40px;
+}
+
+
+/* colors for backgrounds to align with catagories on the text behind the cat and nav text below header*/
+.engineering_process_mainbkgd{
+	background-color:$engineering_process_color;
+	padding-left:30px;
+	padding-right:10px;
+	padding-bottom:10px;
+	padding-top:10px;
+}
+
+.materials_mainbkgd{
+	background-color:$materials_color;
+	padding-left:30px;
+	padding-right:10px;
+	padding-bottom:10px;
+	padding-top:10px;
+}
+
+.structures_mainbkgd{
+	background-color:$structures_color;
+	padding-left:30px;
+	padding-right:10px;
+	padding-bottom:10px;
+	padding-top:10px;
+}
+
+.machines_mainbkgd{
+	background-color:$machines_color;
+	padding-left:30px;
+	padding-right:10px;
+	padding-bottom:10px;
+	padding-top:10px;
+}
+
+.energy_mainbkgd{
+	background-color:$energy_color;
+	padding-left:30px;
+	padding-right:10px;
+	padding-bottom:10px;
+	padding-top:10px;
+	
+}
+
+.computing_mainbkgd{
+	background-color:$computing_color;
+	padding-left:30px;
+	padding-right:10px;
+	padding-bottom:10px;
+	padding-top:10px;
 }
 
 /* In order to get the links to be colored with the catagory colors you have to use the a link formatting, so that's what this section is all about*/
@@ -219,6 +310,8 @@ a:hover {
 a:active {
 	text-decoration:none;
 }
+
+
 
 a.engineering_process:link {
 	color: $engineering_process_color;

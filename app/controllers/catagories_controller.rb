@@ -12,5 +12,10 @@ class CatagoriesController < ApplicationController
     @sections = @catagory.sections.order("id")
     
   end
+
+  def project
+    @catagory = Catagory.find_by_name(params[:id])
+  end
+
   
 end
