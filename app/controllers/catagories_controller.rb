@@ -17,5 +17,9 @@ class CatagoriesController < ApplicationController
     @catagory = Catagory.find_by_name(params[:id])
   end
 
+  def news
+  end
+
+
   
 end

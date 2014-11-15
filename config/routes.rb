@@ -17,6 +17,8 @@ Kidstack::Application.routes.draw do
     end
   end
 
+  match '/news', to: 'catagories#news', via: 'get'
+
       
   root 'catagories#index'
  

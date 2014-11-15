@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 20141006154900) do
     t.string   "linking"
     t.string   "main_idea"
     t.string   "header"
+    t.string   "section_image"
     t.text     "content"
     t.datetime "created_at"
     t.datetime "updated_at"

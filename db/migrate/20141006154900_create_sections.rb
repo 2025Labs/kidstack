@@ -6,7 +6,9 @@ class CreateSections < ActiveRecord::Migration
       t.string :linking
       t.string :main_idea
       t.string :header
+      t.string :section_image
       t.text :content
+
       
 
       t.timestamps
