@@ -17,16 +17,11 @@ $video_area: #f6f6f6;
 
 /* padding used throughout to get spacing correct*/
 
-.indexnav{
-	padding-bottom:20px;
-}
-
 .navgraph{
 	padding-bottom:15px;
 }
 
 .navbuttons{
-	
 	padding-right: 20px;
 	float:right;
 }
@@ -34,10 +29,6 @@ $video_area: #f6f6f6;
 	float:left;
 	padding-top:7px;
 	padding-bottom:7px;
-}
-
-.top_nav{
-	padding-right:10px;
 }
 
 .footer{
@@ -49,7 +40,6 @@ $video_area: #f6f6f6;
 	float:right;
 }
 
-
 .center_text{
 	text-align: center;
 }
@@ -59,7 +49,6 @@ $video_area: #f6f6f6;
 	font-size: 16px;
 	padding-bottom: 10px;
 	font-weight:bold;
-	
 }
 
 .eitn_author{
@@ -75,23 +64,23 @@ $video_area: #f6f6f6;
 	line-height: 8px;
 
 }
-/* image options */
+/* options for positioning images in the section text */
 
-.imageright{
+.imagerightbase{
 	float:right;
 	margin-left:20px;
 	margin-top:20px;
 	margin-bottom:20px;
-	max-width: 50%;
+}
 
+.imageright{
+	@extend .imagerightbase;	
+	max-width: 50%;
 }
 
 .imagerightsmall{
-	float:right;
-	margin-left:20px;
-	margin-top:20px;
+	@extend .imagerightbase;	
 	max-width: 40%;
-
 }
 
 
@@ -103,37 +92,25 @@ $video_area: #f6f6f6;
 }
 
 
-/* text styles */
+/* text styles for accent colors in the sections */
 	
 .accent1 {
 	font-size: 21px;
 	color: $logo_color;
-	font-family: "Comic Sans MS", cursive, sans-serif;
 }
 
 .accent2 {
 	font-size: 21px;
 	color: $logo_color;
-	font-family: "Comic Sans MS", cursive, sans-serif;
 }
 
 .accent3 {
 	font-size: 21px;
 	color: $logo_color;
-	font-family: "Comic Sans MS", cursive, sans-serif;
 }
 
 
-
-
-.mainideasheader {
-	font-weight: bold;
-	font-size: 15px;
-	color: #fff;
-}
-
-
-/* colors for text to align with catagories*/
+/* colors for text in the section header to align with the catagory colors */
 .engineering_process{
 	color:$engineering_process_color;
 }
@@ -164,174 +141,148 @@ $video_area: #f6f6f6;
 
 
 /* colors for backgrounds to align with catagories*/
-.engineering_process_bkgd{
-	background-color:$engineering_process_color;
-	opacity: .7;
+
+.base_bkgd {
 	padding-left:10px;
 	padding-right:10px;
 	padding-bottom:10px;
 	padding-top:10px;
+}
+
+.engineering_process_bkgd{
+	@extend .base_bkgd;
+	background-color:$engineering_process_color;
+	opacity: .7;
+
 }
 
 .materials_bkgd{
+	@extend .base_bkgd;
 	background-color:$materials_color;
 	opacity: .7;
-	padding-left:10px;
-	padding-right:10px;
-	padding-bottom:10px;
-	padding-top:10px;
 }
 
 .structures_bkgd{
+	@extend .base_bkgd;
 	background-color:$structures_color;
 	opacity: .7;
-	padding-left:10px;
-	padding-right:10px;
-	padding-bottom:10px;
-	padding-top:10px;
 }
 
 .machines_bkgd{
+	@extend .base_bkgd;
 	background-color:$machines_color;
 	opacity: .8;
-	padding-left:10px;
-	padding-right:10px;
-	padding-bottom:10px;
-	padding-top:10px;
 }
 
 .energy_bkgd{
+	@extend .base_bkgd;
 	background-color:$energy_color;
 	opacity: .7;
-	padding-left:10px;
-	padding-right:10px;
-	padding-bottom:10px;
-	padding-top:10px;
-	
 }
 
 .computing_bkgd{
+	@extend .base_bkgd;
 	background-color:$computing_color;
-	opacity: .7 ;
-	padding-left:10px;
-	padding-right:10px;
-	padding-bottom:10px;
-	padding-top:10px;
+	opacity: .7;
 }
 
-/* In order to get the links to be colored with the catagory colors you have to use the a link formatting, so that's what this section is all about*/
+/*  this is formatting for the main ideas area*?
+/* you have to override the link defaults and make the main ideas bookmarks whites*/
 
-/* this is here to override the link defaults and make them white in the main ideas section*/
 
+.mainideasheader {
+	font-weight: bold;
+	font-size: 15px;
+	color: #fff;
+}
 
-a.mainideas:link {
+.mainideasbase {
 	color:#fff;
 	font-size: 14px;
 	line-height: 18px;
+	text-decoration:none;
+}
+
+a.mainideas:link {
+	@extend .mainideasbase;
 	
 }
 
 a.mainideas:visited {
-	color:#fff;
-	font-size: 14px;
-	line-height: 18px;
-
+	@extend .mainideasbase;
 }
 
 a.mainideas:hover {
-	color:#fff;
-	font-size: 14px;
-	line-height: 18px;
-	
+	@extend .mainideasbase;
 }
 a.mainideas:active {
-	color:#fff;
-	font-size: 14px;
-	line-height: 18px;
-	
+	@extend .mainideasbase;
 }
 
-/*these are the links for the catagory and topic names that apper right below the header*/
+/* this is the formatting for the cat and topic names that apper below the headers*/
+/*because the catagories are links if you are on the topic page, we need all the link formatting */
 
 .catagoryandtopic {
 	color:#fff;
 	font-size: 22px;
 	line-height: 40px;
+	text-decoration:none;
 }
 
 a.catagoryandtopic:link {
-	color:#fff;
-	font-size: 22px;
-	line-height: 40px;
+	@extend .catagoryandtopic;
 }
 
 a.catagoryandtopic:visited {
-	color:#fff;
-	font-size: 22px;
-	line-height: 40px;
+	@extend .catagoryandtopic;
 }
 
 a.catagoryandtopic:hover {
-	color:#fff;
-	font-size: 22px;
-	line-height: 40px;
+	@extend .catagoryandtopic;
 }
 
 a.catagoryandtopic:active {
-	color:#fff;
-	font-size: 22x;
-	line-height: 40px;
+	@extend .catagoryandtopic;
 }
 
 
 /* colors for backgrounds to align with catagories on the text behind the cat and nav text below header*/
-.engineering_process_mainbkgd{
-	background-color:$engineering_process_color;
+
+.mainbkgd{
 	padding-left:30px;
 	padding-right:10px;
 	padding-bottom:10px;
 	padding-top:10px;
+}
+
+.engineering_process_mainbkgd{
+	@extend .mainbkgd;
+	background-color:$engineering_process_color;
 }
 
 .materials_mainbkgd{
+	@extend .mainbkgd;
 	background-color:$materials_color;
-	padding-left:30px;
-	padding-right:10px;
-	padding-bottom:10px;
-	padding-top:10px;
 }
 
 .structures_mainbkgd{
+	@extend .mainbkgd;
 	background-color:$structures_color;
-	padding-left:30px;
-	padding-right:10px;
-	padding-bottom:10px;
-	padding-top:10px;
 }
 
 .machines_mainbkgd{
+	@extend .mainbkgd;
 	background-color:$machines_color;
-	padding-left:30px;
-	padding-right:10px;
-	padding-bottom:10px;
-	padding-top:10px;
 }
 
 .energy_mainbkgd{
+	@extend .mainbkgd;
 	background-color:$energy_color;
-	padding-left:30px;
-	padding-right:10px;
-	padding-bottom:10px;
-	padding-top:10px;
-	
 }
 
 .computing_mainbkgd{
+	@extend .mainbkgd;
 	background-color:$computing_color;
-	padding-left:30px;
-	padding-right:10px;
-	padding-bottom:10px;
-	padding-top:10px;
 }
 
 .logo_mainbkgd{
@@ -343,45 +294,15 @@ a.catagoryandtopic:active {
 	margin-bottom:10px;
 }
 
-/* In order to get the links to be colored with the catagory colors you have to use the a link formatting, so that's what this section is all about*/
+/* these two classes are here to keep the bookmarked section headers from having the underscoring*/
 a:link {
 	text-decoration:none;
-	color: #0099cc;
 }
 
-a:visited {
-	text-decoration:none;
-}
-	
 a:hover {
 	text-decoration:none;
-	color: #a1a1a1;
 }
 
-a:active {
-	text-decoration:none;
-}
-
-
-
-a.engineering_process:link {
-	color: $engineering_process_color;
-}
-a.materials:link {
-	color: $materials_color;
-}
-a.structures:link {
-	color: $structures_color;
-}
-a.machines:link {
-	color: $machines_color;
-}
-a.energy:link {
-	color: $energy_color;
-}	
-a.computing:link {
-		color: $computing_color;
-}
 
 
 /* This section allows for the video size to be responsive */
@@ -413,9 +334,6 @@ a.computing:link {
 	  .flex-video { padding-top: 0; }
 	}
 	
-	
-
-
 
 /* This section allows you to change the spacing on the header nav graphics so you aren't stuck with 20 px */
 .row-fluid .span2NoGutter { width:16%; margin-left:.66667%} // 100% / 6 col
