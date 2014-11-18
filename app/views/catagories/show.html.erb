@@ -29,7 +29,7 @@
 					<% @sections.each do |section| %>
 					<a id="<%=section.linking %>"><h4 span class= "<%= @catagory.color %>" > <%=section.header.html_safe %></span></h4></a>
 						<% unless section.section_image == nil %>
-							<div class="imagerightsmall">
+							<div class="<%= section.image_position %>">
 								<%= image_tag section.section_image %>
 							</div>
 						<%end %>

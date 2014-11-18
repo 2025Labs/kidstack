@@ -69,7 +69,12 @@ $video_area: #f6f6f6;
 .imagerightbase{
 	float:right;
 	margin-left:20px;
-	margin-top:20px;
+	margin-bottom:20px;
+}
+
+.imageleftbase{
+	float:left;
+	margin-right:20px;
 	margin-bottom:20px;
 }
 
@@ -78,9 +83,35 @@ $video_area: #f6f6f6;
 	max-width: 50%;
 }
 
-.imagerightsmall{
+.imagerightlarge{
 	@extend .imagerightbase;	
 	max-width: 40%;
+}
+
+.imagerightmedium{
+	@extend .imagerightbase;	
+	max-width: 30%;
+}
+
+.imagerightsmall{
+	@extend .imagerightbase;	
+	max-width: 20%;
+}
+
+.imageleftlarge{
+	@extend .imageleftbase;	
+	max-width: 40%;
+
+}
+
+.imageleftmedium{
+	@extend .imageleftbase;	
+	max-width: 30%;
+}
+
+.imageleftsmall{
+	@extend .imageleftbase;	
+	max-width: 20%;
 }
 
 
