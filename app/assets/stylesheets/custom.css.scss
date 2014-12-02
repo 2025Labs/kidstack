@@ -44,6 +44,13 @@ $video_area: #f6f6f6;
 	text-align: center;
 }
 
+
+
+.article_image{
+	margin-top:  20px;
+}
+
+
 /* formatting for engineering in the news*/
 .eitn_title{
 	font-size: 16px;
@@ -76,6 +83,7 @@ $video_area: #f6f6f6;
 	float:left;
 	margin-right:20px;
 	margin-bottom:20px;
+
 }
 
 .imageright{
@@ -85,33 +93,38 @@ $video_area: #f6f6f6;
 
 .imagerightlarge{
 	@extend .imagerightbase;	
-	max-width: 40%;
+	max-width: 60%;
 }
 
 .imagerightmedium{
 	@extend .imagerightbase;	
-	max-width: 30%;
+	max-width: 40%;
+}
+
+.imagerightmediuminline{
+	@extend .imagerightmedium;
+	margin-top: 20px;
 }
 
 .imagerightsmall{
 	@extend .imagerightbase;	
-	max-width: 20%;
+	max-width: 30%;
 }
 
 .imageleftlarge{
 	@extend .imageleftbase;	
-	max-width: 40%;
+	max-width: 60%;
 
 }
 
 .imageleftmedium{
 	@extend .imageleftbase;	
-	max-width: 30%;
+	max-width: 40%;
 }
 
 .imageleftsmall{
 	@extend .imageleftbase;	
-	max-width: 20%;
+	max-width: 30%;
 }
 
 

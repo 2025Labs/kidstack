@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 20141006154900) do
     t.string   "header"
     t.string   "section_image"
     t.string   "image_position"
-    t.string   "image_caption"
+    t.text     "image_caption"
     t.text     "content"
     t.datetime "created_at"
     t.datetime "updated_at"

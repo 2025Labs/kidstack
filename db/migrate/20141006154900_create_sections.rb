@@ -8,7 +8,7 @@ class CreateSections < ActiveRecord::Migration
       t.string :header
       t.string :section_image
       t.string :image_position
-      t.string :image_caption
+      t.text :image_caption
       t.text :content
 
       
