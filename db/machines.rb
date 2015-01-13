@@ -25,6 +25,19 @@ section = FactoryGirl.create(:section, catagory_id: catagory.id, linking: "fifth
 
 section = FactoryGirl.create(:section, catagory_id: catagory.id, linking: "sixth", main_idea:"Machines allow us to do work faster and easier, and allow us do things we could not do without them", header:"Machines allow us to do <span class='accent1'>work faster and easier</span>, and allow us do things we could <span class='accent1'>not do without them</span>", section_image: "section_images/smart_phones_and_tablets.jpg", image_position: "imageleftlarge",content:'Machines allow us to do things much faster and easier than we could do without them. All the vehicles in our world help us get places faster, even machines we power ourselves like skateboards and bicycles. Getting a ride in a car to school is usually a lot faster than walking (unless there is a lot of trafffic!). It is also much faster and easier to make a smoothie with a blender, than to try to make one by hand. <br><br>Modern machines also allow us to do things we could never do without them. There is no way to take a picture or watch a movie without a machine. Now we can do both using a pocket-sized computer called a smartphone. Engineers help to create the machines that have changed and will continue to change our world.')
 
+topic = FactoryGirl.create(:topic, name:"simplemachines",  navgraphic: "navgraphics/simplemachines.png", catagory_id: catagory.id, available: "no")
+topic = FactoryGirl.create(:topic, name:"parts",  navgraphic: "navgraphics/parts.png", catagory_id: catagory.id, available: "no")
+topic = FactoryGirl.create(:topic, name:"motorsandengines",  navgraphic: "navgraphics/motorsandengines.png", catagory_id: catagory.id, available: "no")
+topic = FactoryGirl.create(:topic, name:"resistanceandfriction",  navgraphic: "navgraphics/resistanceandfriction.png", catagory_id: catagory.id, available: "no")
+#topic = FactoryGirl.create(:topic, name:"energy",  navgraphic: "navgraphics/machines-energy.png", catagory_id: catagory.id, available: "no")
+topic = FactoryGirl.create(:topic, name:"electronicmachinesandmotors",  navgraphic: "navgraphics/electronicmachines.png", catagory_id: catagory.id, available: "no")
+#topic = FactoryGirl.create(:topic, name:"bikesandcars",  navgraphic: "navgraphics/bikesandcars.png", catagory_id: catagory.id, available: "no")
+
+
+
+
+
+
 #topic = FactoryGirl.create(:topic, name:"simple machines", navgraphic: "navgraphics/machinessimplemachines.png", catagory_id: catagory.id, video: "EPDesign.m4v", keypoints: "a simple machine is...")
 #topic = FactoryGirl.create(:topic, name:"gears",  navgraphic: "navgraphics/gears.png", catagory_id: catagory.id, video: "EPDesign.m4v")
 #topic = FactoryGirl.create(:topic, name:"motors",  navgraphic: "navgraphics/machinesmotors.png", catagory_id: catagory.id, video: "EPDesign.m4v")
