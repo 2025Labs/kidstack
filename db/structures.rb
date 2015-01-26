@@ -35,7 +35,7 @@ section = FactoryGirl.create(:section, topic_id: topic.id, linking:"fifth", main
 
 
 
-topic = FactoryGirl.create(:topic, name:"forces",  navgraphic: "navgraphics/arches_coming_soon.png", catagory_id: catagory.id, available: "no")
+topic = FactoryGirl.create(:topic, name:"arches",  navgraphic: "navgraphics/arches_coming_soon.png", catagory_id: catagory.id, available: "no")
 
 
 
