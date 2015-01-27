@@ -2,12 +2,13 @@ Kidstack::Application.routes.draw do
   
 
   resources :sections
-  resources :catagories do
-    member do
-      get 'project'
-    end
-    
-  end
+  resources :catagories 
+#  do
+#    member do
+#      get 'project'
+#   end    
+#  end
+
   resources :topics do
     member do
       get 'slide'
@@ -18,6 +19,7 @@ Kidstack::Application.routes.draw do
   end
 
   match '/news', to: 'catagories#news', via: 'get'
+  match '/projects', to: 'catagories#projects', via: 'get'
 
       
   root 'catagories#index'
