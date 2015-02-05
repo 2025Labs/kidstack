@@ -196,6 +196,13 @@ $video_area: #f6f6f6;
 	text-align: center;
 }
 
+.paragraphaccent {
+	color: $machines_color;
+#	color: #70CBF3;
+	font-size: 16px;
+	font-weight: bold;
+}
+
 /* colors for text in the section header to align with the catagory colors */
 .engineering_process{
 	color:$engineering_process_color;
