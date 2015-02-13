@@ -37,7 +37,7 @@
 								<%= image_tag section.section_image %>
 								<% unless section.image_caption == nil %>
 									<span class="eitn_caption">
-										<%= section.image_caption %>
+										<%= section.image_caption.html_safe %>
 									</span>
 								<% end %>
 							</div>
