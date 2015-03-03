@@ -12,6 +12,15 @@ class TopicsController < ApplicationController
     @sections = @topic.sections.order("id")
   end
   
+  def quiz
+  	   @topic = Topic.find_by_name(params[:id])
+    @catagory = Catagory.find(@topic.catagory_id)
+#    @topics = @catagory.topics.all
+    @topics = @catagory.topics.order("id")
+#    @sections = @topic.sections.all  
+    @questions = @topic.questions.order("id")
+  end
+
 
 
 end

@@ -20,6 +20,9 @@ class CatagoriesController < ApplicationController
   def news
   end
 
-
+  def quiz
+    @catagory = Catagory.find_by_name(params[:id])
+    @questions = @catagory.questions.order("id")
+  end
   
 end

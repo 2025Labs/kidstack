@@ -2,16 +2,15 @@ Kidstack::Application.routes.draw do
   
 
   resources :sections
-  resources :catagories 
-#  do
-#    member do
-#      get 'project'
-#   end    
-#  end
+  resources :questions
+  resources :catagories do
+    member do
+      get 'quiz'
+    end    
+  end
 
   resources :topics do
     member do
-      get 'slide'
       get 'activity'
       get 'quiz'
       get 'learnmore'
