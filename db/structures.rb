@@ -9,6 +9,7 @@
 #### Everything for Structures
 catagory = Catagory.create(name:"Structures", navgraphic: "navgraphics/structures.png", headergraphic: "structures", color: "structures", video:"//www.youtube.com/embed/kWsXIIqVy_Q", keypoints: "structures main point one.")
 
+
 section = FactoryGirl.create(:section, catagory_id: catagory.id, linking: "first", main_idea:"A structure is something that has parts put together in a particular way and is load bearing", header:"A structure is something that has <span class='accent3'>parts</span> put together in a <span class='accent3'>particular way</span> and is <span class='accent3'>load bearing</span>", section_image: "section_images/boy_using_tablet_in_car.png", image_position: "imagerightsmall",content: "Are you at home sitting on a chair looking at your iPad? Or maybe you are at the library sitting at a desk watching on a computer. You might even be in a car or an airplane looking at a smartphone or a tablet. Wherever you are, you are likely sitting on a structure, like a chair, and sitting in a structure, like a building. If you are sitting in a vehicle like a car or an airplane, then you are in a machine with structural components, or parts. So what is a structure anyway?<br><br> The simplest definition of a structure is that it is something with parts put together in a particular way. From an engineer's point of view, a structure is something that is 'load bearing'. Let's take a closer look at what each of these two words mean, so we can understand what it means to be 'load bearing'.")
 
 
@@ -21,9 +22,6 @@ section = FactoryGirl.create(:section, catagory_id: catagory.id, linking: "fourt
 
 section = FactoryGirl.create(:section, catagory_id: catagory.id, linking: "fifth", main_idea:"Engineers help to ensure structures are safe", header:"<span class='accent3'>Engineers</span> help to ensure structures are <span class='accent3'>safe</spam>", content: "Engineers help to make sure that buildings and other large structures are safe to use. Engineers also help to ensure the structural safety of other kinds of technology like vehicles and other machines. For example, an engineer would help to make sure that the frame (a structural component) of your car can support the weight of your car, your family, and your stuff. An engineer will also make sure that the frame protects you if you get in an accident.<br><br> We rely on the structural safety of not only our buildings and bridges but also the vehicles we use to travel and the other machines that we encounter in our modern world. From chairs to buildings and bridges, we are surrounded by structures. What structures do you see around you?")
 
-question = FactoryGirl.create(:question, catagory_id: catagory.id, question: "What is 1 + 1", answer1: "2", answer2: "3", answer3: "4")
-
-question = FactoryGirl.create(:question, catagory_id: catagory.id, question: "What is 2 + 2", answer1: "blue", answer2: "green", answer3: "orange")
 
 topic = FactoryGirl.create(:topic, name:"forces",  navgraphic: "navgraphics/forces.png", catagory_id: catagory.id)
 

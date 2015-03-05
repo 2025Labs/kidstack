@@ -23,6 +23,19 @@ class CatagoriesController < ApplicationController
   def quiz
     @catagory = Catagory.find_by_name(params[:id])
     @questions = @catagory.questions.order("id")
+    @question = @questions.first
+    @answers = @question.answers.order("id")
+
   end
-  
+
+  def check
+    @catagory = Catagory.find_by_name(params[:id])
+  end 
+
+  def right_answer
+  end
+
+  def wrong_answer
+  end
+
 end

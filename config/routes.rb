@@ -6,6 +6,9 @@ Kidstack::Application.routes.draw do
   resources :catagories do
     member do
       get 'quiz'
+      get 'check'
+      get 'right_answer'
+      get 'wrong_answer'
     end    
   end
 

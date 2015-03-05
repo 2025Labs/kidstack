@@ -7,7 +7,6 @@ FactoryGirl.define do
 
 factory :topic do
     name "MyString"
-    video "MyString"
     navgraphic "MyString"
     headergraphic "MyString"
     topicname "MyString"

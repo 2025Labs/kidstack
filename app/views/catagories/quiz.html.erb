@@ -13,14 +13,18 @@
 		
 			<div class="row-fluid">
 				<div class="span3">	
-					<% @questions.each do |question| %>
-						<%= question.question %>
-						<%= question.answer1 %>
-						<%= question.answer2 %>
-						<%= question.answer3 %>
-					<% end %>
+						<%= @question.question %> <br>
+						Thie is the question id <%= @question.id %>
+						<% @answers.each do |answer| %>
+							<% if @question.correct_answer == answer.number %>
+								<%= link_to answer.answer, right_answer_catagory_path %> <br>
+							<% else %>
+								<%= link_to answer.answer, wrong_answer_catagory_path %> <br>
+							<% end %>
+						<% end %>
+			
 				</div>
-				
+			
 				<div class="span9">
 					
 					
