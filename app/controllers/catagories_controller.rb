@@ -21,21 +21,34 @@ class CatagoriesController < ApplicationController
   end
 
   def quiz
-    @catagory = Catagory.find_by_name(params[:id])
+    @catagory = Catagory.find(params[:catagory_id])
     @questions = @catagory.questions.order("id")
     @question = @questions.first
-    @answers = @question.answers.order("id")
-
   end
 
-  def check
+  def quiz_right_answer
+    @catagory = Catagory.find(params[:catagory_id])
+    @question = @catagory.questions.find(params[:id])
+  end
+
+  def quiz_wrong_answer
+    @catagory = Catagory.find(params[:catagory_id])
+    @question = @catagory.questions.find(params[:id])
+    @answer = @question.answers.find(params[:answer_id])
+  end
+
+  def quiz_next_question
+    @catagory = Catagory.find(params[:catagory_id])
+    @question = @catagory.questions.find(params[:id])
+  end
+
+  def cat_topic_nav
     @catagory = Catagory.find_by_name(params[:id])
-  end 
-
-  def right_answer
   end
 
-  def wrong_answer
+  def cat_banner
+    @catagory = Catagory.find(params[:catagory_id])
   end
+
 
 end

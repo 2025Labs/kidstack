@@ -1,4 +1,3 @@
-
 <div class="<%= @catagory.color%>_mainbkgd">
 
 	<a class="catagoryandtopic" <%= link_to @catagory.headergraphic, catagory_path(@catagory.name) %></a> <span class= "catagoryandtopic" >     > quiz</span>
@@ -12,8 +11,10 @@
 
 <div class = "slidearea">
 	<div class="row-fluid">	
-		<div class="span10" style="padding-right:20px; border-right: 1px solid #d9d9d9;">
+		<div class="span10" style="padding-right:20px; border-right: 1px solid #d9d9d9;">	
+			
 			<div class="row-fluid">	
+
 				<div class="span1">
 
 					<h1><div class="num_bkgd"><span class="question_num"><%= @question.id %></span></div><h1>
@@ -21,45 +22,85 @@
 				</div>
 
 				<div class="span11">
+
 					<div class="row-fluid">	
 						<div class="span6">
 				 			<h4><div class="<%= @catagory.color %>_bkgd"><span class="question_txt"><%= @question.question_content %> </span></div></h4>
 				 	
+
 				 			<% @question.answers.each do |answer| %>
 
+								<div class="row-fluid">
+									<% if answer.correct %>
+										<div class = "span2">
+
+											<%= image_tag("answer_images/answer_correct.png") %>
+								
+										</div>
+
+										<div class = "span10">
+										
+											<h4><%= answer.answer_content %></h4>
+									
+										</div>
+								
+									<% end %></h4>
+							
+								</div>
+							<% end %>
+					
 							<div class="row-fluid">
 								<div class = "span2">
-
-									<span class="question_txt"><% if answer.correct %>
-							
-										<%= link_to image_tag(answer.image), quiz_right_answer_catagory_path(:id => @question.id, :catagory_id => @catagory.id, :answer_id => answer.id) %>
-
-									<% else %>
-
-										<%= link_to image_tag(answer.image), quiz_wrong_answer_catagory_path(:id => @question.id, :catagory_id => @catagory.id, :answer_id => answer.id)%>
-
-									<% end %></h4>
-
 								</div>
-
 
 								<div class = "span10">
-									<h4><%= answer.answer_content %></h4>
-									
+									<h4><%= @question.explanation %></h4>
 								</div>
-								<br><br><br>
 							</div>
-							<% end %>
-						</div>
 
+
+							<% if @question.catnext.nil? %>
+								<div class="row-fluid">
+									<div class="span2">
+								</div>
+
+								<div class="span10">
+									<h4>Congratulations! You finished the quiz.</h4>
+								</div>
+							</div>
+
+							<% else %>
+
+								<div class="row-fluid">
+
+									<div class="span2">
+									</div>
+
+									<div class="span4"
+
+										<% nextquestion = @question.catnext %>
+
+										<br><br>
+
+										<%= link_to image_tag("answer_images/next_question.png"), quiz_next_question_catagory_path(:id => nextquestion.id, :catagory_id => @catagory.id)%>
+									</div>
+
+								</div>
+
+							<% end%>
+					</div>
+					
 					<div class="span6">
 				 			<%= image_tag(@question.question_image) %>
 				 	</div>
 
 				 </div>
+				
+				
 			</div>
 		</div>
 	</div>
+
 	
 		<div class="span2">
 			<%= render 'catagories/cat_topic_nav' %>

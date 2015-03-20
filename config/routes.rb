@@ -7,8 +7,9 @@ Kidstack::Application.routes.draw do
     member do
       get 'quiz'
       get 'check'
-      get 'right_answer'
-      get 'wrong_answer'
+      get 'quiz_right_answer'
+      get 'quiz_wrong_answer'
+      get 'quiz_next_question'
     end    
   end
 

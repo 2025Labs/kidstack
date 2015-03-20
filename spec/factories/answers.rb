@@ -2,8 +2,6 @@
 
 FactoryGirl.define do
   factory :answer do
-    number 1
-    answer "MyText"
-    image "MyString"
+    
   end
 end

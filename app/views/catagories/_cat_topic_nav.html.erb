@@ -1,0 +1,7 @@
+<% @catagory.topics.each do |topic| %>
+	<% if topic.available == "no" %>
+		<%= image_tag(topic.navgraphic, :class => "navgraph")%>
+	<% else %>
+		<%= link_to image_tag(topic.navgraphic, :class => "navgraph"), topic_path(topic.name) %>
+	<% end %>
+<% end %>

@@ -17,9 +17,9 @@ ActiveRecord::Schema.define(version: 20150303194131) do
   enable_extension "plpgsql"
 
   create_table "answers", force: true do |t|
-    t.integer  "number"
-    t.text     "answer"
+    t.text     "answer_content"
     t.string   "image"
+    t.string   "correct"
     t.integer  "question_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -38,12 +38,8 @@ ActiveRecord::Schema.define(version: 20150303194131) do
   end
 
   create_table "questions", force: true do |t|
-    t.string   "question"
-    t.string   "answer1"
-    t.string   "answer2"
-    t.string   "answer3"
+    t.string   "question_content"
     t.string   "question_image"
-    t.integer  "correct_answer"
     t.text     "explanation"
     t.integer  "topic_id"
     t.integer  "catagory_id"

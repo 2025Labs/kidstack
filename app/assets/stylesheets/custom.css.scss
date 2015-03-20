@@ -13,6 +13,7 @@ $machines_color: #A3D147;
 $energy_color: #F59A00;
 $computing_color: #F74D9C;
 $video_area: #f6f6f6;
+$correct_color: #008000;
 
 
 /* padding used throughout to get spacing correct*/
@@ -174,6 +175,19 @@ $video_area: #f6f6f6;
 	padding: 20px;
 }
 
+/* styles for quiz area */
+
+.question_num {
+	color: #FF1F00;
+	font-size: 70px;
+}
+
+.question_txt {
+	color: #fff;
+
+}
+
+
 
 /* text styles for accent colors in the sections */
 	
@@ -241,6 +255,40 @@ $video_area: #f6f6f6;
 	padding-bottom:10px;
 	padding-top:10px;
 }
+
+.num_bkgd {
+	@extend .base_bkgd;
+	text-align: right;
+
+}
+
+.right_answer_bkgd {
+	@extend .base_bkgd;
+	background-color:$correct_color;
+	opacity: .5;
+	color: #fff;
+	
+
+}
+
+.wrong_answer_bkgd {
+	@extend .base_bkgd;
+	background-color:$logo_color;
+	opacity: .5;
+	color: #fff;
+	
+
+}
+
+.num_bkgd {
+	padding-left:10px;
+	padding-right:10px;
+	padding-bottom:10px;
+	padding-top:10px;
+	text-align: right;
+
+}
+
 
 .engineering_process_bkgd{
 	@extend .base_bkgd;
@@ -337,6 +385,10 @@ a.catagoryandtopic:hover {
 a.catagoryandtopic:active {
 	@extend .catagoryandtopic;
 }
+
+
+
+
 
 
 /* colors for backgrounds to align with catagories on the text behind the cat and nav text below header*/
