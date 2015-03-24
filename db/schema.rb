@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 20150303194131) do
     t.text     "explanation"
     t.integer  "topic_id"
     t.integer  "catagory_id"
+    t.integer  "question_num"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -22,7 +22,7 @@ section = FactoryGirl.create(:section, catagory_id: catagory.id, linking: "fourt
 
 section = FactoryGirl.create(:section, catagory_id: catagory.id, linking: "fifth", main_idea:"Engineers help to ensure structures are safe", header:"<span class='accent3'>Engineers</span> help to ensure structures are <span class='accent3'>safe</spam>", content: "Engineers help to make sure that buildings and other large structures are safe to use. Engineers also help to ensure the structural safety of other kinds of technology like vehicles and other machines. For example, an engineer would help to make sure that the frame (a structural component) of your car can support the weight of your car, your family, and your stuff. An engineer will also make sure that the frame protects you if you get in an accident.<br><br> We rely on the structural safety of not only our buildings and bridges but also the vehicles we use to travel and the other machines that we encounter in our modern world. From chairs to buildings and bridges, we are surrounded by structures. What structures do you see around you?")
 
-question = Question.create(catagory_id: catagory.id, question_content: "Which of the items in this picture are structures?", question_image: "question_images/four_structures.png", explanation: "A structure is something that is load bearing. All of the items in this picture from the chair to the bridge are all load bearing, which means they can support or stand strong against one or more forces.")
+question = Question.create(catagory_id: catagory.id, question_num: "1", question_content: "Which of the items in this picture are structures?", question_image: "question_images/four_structures.png", explanation: "A structure is something that is load bearing. All of the items in this picture from the chair to the bridge are all load bearing, which means they can support or stand strong against one or more forces.")
 
 answer = Answer.create(question_id: question.id, image: "answer_images/answer_a.png", answer_content: "Only the bridge and the skyscraper are structures.")
 
@@ -31,14 +31,14 @@ answer = Answer.create(question_id: question.id, image: "answer_images/answer_b.
 answer = Answer.create(question_id: question.id, image: "answer_images/answer_c.png", answer_content: "Only the skyscraper and the house are structures.")
 
 
-question = Question.create(catagory_id: catagory.id, question_content: "Which of these two chairs has a “live load”?", question_image: "question_images/chair_alone_and_with_backpack.png",explanation: "A structure’s own weight is called its “dead load”. Any other force the structure supports is called its “live load”. In this example, the backpack is the “live load” of the chair.")
+question = Question.create(catagory_id: catagory.id, question_num: "2", question_content: "Which of these two chairs has a “live load”?", question_image: "question_images/chair_alone_and_with_backpack.png",explanation: "A structure’s own weight is called its “dead load”. Any other force the structure supports is called its “live load”. In this example, the backpack is the “live load” of the chair.")
 
 answer = Answer.create(question_id: question.id, image: "answer_images/answer_a.png", answer_content: "The chair without the backpack")
 
 answer = Answer.create(question_id: question.id, image: "answer_images/answer_b.png", answer_content: "The chair with the backpack", correct: "true")
 
 
-question = Question.create(catagory_id: catagory.id, question_content: "What forces does a bridge have to stand up to?", question_image: "question_images/golden_gate_bridge.jpg", explanation: "All structures have to support their own weight and the weight of their users. Large structures like bridges and buildings have to stand up to environmental forces like wind and earthquakes as well.")
+question = Question.create(catagory_id: catagory.id, question_num: "3", question_content: "What forces does a bridge have to stand up to?", question_image: "question_images/golden_gate_bridge.jpg", explanation: "All structures have to support their own weight and the weight of their users. Large structures like bridges and buildings have to stand up to environmental forces like wind and earthquakes as well.")
 
 answer = Answer.create(question_id: question.id, image: "answer_images/answer_a.png", answer_content: "The bridge has to support its own weight and the weight of its users.  It also has to stand up to environmental forces like wind and earthquakes.", correct: "true")
 

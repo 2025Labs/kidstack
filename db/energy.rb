@@ -30,6 +30,23 @@ section = FactoryGirl.create(:section, catagory_id: catagory.id, linking: "third
 
 section = FactoryGirl.create(:section, catagory_id: catagory.id, linking: "fourth", main_idea:"Energy sources are all around us, both renewable and non-renewable", header:"Energy sources are all around us, both <span class='accent1'>renewable</span> and <span class='accent1'>non-renewable</span> ", section_image: "section_images/energy_sources.png", image_position: "imagerightlarge", content: "There are a variety of ways that we generate energy to power our modern world, many of which people have used for hundreds or even thousands of years. Some of these are considered renewable, like wind and sunlight, which means that we are not in danger of running out of them. Some of these are being consumed faster than they are being created, such as coal, which means that we will some day run out of that energy source.<br><br>Non-renewable energy sources include coal, petroleum, and natural gas. These three energy sources are called “fossil fuels” because they are created by ancient living things, like plants and animals, that were buried in the ground millions of years ago. Because it takes millions of years to create coal or petroleum, we use them up much faster than new coal or petroleum is created. That’s why they are called “non-renewable”. We extract energy from fossil fuels by burning them, such as burning gas to run a car or burning coal to generate electricty at a power plant.<br><br> Renewable energy sources include wind, sunlight, and water. Solar Power uses the power of the sun's light to create electricity.  Hydroelectric Power refers to making electricity from the power of water in motion. For example, water flowing over a man-made dam falls downward due to the force of gravity (the same reason a ball falls down if you throw it in the air). The power in this falling water can be used to turn turbines at the bottom, which can generate electricity through a process called electromagnetic induction.")
 
+question = Question.create(catagory_id: catagory.id, question_num: "1", question_content: "What is Energy?", question_image: "section_images/mag_flashlight_with_d_batteries.png",explanation: "Energy is the capacity to do work. Our bodies get energy from food. The devices we rely on get their energy from sources like electricity, batteries, or gasoline.")
+answer = Answer.create(question_id: question.id, image: "answer_images/answer_a.png", answer_content: "The capacity to do work")
+answer = Answer.create(question_id: question.id, image: "answer_images/answer_b.png", answer_content: "What your body gets from eating healthy food")
+answer = Answer.create(question_id: question.id, image: "answer_images/answer_c.png", answer_content: "What batteries provide for a handheld gaming console")
+answer = Answer.create(question_id: question.id, image: "answer_images/answer_d.png", answer_content: "All of the above", correct: "true")
+
+question = Question.create(catagory_id: catagory.id, question_num: "2", question_content: "We use energy for:", question_image: "section_images/electricity_to_your_home.png",explanation: "Household appliances use electricity provided to our homes. Vehicles run off energy sources like gasoline, jet fuel, or electricity. We use energy to run around the park; we get energy to run around from the food we eat.")
+answer = Answer.create(question_id: question.id, image: "answer_images/answer_a.png", answer_content: "Running household appliances like microwaves and televisions")
+answer = Answer.create(question_id: question.id, image: "answer_images/answer_b.png", answer_content: "Powering vehicles like cars, trains, and airplanes")
+answer = Answer.create(question_id: question.id, image: "answer_images/answer_c.png", answer_content: "Running around the park")
+answer = Answer.create(question_id: question.id, image: "answer_images/answer_d.png", answer_content: "All of the above", correct: "true")
+
+question = Question.create(catagory_id: catagory.id, question_num: "3", question_content: "Coal is:", question_image: "section_images/coal_76286749.jpg",explanation: "Coal is considered a non-renewable form of energy. It takes millions of years to turn an ancient plant into coal. We use up the energy much more quickly than it can be created.")
+answer = Answer.create(question_id: question.id, image: "answer_images/answer_a.png", answer_content: " A renewable form of energy")
+answer = Answer.create(question_id: question.id, image: "answer_images/answer_b.png", answer_content: "A non-renewable form of energy?", correct: "true")
+
+
 topic = FactoryGirl.create(:topic, name:"energy use",  navgraphic: "navgraphics/energyuse.png", catagory_id: catagory.id, available: "no")
 
 
