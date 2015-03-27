@@ -75,7 +75,24 @@ section = FactoryGirl.create(:section, topic_id: topic.id, linking:"third", main
 
 section = FactoryGirl.create(:section, topic_id: topic.id, linking:"fourth", main_idea:"One main distinction between the different bridge designs is the maximum length a single span of the bridge can be", header:"One main <span class='accent3'>distinction</span> between the different bridge designs is the <span class='accent3'>maximum length</span> a <span class='accent3'>single span</span> of the bridge can be", section_image: "section_images/ak_vs_lp_bridge.png", image_position: "imageleftlarge", image_caption: "Top: Lake Pontchartrain Causeway, &#169; pisaphotograpy/Shutterstock.com, Bottom: Akashi Kaikyo Bridge, &#169; Sean Pavone.",content: "Just as skyscrapers challenge engineers to build vertically, or up, bridges challenge engineers to build horizontally, or across. Bridges are noted both for their overall length, and for the length of their longest span. Beam bridges are the longest bridges in the world, but a single span on a beam bridge is shorter than a single span on many of the other bridge designs. For example, the Lake Pontchartrain Causeway, part of the highway system in Louisiana, is 23.8 miles long, but the individual spans of its deck are only 56 feet. <br><br>On the other end of the spectrum, the longest suspension bridge in the world is the Akashi Kaikyo Bridge in Japan. Like the Lake Pontchartrain Causeway, the Akashi Kaikyo Bridge is part of a highway system. This bridge is only 2.4 miles long, but its longest span is 6,532 feet long. The Akashi Kaikyo Bridge is about a tenth the length of the Lake Pontchartrain Causeway, but its longest span is 116 times longer than any span on the Causeway. <br><br>These distances and lengths point out not only the differences in the bridge designs, but also the different design constraints that each bridge must meet. Bridges are a critical part of our transporation infrastructure, or system. They are each are designed to meet the unique requirements of the many obstacles that people cross every day on their way to work, school, and play.")
 
-topic = FactoryGirl.create(:topic, name:"forces",  navgraphic: "navgraphics/skyscrapers_coming_soon.png", catagory_id: catagory.id, available: "no")
+question = Question.create(topic_id: topic.id, question_num: "1", question_content: "Which of the items is a bridge?", question_image: "question_images/four_structures.png", explanation: "A structure is something that is load bearing. All of the items in this picture from the chair to the bridge are all load bearing, which means they can support or stand strong against one or more forces.")
+
+answer = Answer.create(question_id: question.id, image: "answer_images/answer_a.png", answer_content: "Answer 1.")
+
+answer = Answer.create(question_id: question.id, image: "answer_images/answer_b.png", answer_content: "Answer 2.", correct: "true")
+
+answer = Answer.create(question_id: question.id, image: "answer_images/answer_c.png", answer_content: "Answer 3.")
+
+question = Question.create(topic_id: topic.id, question_num: "1", question_content: "This is the second question?", question_image: "question_images/four_structures.png", explanation: "A structure is something that is load bearing. All of the items in this picture from the chair to the bridge are all load bearing, which means they can support or stand strong against one or more forces.")
+
+answer = Answer.create(question_id: question.id, image: "answer_images/answer_a.png", answer_content: "Second Question - Answer 1.")
+
+answer = Answer.create(question_id: question.id, image: "answer_images/answer_b.png", answer_content: "Second Question - Answer 2.", correct: "true")
+
+answer = Answer.create(question_id: question.id, image: "answer_images/answer_c.png", answer_content: "Second Question - Answer 3.")
+
+
+topic = FactoryGirl.create(:topic, name:"skyscrapers",  navgraphic: "navgraphics/skyscrapers_coming_soon.png", catagory_id: catagory.id, available: "no")
 
 topic = FactoryGirl.create(:topic, name:"infrastructure",  navgraphic: "navgraphics/infrastructure_coming_soon.png", catagory_id: catagory.id, available: "no")
 

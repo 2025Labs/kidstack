@@ -11,4 +11,8 @@ class Question < ActiveRecord::Base
     def catprev
       catagory.questions.where("id < ?", id).order("id DESC").first
     end  
+
+    def topnext
+      topic.questions.where("id > ?", id).order("id ASC").first
+    end
 end

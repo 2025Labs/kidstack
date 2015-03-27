@@ -1,8 +1,6 @@
 <div class="<%= @catagory.color%>_mainbkgd">
 
-	<span class= "catagoryandtopic"><a class="catagoryandtopic" <%= link_to @catagory.headergraphic, catagory_path(@catagory.name) %> > </a> <a class="catagoryandtopic" <%= link_to @topic.name,topic_path(@topic.name) %> > quiz </a></span>
-
-
+	<a class="catagoryandtopic" <%= link_to @catagory.headergraphic, catagory_path(@catagory.name) %></a> <span class= "catagoryandtopic" >     > <%= @topic.name %> > quiz </span>
 
 	<%= link_to image_tag("navgraphics/news_icon.png", :class=>'navbuttons'), news_path  %> </span>
 	<%= link_to image_tag("navgraphics/project_icon.png", :class=>'navbuttons'), projects_path  %> </span>
@@ -23,7 +21,7 @@
 				</div>
 
 				<div class="span11">
-					<div class="row-fluid">	
+				 	<div class="row-fluid">	
 						<div class="span6">
 				 			<h4><div class="<%= @catagory.color %>_bkgd"><span class="question_txt"><%= @question.question_content %> </span></div></h4>
 				 	
@@ -41,7 +39,6 @@
 										<%= link_to image_tag(answer.image), quiz_wrong_answer_topic_path(:id => @question.id, :topic_id => @topic.id, :answer_id => answer.id)%>
 
 									<% end %></h4>
-
 								</div>
 
 
@@ -49,7 +46,6 @@
 									<h4><%= answer.answer_content %></h4>
 									
 								</div>
-								<br><br><br>
 							</div>
 							<% end %>
 						</div>
@@ -57,26 +53,14 @@
 					<div class="span6">
 				 			<%= image_tag(@question.question_image) %>
 				 	</div>
-
+				 </div>
 				 </div>
 			</div>
 		</div>
-	</div>
+
 	
-	<div class="span2">
-		
+		<div class="span2">
 			<%= render 'catagories/cat_topic_nav' %>
+		</div>
 	</div>
 </div>
-		
-
-		
-	
-		
-	
-			
-</div>
-
-
-
-
