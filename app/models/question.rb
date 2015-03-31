@@ -5,7 +5,7 @@ class Question < ActiveRecord::Base
 
 
     def catnext
-      catagory.questions.where("id > ?", id).order("id ASC").first
+      catagory.questions.where("id > ?", id).order("question_num ASC").first
     end
 
     def catprev

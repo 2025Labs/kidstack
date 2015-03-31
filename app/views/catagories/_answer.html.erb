@@ -1,0 +1,105 @@
+
+<% if @answer == nil %>
+<%= @answer %>
+<% @question.answers.each do |answer| %>
+
+	<div class="row-fluid">
+		<div class = "span2">
+
+			<%= link_to image_tag(answer.image), answer_catagory_path(:id => @question.id, :catagory_id => @catagory.id, :answer_id => answer.id), :remote => true %>
+
+		</div>
+
+
+		<div class = "span10">
+			<h4><%= answer.answer_content %></h4>
+		</div>
+		<br><br>
+	</div>
+<% end %>
+
+
+<% else %>
+
+
+
+<% if @answer.correct %>
+	<div class="row-fluid">
+							
+		<div class = "span2">
+			<%= image_tag("answer_images/answer_correct.png") %>
+		</div>
+
+		<div class = "span10">
+			<h4><%= @answer.answer_content %></h4>				
+		</div>
+	</div>
+
+	<div class="row-fluid">
+		
+		<div class = "span2">
+		</div>
+
+		<div class = "span10">
+			<h4><%= @question.explanation %></h4>
+		</div>
+	</div>
+
+	<% if @question.catnext.nil? %>
+		<div class="row-fluid">
+			<div class="span2">
+			</div>
+
+			<div class="span10">
+				<h4>Congratulations! You finished the quiz.</h4>
+			</div>
+		</div>
+
+	<% else %>
+
+		<div class="row-fluid">
+
+			<div class="span2">
+			</div>
+
+			<div class="span4">
+
+				<% nextquestion = @question.catnext %>
+				
+				<%= link_to image_tag("answer_images/next_question.png"), question_catagory_path(:id => nextquestion.id, @answer => "start", :catagory_id => @catagory.id), :remote => true  %>
+			</div>
+
+		</div>
+	<% end%>
+
+<% else %>
+
+
+	<% @question.answers.each do |answer| %>
+
+		<div class="row-fluid">
+
+			<div class = "span2">
+
+				<% if answer.id == @answer.id %>
+
+					<%= image_tag("answer_images/answer_wrong.png") %>
+
+				<% else %>	
+
+					<%= link_to image_tag(answer.image), answer_catagory_path(:id => @question.id, :catagory_id => @catagory.id, :answer_id => answer.id), :remote => true %>
+				<% end %>
+			</div>
+				
+			<div class = "span10">
+				<h4><%= answer.answer_content %></h4>	
+			</div>
+		</div>
+
+	<% end %>
+
+<% end %>
+
+<% end %>
+
+

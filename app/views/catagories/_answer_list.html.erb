@@ -1,0 +1,16 @@
+<% @question.answers.each do |answer| %>
+
+	<div class="row-fluid">
+		<div class = "span2">
+
+			<%= link_to image_tag(answer.image), quiz_check_answer_catagory_path(:id => @question.id, :catagory_id => @catagory.id, :answer_id => answer.id) %>
+
+		</div>
+
+
+		<div class = "span10">
+			<h4><%= answer.answer_content %></h4>
+		</div>
+		<br><br>
+	</div>
+<% end %>

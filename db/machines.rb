@@ -10,7 +10,7 @@
 
 #### Everything for Machines
 
-catagory = FactoryGirl.create(:catagory, name:"Machines", navgraphic: "navgraphics/machines.png", headergraphic: "machines", color: "machines")
+catagory = FactoryGirl.create(:catagory, name:"Machines", navgraphic: "navgraphics/machines.png", headergraphic: "machines", color: "machines", video:"//www.youtube.com/embed/te50y1zvi9M")
 
 section = FactoryGirl.create(:section, catagory_id: catagory.id, linking: "first", main_idea:"A machine is something with one or more parts that uses energy to do a job", header:"A machine is something with one or more <span class='accent1'>parts</span> that uses <span class='accent1'>energy</span> to do a job", section_image: "section_images/different-machines.png", image_position: "imagerightlarge", content: "You know that a bicycle or a car is a machine, but did you know that a doorknob is also a machine?  A machine is something with one or more parts that uses energy to do a job. Machines include tools like scissors, hammers, and flashlights. Machines also include vehicles like bicycles, cars, and planes, and appliances like refrigerators, washing machines, and microwaves. Electronic devices such as televisions, computers, tablets, and smart phones are also machines. There are machines that do almost any kind of work you can think of, but they all have at least one part and use energy to get something done.")
 

@@ -18,6 +18,7 @@ class TopicsController < ApplicationController
     @catagory = Catagory.find(@topic.catagory_id)
     @questions = @topic.questions.order("id")
     @question = @questions.first
+    
   end
 
   def quiz_right_answer
