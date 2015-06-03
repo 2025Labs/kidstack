@@ -16,7 +16,7 @@
 #topic = FactoryGirl.create(:topic, name:"energy storage",  navgraphic: "navgraphics/energystorage.png", catagory_id: catagory.id, video: "EPDesign.m4v")
 #topic = FactoryGirl.create(:topic, name:"energy consumption",  navgraphic: "navgraphics/energyconsumption.png", catagory_id: catagory.id, video: "EPDesign.m4v")
 
-catagory = Catagory.create(name:"Energy", navgraphic: "navgraphics/energy.png", headergraphic: "energy", color: "energy", keypoints: "this is a key point")
+catagory = Catagory.create(name:"Energy", navgraphic: "navgraphics/energy.png", headergraphic: "energy", color: "energy", video:"//www.youtube.com/embed/XpRU_HVB1Eg")
 
 
 section = FactoryGirl.create(:section, catagory_id: catagory.id, linking: "first", main_idea:"Energy is the capacity to do work", header:"Energy is the <span class='accent1'>capacity</span> to do <span class='accent1'>work</span>", section_image: "section_images/mag_flashlight_with_d_batteries.png", image_position: "imagerightmedium", content: "To understand what that means, think about a flashlight. Flashlights use batteries as an energy, or power, source. When you switch on the flashlight, the light comes on. The batteries in your flashlight have the capacity – or ability – to do the work of powering your flashlight. The energy stored in batteries is a form of chemical energy. The energy is provided by a chemical reaction. <br><br> Capacity is also how much work something can do. For example, two D-cell batteries might be able to power a large flashlight, but not an entire home.  Even for the flashlight, those D-cell batteries won’t last forever. Eventually the batteries will be drained and will need to be replaced. The energy capacity of a battery is limited.")

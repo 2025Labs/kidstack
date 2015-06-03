@@ -2,7 +2,7 @@
 
 
 /* defining the colors*/
-$logo_color: #FF1F00;
+$logo_color: #E72E1C;
 $possible_color: #21B6A5;
 $slide_title: #FF1F00;
 $slide_text: #a1a1a1;
@@ -324,7 +324,7 @@ $correct_color: #008000;
 .computing_bkgd{
 	@extend .base_bkgd;
 	background-color:$computing_color;
-	opacity: .7;
+	opacity: .8;
 }
 
 /*  this is formatting for the main ideas area*?
