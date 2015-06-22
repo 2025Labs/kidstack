@@ -1,49 +1,52 @@
-<div class="row-fluid">	
-		<div class="span3">
-	   	<%= link_to image_tag("2025LabsKids_600.png", :alt =>"2025LabsKids logo", :class => "topnav"), root_path %>
+
+<div class="row-fluid", style= "padding-top:10px; padding-bottom:10px;  border-bottom: 1px solid #d9d9d9;">	
+		
+		<div class="span2">
+		   	<%= link_to image_tag("2025LabsKids_600.png"), root_path  %>
 		</div>
-		<div class="span6">
-		</div>
-		<div class="span3" style="float:right;">
-	     <%= image_tag "cornerart.png" %>
+
+		<div class="span10">
+			<div class="span6NoGutter">
+
+				<div class="span3">
+					<%= image_tag("line_art.png")%> 
+				</div>
+
+				<div class="span3NoGutter">
+	   				<%= link_to image_tag("navgraphics/engineering_process.png"), catagory_path("Engineering Process") %>
+				</div>
+
+				<div class="span3NoGutter">
+					<%= link_to image_tag("navgraphics/materials.png"), catagory_path("Materials")  %> 
+				</div>
+
+				<div class="span3NoGutter">
+					<%= link_to image_tag("navgraphics/structures.png"), catagory_path("Structures") %> 
+				</div>
+			</div>
+			<div class="span6NoGutter">
+
+				<div class="span3NoGutter">
+					<%= link_to image_tag("navgraphics/machines.png"), catagory_path("Machines") %> 
+				</div>
+	
+				<div class="span3NoGutter">
+					<%= link_to image_tag("navgraphics/instruments_and_data.png"), "#" %> 
+				</div>
+
+				<div class="span3NoGutter">
+					<%= link_to image_tag("navgraphics/energy.png"), catagory_path("Energy") %>
+				</div>
+			
+				<div class="span3NoGutter">
+					<%= link_to image_tag("navgraphics/computing.png"), catagory_path("Computing") %> 
+				</div>
+	
+			</div>
+
 		</div>
 </div>
 
-
-<div class="row-fluid" style="padding-bottom:10px; border-bottom: 1px solid #d9d9d9;">
-	
-	<div class="span2NoGutter">
-		<ul id="menu">
-			<li><%= link_to image_tag("navgraphics/engineering_process.png"), catagory_path("Engineering Process") %>
-			</li>
-		</ul>
-	</div>
-
-	<div class="span2NoGutter">
-		<ul id="menu">
-		<%= link_to image_tag("navgraphics/materials.png"), catagory_path("Materials")  %> 
-		</ul>
-	</div>
-	
-	<div class="span2NoGutter ">
-		<%= link_to image_tag("navgraphics/structures.png"), catagory_path("Structures") %> 
-	</div>
-	
-	<div class="span2NoGutter ">
-		<%= link_to image_tag("navgraphics/machines.png"), catagory_path("Machines") %> 
-	</div>
-	
-	<div class="span2NoGutter ">		
-		<%= link_to image_tag("navgraphics/energy.png"), catagory_path("Energy") %>
-	</div>
-	
-	<div class="span2NoGutter ">
-		<%= link_to image_tag("navgraphics/computing.png"), catagory_path("Computing") %> 
-	</div>
-	
-
-
-</div>
 
 
 <br>

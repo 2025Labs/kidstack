@@ -490,7 +490,8 @@ a:hover {
 
 /* This section allows you to change the spacing on the header nav graphics so you aren't stuck with 20 px */
 .row-fluid .span2NoGutter { width:16%; margin-left:.66667%} // 100% / 6 col
-
+.row-fluid .span3NoGutter { width:24.5%; margin-left:.59%} // 100% / 4 col
+.row-fluid .span6NoGutter { width:49.9%; margin-left:-.4%} // 100% / 2 col
 
 #menu {
     list-style:none;

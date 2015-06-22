@@ -100,6 +100,9 @@ topic = FactoryGirl.create(:topic, name:"parts",  navgraphic: "navgraphics/parts
 topic = FactoryGirl.create(:topic, name:"electronicmachinesandmotors",  navgraphic: "navgraphics/electronicmachines.png", catagory_id: catagory.id, available: "no")
 #topic = FactoryGirl.create(:topic, name:"bikesandcars",  navgraphic: "navgraphics/bikesandcars.png", catagory_id: catagory.id, available: "no")
 
+topic = FactoryGirl.create(:topic, name:"robotics",  navgraphic: "navgraphics/robotics.png", catagory_id: catagory.id, available: "no")
+#topic = FactoryGirl.create(:topic, name:"energy",  navgraphic: "navgraphics/machines-energy.png", catagory_id: catagory.id, available: "no")
+
 
 
 
