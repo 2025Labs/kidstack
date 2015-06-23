@@ -84,7 +84,7 @@ section = FactoryGirl.create(:section, topic_id: topic.id, linking:"fifth", main
 section = FactoryGirl.create(:section, topic_id: topic.id, linking:"sixth", main_idea:"Other countries have electric grids as well", header:"Other <span class='accent1'>countries</span> have electric grids as well",  content:"America is not the only country with a large power grid. In fact, the continent of Europe has the largest synchronous electrical grid in the world, called the synchronous grid of Continental Europe. It reaches over 400 million customers in 24 countries. Although the grid also uses alternating current, it uses 220 volt current. This is 100 volts higher than the American grid. This means that if you travel to Europe you cannot plug your devices into the wall. You need to plug a converter into the wall first. This will act as transformer and step down the voltage to work with your device. ")
 
 
-topic = FactoryGirl.create(:topic, name:"energy use",  navgraphic: "navgraphics/energyuse.png", catagory_id: catagory.id, available: "no")
+#topic = FactoryGirl.create(:topic, name:"energy use",  navgraphic: "navgraphics/energyuse.png", catagory_id: catagory.id, available: "no")
 topic = FactoryGirl.create(:topic, name:"energy storage",  navgraphic: "navgraphics/energystorage.png", catagory_id: catagory.id, available: "no")
-topic = FactoryGirl.create(:topic, name:"future of energy",  navgraphic: "navgraphics/energyfuture.png", catagory_id: catagory.id, available: "no")
+#topic = FactoryGirl.create(:topic, name:"future of energy",  navgraphic: "navgraphics/energyfuture.png", catagory_id: catagory.id, available: "no")
 
