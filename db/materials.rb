@@ -100,8 +100,9 @@ section = FactoryGirl.create(:section, topic_id: topic.id, linking: "sixth", mai
 
 section = FactoryGirl.create(:section, topic_id: topic.id, linking: "seventh", main_idea:"Steel is a defining material of the modern world", header:"Steel is a <span class='accent1'>defining material</span> of the modern world", section_image: "", content: "From eating with stainless steel utensils, to driving around in vehicles built with steel parts, to going to school or work in buildings made with steel columns and beams, we benefit from steel every day. The ability to cost-effectively manufacture high-quality steel, with its unique combination of strength, toughness and stiffness has been critical to the development of our modern world. Our lives would simply not be the same without it. ")
 
+topic = FactoryGirl.create(:topic, name:"glass",  navgraphic: "navgraphics/glass_coming_soon.png", catagory_id: catagory.id, available: "no")
 topic = FactoryGirl.create(:topic, name:"concrete",  navgraphic: "navgraphics/concrete_coming_soon.png", catagory_id: catagory.id, available: "no")
 topic = FactoryGirl.create(:topic, name:"plastics",  navgraphic: "navgraphics/plastics_coming_soon.png", catagory_id: catagory.id, available: "no")
-topic = FactoryGirl.create(:topic, name:"glass",  navgraphic: "navgraphics/glass_coming_soon.png", catagory_id: catagory.id, available: "no")
+
 topic = FactoryGirl.create(:topic, name:"semiconductors",  navgraphic: "navgraphics/semiconductors_coming_soon.png", catagory_id: catagory.id, available: "no")
 topic = FactoryGirl.create(:topic, name:"metal alloys",  navgraphic: "navgraphics/metal_alloys_coming_soon.png", catagory_id: catagory.id, available: "no")
