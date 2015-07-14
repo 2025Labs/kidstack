@@ -10,6 +10,7 @@ Kidstack::Application.routes.draw do
       get 'quiz_check_answer'
       get 'quiz_next_question'
       get 'answer'
+      get 'game'
     end    
   end
 
@@ -18,8 +19,10 @@ Kidstack::Application.routes.draw do
       get 'activity'
       get 'quiz'
       get 'quiz_right_answer'
+      get 'quiz_check_answer'
       get 'quiz_wrong_answer'
       get 'quiz_next_question'
+      get 'answer'
       get 'learnmore'
     end
   end

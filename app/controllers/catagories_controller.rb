@@ -53,5 +53,9 @@ class CatagoriesController < ApplicationController
     @catagory = Catagory.find(params[:catagory_id])
   end
 
+  def game
+     @catagory = Catagory.find(params[:catagory_id])
+  end 
+
 
 end

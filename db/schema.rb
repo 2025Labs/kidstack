@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 20150303194131) do
     t.string   "timeline"
     t.string   "headergraphic"
     t.string   "video"
+    t.string   "game_name"
     t.text     "keypoints"
     t.datetime "created_at"
     t.datetime "updated_at"

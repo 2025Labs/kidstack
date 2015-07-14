@@ -1,4 +1,18 @@
-//Eron Lake 
+<% provide(:location, ' > game') %>
+
+<%= render 'cat_banner' %>
+
+<div class = "slidearea">
+	<div class="row-fluid">	
+	
+
+		<canvas id="canvas" width=1000 height=600 style="border: solid black;"></canvas>
+
+
+<%= javascript_include_tag @catagory.game_name %>
+<%# 		
+ 		<%= javascript_tag do 
+		  //Eron Lake 
 //CMPM 20
 //
 //-------------------------------------------------------
@@ -609,3 +623,11 @@ function game_loop(){
 setInterval(game_loop, 30);
 //---------------------------------------------------------
 ///////////////////////////////////////////////////////////
+
+		<% end %> 
+ 	    
+	</div>
+
+</div>
+
+this is my game page

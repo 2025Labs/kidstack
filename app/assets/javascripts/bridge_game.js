@@ -5,6 +5,8 @@
 //BEGINING OF SCRIPT///////////////////////////////////////
 //-------------------------------------------------------
 
+console.log("read")
+
 //initialization
 //----------------------------------------------------
 var canvas = document.getElementById("canvas");

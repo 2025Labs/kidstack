@@ -1,0 +1,30 @@
+<% provide(:location, ' > quiz') %>
+
+<%#= render 'cat_banner' %>
+
+<div class = "slidearea">
+	<div class="row-fluid">	
+		<div class="span10" style="padding-right:20px; border-right: 1px solid #d9d9d9;">
+			<div id="show_question">
+
+				
+				 <%=  render( :partial => "catagories/question", :locals => { :question => @question, :catagory_id => @catagory.id } ) %>
+				
+				<%#= @topic.questions.each do |question| 
+					<%= question.question_content 
+
+						<% question.answers.each do |peanut| 
+							<%= peanut.answer_content
+						 end
+				<% end %>
+				
+			</div>
+		</div>
+	
+	
+		<div class="span2">
+			<%= render 'catagories/cat_topic_nav' %>
+		</div>
+	</div>
+
+</div>

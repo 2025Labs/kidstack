@@ -7,6 +7,7 @@ class CreateCatagories < ActiveRecord::Migration
       t.string :timeline
       t.string :headergraphic
       t.string :video
+      t.string :game_name
       t.text :keypoints
 
       t.timestamps

@@ -17,27 +17,27 @@ class TopicsController < ApplicationController
     @topic = Topic.find(params[:topic_id])
     @catagory = Catagory.find(@topic.catagory_id)
     @questions = @topic.questions.order("id")
-    @question = @questions.first
+    @question = @questions.first 
     
   end
 
-  def quiz_right_answer
-    @topic = Topic.find(params[:topic_id])
-    @catagory = Catagory.find(@topic.catagory_id)
-    @question = @topic.questions.find(params[:id])
-  end
+  #def quiz_right_answer
+   # @topic = Topic.find(params[:topic_id])
+    #@catagory = Catagory.find(@topic.catagory_id)
+    #@question = @topic.questions.find(params[:id])
+  #end
 
-  def quiz_wrong_answer
-    @topic = Topic.find(params[:topic_id])
-    @catagory = Catagory.find(@topic.catagory_id)
-    @question = @topic.questions.find(params[:id])
-    @answer = @question.answers.find(params[:answer_id])
-  end
+  #def quiz_wrong_answer
+   # @topic = Topic.find(params[:topic_id])
+    #@catagory = Catagory.find(@topic.catagory_id)
+    #@question = @topic.questions.find(params[:id])
+    #@answer = @question.answers.find(params[:answer_id])
+  #end
 
-  def quiz_next_question
-    @topic = Topic.find(params[:topic_id])
-    @catagory = Catagory.find(@topic.catagory_id)
-    @question = @topic.questions.find(params[:id])
-  end
+  #def quiz_next_question
+   # @topic = Topic.find(params[:topic_id])
+   # @catagory = Catagory.find(@topic.catagory_id)
+   # @question = @topic.questions.find(params[:id])
+  #end
 
 end
