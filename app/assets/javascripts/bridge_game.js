@@ -283,6 +283,7 @@ var error_sound = document.getElementById("error_sound");
 var tutorial_sound = document.getElementById("tutorial_sound"); 
 var play_sound = document.getElementById("play_sound"); 
 var victory_sound = document.getElementById("victory_sound");
+var success_sound = document.getElementById("success_sound");
 
 
 
@@ -710,8 +711,10 @@ function music(){
 		} else {
 			tutorial_sound.pause();
 			tutorial_sound.currentTime = 0;
-			play_sound.play();
-		}
+			if(state != success) {
+				play_sound.play();
+			} else play_sound.pause();
+		}	
 	}
 }
 
@@ -733,7 +736,7 @@ function draw(){
 	//console.log('loadx: '+ loadx);
 	//console.log('state '+ state);
 	//	console.log('sound '+ sound);
-	//console.log('step: '+ step);
+	console.log('step: '+ step);
 	//console.log('tutor: '+ tutor);
 	///console.log('countdown: '+ countdown);
 
@@ -741,15 +744,15 @@ function draw(){
 
 
 	//console.log('elligibleForPickup: '+ elligibleForPickup());
-	console.log('elligible_for_arrangement '+ elligible_for_arrangement);
+//	console.log('elligible_for_arrangement '+ elligible_for_arrangement);
 
 
 //	if(picItem) console.log('PICUP---------------');
-	if(picItem) console.log('PICUP =' + picItem.name);
+//	if(picItem) console.log('PICUP =' + picItem.name);
 //	if(picItem) console.log('PICUP---------------');
 
 //	if(picItemB) console.log('PICUPB---------------');
-	if(picItemB) console.log('PICUPB =' + picItemB.name);
+	//if(picItemB) console.log('PICUPB =' + picItemB.name);
 //	if(picItemB) console.log('PICUPB---------------');
 	
 	if(state == play){
@@ -1000,7 +1003,9 @@ function drawMenu(){
 }
 
 function slideMenu(){
-	if (mouse.x < menuBox && mdown == false && sliding == false && step > 1 && step != 11&& step != 20){
+	if (mouse.x < menuBox && mdown == false && sliding == false && 
+		step > 1 && step != 8 && step != 11 && step != 20 && step != 10 
+		&& step != 17 && step != 19 && step != 24 && step != 25 && step != 26){
 		state = menu;
 		menu_open();
 	}else if(mdown == true && carry == true && state == menu && mouse.x > menuBox && sliding == false){
@@ -1399,7 +1404,7 @@ function placement(){
 	var xval= 100 + PspaceingSize;
 	//var yval 100;
 	for(var i = 1; i < activePillars.length - 1; i++){
-		context.fillStyle = 'rgba(255,255,0,0.08)';
+		context.fillStyle = 'rgba(255,255,0,0.09)';
 		context.fillRect(xval,canvas.height*3/5 + 60, pwidth,pheight);  
  		context.fill();
  		xval += PspaceingSize;
@@ -1514,6 +1519,7 @@ function testLoad(){
 	moveLoad();
 
 	failSound = true;
+	successSound = true;
 	if (step == 11 || step == 17) step += 1;
 
 	test = true
@@ -1581,6 +1587,8 @@ function successFunc(){
 	car_sound.currentTime = 0;
 	animal_sound.pause();
 	animal_sound.currentTime = 0;
+	if(successSound)success_sound.play();
+	successSound = false;
 
 	if (step == 8) step += 1;
 
@@ -1612,7 +1620,7 @@ function failureFunc(){
 	failSound = false;
 
 
-
+	//if (step == 12) step += 1;
 	//loadx = canvas.width-100;
 	//if(testGo && weightIndex < activeWeights.length -1){ weightIndex += 1; }
 	testGo = false;
@@ -1827,7 +1835,7 @@ document.addEventListener("mousedown", function(){
 
 document.addEventListener("mouseup", function(){ 
 	if(step == 1 || step == 3 || step == 4 || step == 9  || step == 10 
-		|| step == 12  || step == 18 && state == success || step == 21 || step > 23){
+	|| (step == 12 && state == failure) || step == 18 && state == success || step == 21 || step > 23){
 		step += 1;
 	}
 

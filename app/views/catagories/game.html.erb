@@ -93,6 +93,7 @@
 			<%= image_tag("game_art/victory.png", id: "victory_img") %>
 			<%= image_tag("game_art/pause.png", id: "pause_img") %>
 			<%= image_tag("game_art/cant_buy.png", id: "cant_buy_img") %>
+			<%= image_tag("game_art/title.png", id: "title_img") %>
 
 			<%= image_tag("game_art/tutorial_note_1.png", id: "tutorial_note_1_img") %>
 			<%= image_tag("game_art/tutorial_note_2.png", id: "tutorial_note_2_img") %>
@@ -163,6 +164,8 @@
 			<%= audio_tag("game_audio/animal_sound.wav", id: "animal_sound") %>
 			<%= audio_tag("game_audio/fall_sound.wav", id: "fall_sound") %>
 			<%= audio_tag("game_audio/error_sound.wav", id: "error_sound") %>
+			<%= audio_tag("game_audio/success_sound.wav", id: "success_sound") %>
+
 
 			<%= audio_tag("game_audio/tutorial_sound.wav", id: "tutorial_sound") %>
 			<%= audio_tag("game_audio/play_sound.wav", id: "play_sound") %>
@@ -171,9 +174,11 @@
 
 
 		</p>
-		
-<%= javascript_include_tag @catagory.game_name %>
+		<%=javascript_include_tag @catagory.game_name %>
+			
 <%# 		
+ javascript_include_tag "bridge_game.js" 
+ 
  		<%= javascript_tag do 
 		  //Eron Lake 
 //CMPM 20
