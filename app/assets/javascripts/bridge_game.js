@@ -34,7 +34,7 @@ var lheight = 100;
 var iwidth = 30*13/3;
 var iheight = 40*13/3;
 
-loadSpeed = 5;//5
+loadSpeed = 50;//5
 var amountRotated = 0;
 var rotationdir = 'right';
 //movable variables
@@ -249,11 +249,16 @@ var tutorial_note_20_img = document.getElementById('tutorial_note_20_img')
 var tutorial_note_21_img = document.getElementById('tutorial_note_21_img')
 var tutorial_note_22_img = document.getElementById('tutorial_note_22_img')
 var tutorial_note_23_img = document.getElementById('tutorial_note_23_img')
+var tutorial_note_24_img = document.getElementById('tutorial_note_24_img')
+
 
 var arrow_up_img = document.getElementById('arrow_up_img')
 var arrow_right_img = document.getElementById('arrow_right_img')
 var arrow_left_img = document.getElementById('arrow_left_img')
 var arrow_down_img = document.getElementById('arrow_down_img')
+var drag_arrow_1_img = document.getElementById('drag_arrow_1_img')
+var drag_arrow_2_img = document.getElementById('drag_arrow_2_img')
+
 
 
 
@@ -510,7 +515,35 @@ var weightIndex = 0;
 
 //img.onload = function() {
 //};
+scroll_counter = 4;
+scroll_xloc = 0;
+function scrollAnimation(){
+	if(scroll_counter >= 3){
+		//draw up arrow
+		context.drawImage(drag_arrow_1_img,300 - 2*scroll_xloc,20,80,80);
+	} else if(scroll_counter >= 1){
+		//draw down arrow
+		context.drawImage(drag_arrow_2_img,300 - 2*scroll_xloc,20,80,80);
+	} else if (scroll_counter == 0){
+		scroll_counter = 3;
+		scroll_xloc = 0;
+	}
 
+}
+
+function scrollTicker(){
+	if(step == 22){
+		scroll_counter--;
+		console.log("tick");
+	}
+} setInterval(scrollTicker, 1000);
+
+function scrollMover(){
+	if(step == 22 && scroll_counter < 3){
+		scroll_xloc ++;
+		//console.log("tick");
+	}
+} setInterval(scrollMover, 10);
 //-------------------------------------------------------------------
 
 ///////////////////////////////////////////////
@@ -530,6 +563,7 @@ function tutorial(){
 	//	context.fillText('click the screen for next! ',canvas.width/2 - 150, canvas.height/2 + 60 );
 	//	context.fill();
 		context.drawImage(tutorial_note_1_img,canvas.width/2 - 150,canvas.height/2 -100,400,200);
+		//scrollAnimation();
 	}if(step == 2){ 
 	//	context.fillText('Oh look we have our first traveller! ',canvas.width/2 - 150, canvas.height/2);
 	//	context.fillText('We have to build our bridge span ',canvas.width/2 - 150, canvas.height/2 + 30 );
@@ -597,7 +631,7 @@ function tutorial(){
 	//	context.fillText('you can also press enter to send the traveller accross',canvas.width/2 - 150, canvas.height/2 + 30 );
 	//	context.fill();
 		context.drawImage(tutorial_note_10_img,canvas.width/2 - 150,canvas.height/2 -100,400,200);
-		context.drawImage(arrow_up_img,120, 100,100,100);
+		context.drawImage(arrow_up_img,420, 95,100,100);
 	}
 	if(step == 12){ 
 		arrow = true;
@@ -643,7 +677,8 @@ function tutorial(){
 	}
 	if(step == 17){ 
 	//	context.fillText('Great job! now lets see if it the traveler makes it accross   ',canvas.width/2 - 150, canvas.height/2);
-		context.drawImage(tutorial_note_15_img,canvas.width/2 - 150,canvas.height/2 -100,400,150);
+		context.drawImage(tutorial_note_15_img,canvas.width/2 - 150,canvas.height/2 -100,400,200);
+		context.drawImage(arrow_up_img,420, 95,100,100);
 
 		
 		tutor = false;
@@ -685,6 +720,7 @@ function tutorial(){
 	//	context.fillText('press and drag anywhere in the shop to scroll the the side',canvas.width/2 - 150, canvas.height/2 + 30 );
 	////	context.fill();
 		context.drawImage(tutorial_note_20_img,canvas.width/2 - 150,canvas.height/2 -100,400,200);
+		scrollAnimation();
 	//	context.drawImage(tutorial_note_15_img,canvas.width/2 - 150,canvas.height/2 -100,400,150);
 	}
 	if(step == 23){ 
@@ -965,8 +1001,8 @@ function drawObjects(){
 }
 
 function drawButtons(){
-	context.drawImage(go_button_img,120,20, 100,70);
-	context.drawImage(pause_button_img,240,20, 100,70);
+	context.drawImage(go_button_img,420,20, 100,70);
+	context.drawImage(pause_button_img,540,20, 100,70);
 	//context.drawImage(tips_button_img,360,20, 100,70);
 
 
@@ -1772,18 +1808,24 @@ function placePillars(){
 			if((xval -30 < mouse.x  && mouse.x < xval + pwidth/2 + 40) && 
 				(canvas.height*3/5 + 60 < mouse.y && mouse.y < canvas.height*3/5 + 60 + pheight/2) &&
 				onEnd == false && activePillars[i].name != 'end'){
-	 			console.log('add to the active list');
-	 			activePillars.splice(i, 1, picItem);
-	 			worked = true;
-	 			holding = false;
-	 			arranging = false;
-	 			place();
-	 			if(step == 16) step += 1;
-	 			picItem = null;  
-	 			//activePillars[i] = picItem;
-	 		//	context.fill();
+				if(activePillars[i].name != 'end' && activePillars[i].name != 'empty' ){
+	//		context.font = "small-caps bold 25px Trebuchet MS";
+   	//		context.fillStyle = 'red';
+	//		context.drawImage(cant_buy_img,70,30);
+		}else {
+		 			console.log('add to the active list');
+		 			activePillars.splice(i, 1, picItem);
+		 			worked = true;
+		 			holding = false;
+		 			arranging = false;
+		 			place();
+		 			if(step == 16) step += 1;
+		 			picItem = null;  
+		 			//activePillars[i] = picItem;
+		 		//	context.fill();
+		 		}
 			}	
-			xval += PspaceingSize;
+				xval += PspaceingSize;
 		}  
 		if(worked == false && arranging == true){
 			//this makes the pillar return to its original place
@@ -1824,6 +1866,11 @@ function placeBridges(){
 	var worked = false;
 	if((mouse.x > 100 && mouse.x < canvas.width) &&
 			(canvas.height*3/5 < mouse.y && mouse.y < canvas.height*3/5 + pheight/2 + 10)){
+		if(activeBridge.name != 'end' && activeBridge.name != 'empty' ){
+	//		context.font = "small-caps bold 25px Trebuchet MS";
+   	//		context.fillStyle = 'red';
+	//		context.drawImage(cant_buy_img,70,30);
+		}else {
 			console.log('add to the active list');
 			activeBridge = picItemB;
 			worked = true;
@@ -1833,7 +1880,8 @@ function placeBridges(){
 			if(step == 7) step += 1;  
 			picItemB = null;
 			//activePillars[i] = picItem;
-		//	context.fill();
+			//	context.fill();
+		}
 	}	
 	if(worked == false && arranging == true){
 		//this makes the pillar return to its original place
@@ -1936,16 +1984,16 @@ document.addEventListener("mouseup", function(){
 
 
 	if(state == play){
-		if((240 < mouse.x && mouse.x < 340) &&
+		if((540 < mouse.x && mouse.x < 640) &&
 			(20 < mouse.y && mouse.y < 90)){
 			pauseButton();
 		//240,20, 100,60
-		}else if((120 < mouse.x && mouse.x < 220) &&
+		}else if((420 < mouse.x && mouse.x < 520) &&
 			(20 < mouse.y && mouse.y < 90)){
 			goButton();
 		}
 	}else if(state == pause){
-		if((240 < mouse.x && mouse.x < 340) &&
+		if((540 < mouse.x && mouse.x < 640) &&
 			(20 < mouse.y && mouse.y < 90)){
 			pauseButton();
 		}
