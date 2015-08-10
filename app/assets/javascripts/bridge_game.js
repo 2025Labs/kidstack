@@ -92,7 +92,7 @@ var countdown = 30;
 var money = 500;// the problem with the money is the reult of nath with the 
 //prize money from the object that doesnt exist(the last black one)
 noMoney = false;
-promptcount = 50;
+promptcount = 20;
 //variabls for subtraction animation
 var subMoney = false;
 var subLoc = {x:100, y:100};
@@ -104,6 +104,9 @@ var addLoc = {x:100, y:100};
 var addCount = 50;
 var addAmount = 100;
 
+var money_add_check = false;
+var money_sub_check = true; 
+
 var holding = false;
 var arranging = false;
 var elligible_for_arrangement = false; 
@@ -111,7 +114,10 @@ var elligible_for_arrangement = false;
 var onEnd = false;
 
 var winAfter = false;
-victory_lap = true;
+var victory_lap = true;
+var success_bool = false;
+var result_time = 2;
+
 /////////////////////////////////////////////
 //GAME STATES
 var state = 1;
@@ -205,6 +211,8 @@ var menu_end2_img = document.getElementById('menu_end2_img')
 var menu_title_img = document.getElementById('menu_title_img')
 var menu_pillar_img = document.getElementById('menu_pillar_img')
 var menu_bridge_img = document.getElementById('menu_bridge_img')
+var menu_label_img = document.getElementById('menu_label_img')
+
 var background_img = document.getElementById('background_img')
 var background2_img = document.getElementById('background2_img')
 var success_img = document.getElementById('success_img')
@@ -212,6 +220,10 @@ var fail_img = document.getElementById('fail_img')
 var victory_img = document.getElementById('victory_img')
 var pause_img = document.getElementById('pause_img')
 var cant_buy_img = document.getElementById('cant_buy_img')
+
+var go_button_img = document.getElementById('go_button_img')
+var pause_button_img = document.getElementById('pause_button_img')
+var tips_button_img = document.getElementById('tips_button_img')
 
 
 var tutorial_note_1_img = document.getElementById('tutorial_note_1_img')
@@ -278,7 +290,9 @@ var money_add_sound = document.getElementById("money_add_sound");
 var money_subtract_sound = document.getElementById("money_subtract_sound"); 
 var place_sound = document.getElementById("place_sound"); 
 var animal_sound = document.getElementById("animal_sound"); 
-var error_sound = document.getElementById("error_sound"); 
+var error_sound = document.getElementById("error_sound");
+var button_sound = document.getElementById("button_sound");
+
 
 var tutorial_sound = document.getElementById("tutorial_sound"); 
 var play_sound = document.getElementById("play_sound"); 
@@ -351,16 +365,16 @@ function  place(){
 var emptyB = Bridge('empty',0,empty_bridge_img,0,marshMellow_pillar_item_img);
 
 //var rockB = Bridge('rock',1000,'red',500);
-var marshmellowB = Bridge('marshM',1000,marshMellow_bridge_img,500,marshMellow_bridge_item_img);
-var rubberB = Bridge('rubber',1500,rubber_bridge_img,750,rubber_bridge_item_img);
-var plasticB = Bridge('plastic',2000,plastic_bridge_img,1000,plastic_bridge_item_img);
-var woodB = Bridge('wood',3000,wood_bridge_img,1500,wood_bridge_item_img);
-var rockB = Bridge('rock',3500,rock_bridge_img,2000,rock_bridge_item_img);
-var ironB = Bridge('iron',4500,iron_bridge_img,2500,iron_bridge_item_img);
-var steelB = Bridge('steel',5000,steel_bridge_img,3000,steel_bridge_item_img);
-var goldB = Bridge('gold',6500,gold_bridge_img,3750,gold_bridge_item_img);
-var platinumB = Bridge('platinum',8000,platinum_bridge_img,4500,platinum_bridge_item_img);
-var nanomeshB = Bridge('nanomesh',10000,nanomesh_bridge_img,6000,nanomesh_bridge_item_img);
+var marshmellowB = Bridge('marshM',2000,marshMellow_bridge_img,500,marshMellow_bridge_item_img);
+var rubberB = Bridge('rubber',3000,rubber_bridge_img,750,rubber_bridge_item_img);
+var plasticB = Bridge('plastic',4000,plastic_bridge_img,1000,plastic_bridge_item_img);
+var woodB = Bridge('wood',6000,wood_bridge_img,1500,wood_bridge_item_img);
+var rockB = Bridge('rock',7000,rock_bridge_img,2000,rock_bridge_item_img);
+var ironB = Bridge('iron',9000,iron_bridge_img,2500,iron_bridge_item_img);
+var steelB = Bridge('steel',10000,steel_bridge_img,3000,steel_bridge_item_img);
+var goldB = Bridge('gold',13000,gold_bridge_img,4000,gold_bridge_item_img);
+var platinumB = Bridge('platinum',16000,platinum_bridge_img,5000,platinum_bridge_item_img);
+var nanomeshB = Bridge('nanomesh',20000,nanomesh_bridge_img,6000,nanomesh_bridge_item_img);
 //-----------------------------------------------------------
 //pushes the item onto the menu list of bridges
 var menuBridges = [get(marshmellowB)]; 
@@ -382,16 +396,16 @@ menuBridges.push(get(nanomeshB));
 var emptyp = Pillar('empty',0,empty_pillar_img,0);
 var endP = Pillar('end',100,empty_pillar_img,50);
 
-var marshmellowP = Pillar('marshM',20,marshMellow_pillar_img,5,marshMellow_pillar_item_img);
-var rubberP = Pillar('rubber',60,rubber_pillar_img,15,rubber_pillar_item_img);
-var plasticP = Pillar('plastic',120,plastic_pillar_img,30,plastic_pillar_item_img);
-var woodP = Pillar('wood',200,wood_pillar_img,50,wood_pillar_item_img);
-var rockP = Pillar('rock',300,rock_pillar_img,75,rock_pillar_item_img);
-var ironP = Pillar('iron',400,iron_pillar_img,100,iron_pillar_item_img);
-var steelP = Pillar('steel',600,steel_pillar_img,150,steel_pillar_item_img);
-var goldP = Pillar('gold',800,gold_pillar_img,200,gold_pillar_item_img);
-var platinumP = Pillar('platinum',1200,platinum_pillar_img,300,platinum_pillar_item_img);
-var nanomeshP = Pillar('nanomesh',2400,nanomesh_pillar_img,600,nanomesh_pillar_item_img);
+var marshmellowP = Pillar('marshM',50,marshMellow_pillar_img,100,marshMellow_pillar_item_img);//$5
+var rubberP = Pillar('rubber',400,rubber_pillar_img,120,rubber_pillar_item_img);//$15
+var plasticP = Pillar('plastic',700,plastic_pillar_img,140,plastic_pillar_item_img);//$30
+var woodP = Pillar('wood',1200,wood_pillar_img,160,wood_pillar_item_img);//$50
+var rockP = Pillar('rock',2800,rock_pillar_img,180,rock_pillar_item_img);//$75
+var ironP = Pillar('iron',3500,iron_pillar_img,200,iron_pillar_item_img);//$100
+var steelP = Pillar('steel',5000,steel_pillar_img,240,steel_pillar_item_img);//$150
+var goldP = Pillar('gold',6500,gold_pillar_img,280,gold_pillar_item_img);//$200
+var platinumP = Pillar('platinum',8000,platinum_pillar_img,300,platinum_pillar_item_img);//$300
+var nanomeshP = Pillar('nanomesh',10000,nanomesh_pillar_img,400,nanomesh_pillar_item_img);//$600
 
 //-----------------------------------------------------------
 //pushes the item onto the menu list of pillars
@@ -414,24 +428,25 @@ menuPillars.push(get(nanomeshP));
 //LiveLoad types
 /////////////////////////////////////////
 //-----------------------------------------------------------
-var butterfly = LiveLoad('butterfly',1,15,butterfly_img,30,50); //30
-var rabbit = LiveLoad('rabbit',2,21,rabbit_img,50,70);
-var chicken = LiveLoad('chicken',3,40,chicken_img,80,80);
-var dog = LiveLoad('dog',4,60,dog_img,80,90);
-var horse = LiveLoad('horse',5,80,horse_img,160,110);
-var cow = LiveLoad('cow',6,100,cow_img,200,140);
-var elephant = LiveLoad('cat',7,120,elephant_img,240,150);
-var small_car = LiveLoad('small_car',8,150,small_car_img,300,150);
-var small_car2 = LiveLoad('small_car2',9,160,small_car2_img,320,160);
-var medium_car = LiveLoad('medium_car',10,200,medium_car_img,400,170);
-var medium_car2 = LiveLoad('medium_car2',11,250,medium_car2_img,500,180);
-var large_car = LiveLoad('large_car',12,300,large_car_img,600,190);
-var large_car2 = LiveLoad('large_car2',13,350,large_car2_img,700,230);
-var truck1 = LiveLoad('truck1',14,400,truck1_img,800,170);
-var truck2 = LiveLoad('truck2',15,500,truck2_img,1000,190);
-var truck3 = LiveLoad('truck3',16,700,truck3_img,1400,230);
-var truck4 = LiveLoad('truck4',17,850,truck4_img,1700,280);
-var truck5 = LiveLoad('truck5',18,1000,truck5_img,2000,320);
+var butterfly = LiveLoad('butterfly',1,60,butterfly_img,100,50); //30
+var rabbit = LiveLoad('rabbit',2,130,rabbit_img,110,70);
+var chicken = LiveLoad('chicken',3,250,chicken_img,120,80);
+var dog = LiveLoad('dog',4,300,dog_img,130,90);
+var horse = LiveLoad('horse',5,400,horse_img,150,110);
+var cow = LiveLoad('cow',6,550,cow_img,180,140);
+var elephant = LiveLoad('cat',7,850,elephant_img,200,150);
+var small_car = LiveLoad('small_car',8,1100,small_car_img,230,150);
+var small_car2 = LiveLoad('small_car2',9,1600,small_car2_img,280,160);
+var medium_car = LiveLoad('medium_car',10,2000,medium_car_img,300,170);
+var medium_car2 = LiveLoad('medium_car2',11,2400,medium_car2_img,450,180);
+var large_car = LiveLoad('large_car',12,3000,large_car_img,500,190);
+var large_car2 = LiveLoad('large_car2',13,4000,large_car2_img,600,230);
+var truck1 = LiveLoad('truck1',14,5000,truck1_img,800,170);
+var truck2 = LiveLoad('truck2',15,6500,truck2_img,1000,190);
+var truck3 = LiveLoad('truck3',16,8000,truck3_img,1400,230);
+var truck4 = LiveLoad('truck4',17,10000,truck4_img,1800,280);
+var truck5 = LiveLoad('truck5',18,13000,truck5_img,2000,320);
+
 
 
 
@@ -551,11 +566,17 @@ function tutorial(){
 	//	context.fillText('where the arrow is pointing  ',canvas.width/2 - 150, canvas.height/2 + 60 );
 	//	context.fill();
 		context.drawImage(tutorial_note_6_img,canvas.width/2 - 150,canvas.height/2 -100,400,200);
+		context.drawImage(arrow_right_img,canvas.width - 250,400,100,100);
 	}if(step == 7){ 
+		if(menuBox == 100){
 	//	context.fillText('bridge span place here!',canvas.width/2 - 150, canvas.height/2 + 30 );
 	//	context.fill();
-		context.drawImage(tutorial_note_7_img,canvas.width/2 - 150,canvas.height/2 -100,400,150);
-		context.drawImage(arrow_up_img,canvas.width/2, canvas.height - 200,100,100);
+			context.drawImage(tutorial_note_7_img,canvas.width/2 - 150,canvas.height/2 -100,400,150);
+			context.drawImage(arrow_up_img,canvas.width/2, canvas.height - 200,100,100);
+		} else {
+			//NEEDS ANOTHER HINT
+			context.drawImage(tutorial_note_6_img,canvas.width/2 - 150,canvas.height/2 -100,400,200);
+		}
 	}
 	if(step == 8){ 
 	//	context.fillText('alright here comes our first customer!',canvas.width/2 - 150, canvas.height/2 + 30 );
@@ -576,6 +597,7 @@ function tutorial(){
 	//	context.fillText('you can also press enter to send the traveller accross',canvas.width/2 - 150, canvas.height/2 + 30 );
 	//	context.fill();
 		context.drawImage(tutorial_note_10_img,canvas.width/2 - 150,canvas.height/2 -100,400,200);
+		context.drawImage(arrow_up_img,120, 100,100,100);
 	}
 	if(step == 12){ 
 		arrow = true;
@@ -609,8 +631,12 @@ function tutorial(){
 	if(step == 16){ 
 	//	context.fillText('place here!',canvas.width/2 - 150, canvas.height/2 + 30 );
 	//	context.fill();
-		context.drawImage(tutorial_note_14_img,canvas.width/2 - 150,canvas.height/2 -100,400,150);
-		context.drawImage(arrow_down_img,canvas.width/2, canvas.height - 300,100,100);
+		if(menuBox == 100){
+			context.drawImage(tutorial_note_14_img,canvas.width/2 - 150,canvas.height/2 -100,400,150);
+			context.drawImage(arrow_down_img,canvas.width/2, canvas.height - 300,100,100);
+		} else {
+			context.drawImage(tutorial_note_13_img,canvas.width/2 - 150,canvas.height/2 -100,400,200);
+		}
 		countdown = 30;
 		wpos.x = -350;
 		wpos.y = 200;
@@ -705,15 +731,19 @@ function music(){
 		if(victory_lap == true) victory_sound.play();
 		victory_lap = false;
 	}else {
-		if (step < 26) {
+		if (step < 26 || state == pause) {
+			play_sound.pause();
 			tutorial_sound.play();
 
 		} else {
 			tutorial_sound.pause();
 			tutorial_sound.currentTime = 0;
+			play_sound.play();
+			/*
 			if(state != success) {
 				play_sound.play();
 			} else play_sound.pause();
+			*/
 		}	
 	}
 }
@@ -732,13 +762,15 @@ function draw(){
 	//console.log('wi'+ weightIndex);
 	//console.log('length'+ activeWeights.length);
 //	console.log('arranging: '+ arranging);
-//	console.log('holding: '+ holding);
+	//console.log('holding: '+ holding);
 	//console.log('loadx: '+ loadx);
 	//console.log('state '+ state);
 	//	console.log('sound '+ sound);
-	console.log('step: '+ step);
+	//console.log('step: '+ step);
 	//console.log('tutor: '+ tutor);
 	///console.log('countdown: '+ countdown);
+//	console.log('addMoney: '+ addMoney);
+	//console.log('end1: '+ activePillars[0].name);
 
 
 
@@ -835,10 +867,11 @@ function draw(){
 		//console.log('_________'+ state);
 	}if(state == pause){
 		background();
+		drawAnimation();
 		drawObjects();
-		pauseScreen();
 		drawMenu();
 		moneyDisplay();
+		pauseScreen();
 
 	}if(state == success){
 		//moneyDisplay();
@@ -895,24 +928,27 @@ function background(){
 	//context.fill();
 }
 
-function timerAnimation(){
+function drawAnimation(){
 	context.save();
    	context.translate(200, 0);     
    	context.scale(-1, 1);
 	context.drawImage(activeWeights[weightIndex].picture,wpos.x,wpos.y,100,100);
 	context.restore();
+	if(countdown > 25)context.drawImage(background2_img,100,0,canvas.width -100,canvas.height);
+}
 
+function timerAnimation(){
+	drawAnimation();
 	if (countdown > 25){
 		wpos.y -=.6; 
 	} else if (countdown <= 25){
 		wpos.y +=.6; 
 		wpos.x +=-.5; 
 	}
-	if(countdown > 25)context.drawImage(background2_img,100,0,canvas.width -100,canvas.height);
+	//if(countdown > 25)context.drawImage(background2_img,100,0,canvas.width -100,canvas.height);
 	
-	if(countdown <= 0 && step > 7 && tutor == false){
+	if(countdown <= 0 && step > 7 && tutor == false && state == play && fakeMenu == 100){
 		testGo = true;
-		state = play;
 	} 
 }
 
@@ -924,7 +960,16 @@ setInterval(timerCount, 1000);
 function drawObjects(){
 	drawBridge(activeBridge);
 	drawPillars(activePillars);
+	drawButtons();
 	//drawLoad(activeBridge);
+}
+
+function drawButtons(){
+	context.drawImage(go_button_img,120,20, 100,70);
+	context.drawImage(pause_button_img,240,20, 100,70);
+	//context.drawImage(tips_button_img,360,20, 100,70);
+
+
 }
 
 function pauseScreen(){
@@ -934,7 +979,9 @@ function pauseScreen(){
    // context.fillStyle = 'red';
    // context.fillText("PAUSE", canvas.width/2, canvas.height/2);
 	//context.fill();
-	context.drawImage(pause_img,canvas.width/2 - 150, canvas.height/2 -100,400,150);
+	context.fillStyle = 'rgba(0, 0, 0, 0.2)';
+	context.fillRect(0,0, canvas.width,canvas.height);  
+	context.drawImage(pause_img,canvas.width/2 - 100, canvas.height/2 -50,300,100);
 }
 
 function drawMenu(){
@@ -995,10 +1042,12 @@ function drawMenu(){
 	
 	if(fakeMenu <= 100){
 		context.drawImage(menu_end_img,fakeMenu -100,0, 100,canvas.height);
+		context.drawImage(menu_label_img,fakeMenu -100,0, 100,canvas.height);
 	}else{
 		context.drawImage(menu_end2_img,0,-4, 50,canvas.height +8);
 		context.drawImage(menu_end_img,fakeMenu -100,0, 100 + fakeMenu/20,canvas.height);
-		
+		if(fakeMenu <= 300) { context.drawImage(menu_label_img,fakeMenu -100,0, 100,canvas.height);
+		}else context.drawImage(menu_label_img,fakeMenu -80,0, 100,canvas.height);
 	}
 }
 
@@ -1008,16 +1057,20 @@ function slideMenu(){
 		&& step != 17 && step != 19 && step != 24 && step != 25 && step != 26){
 		state = menu;
 		menu_open();
-	}else if(mdown == true && carry == true && state == menu && mouse.x > menuBox && sliding == false){
-		if (step == 6 || step == 15) step += 1;
-		state = put;
-		menu_close();
+	}else if(mdown == true && carry == true && holding == true && state == menu && mouse.x > menuBox && sliding == false){
+		if (step == 6 || step == 7 ||step == 15 ||step == 16  || step > 25) {
+			if(step == 6 || step == 15) step += 1;
+			state = put;
+			menu_close();
+		}
 	}else if(state == menu && mouse.x > menuBox && sliding == false){
-		if (step == 23) step += 1; 
 		picItem = null;
 		picItemB = null;
-		state = play;
-		menu_close();
+		if (step == 23 || step > 25) {
+			state = play;
+			menu_close();
+		}
+		if (step == 23) step += 1; 
 	}else if(state == put && mouse.x < menuBox && sliding == false){
 		state = menu;
 		menu_open();
@@ -1044,6 +1097,7 @@ function drawItem(){
 		    drawI(menuPillars[i].item,itemx,itemy);
 		    if(fakeMenu >= 200) context.drawImage(menu_end2_img,0,-4, 50,canvas.height +8);
 		    context.drawImage(menu_end_img,fakeMenu -100,0, 140,canvas.height);
+		    context.drawImage(menu_label_img,fakeMenu -80,0, 100,canvas.height);
 		 
 
 		   // context.fillRect(itemx,itemy, pwidth/2,pheight/2);  
@@ -1070,6 +1124,7 @@ function drawItemB(){
 		  drawI(menuBridges[i].item,itemx,itemy + 30);
 		   if(fakeMenu >= 200) context.drawImage(menu_end2_img,0,-4, 50,canvas.height +8);
 		  context.drawImage(menu_end_img,fakeMenu -100,0, 140,canvas.height);
+		   context.drawImage(menu_label_img,fakeMenu -80,0, 100,canvas.height);
 
 		  //  context.fillRect(itemx,itemy + 30, bwidth/10,bheight/5);  
 		 //    context.fillStyle = 'red';
@@ -1171,11 +1226,11 @@ function elligibleForPickup(){
 }
 
 function pickup(){
-	if(elligibleForPickup() && step > 4){
+	if(elligibleForPickup() && step > 4 && mouse.x < 700){
 			 console.log('pickup'); 
 			 carry = true;
 	}
-	if(picItem && step > 5) {
+	if(picItem && step > 6) {
 		pickupCheck(picItem)
 	} else if(picItemB) {
 		pickupCheck(picItemB)
@@ -1196,21 +1251,23 @@ function pickupCheck(picItem){
 
 			  	//this portion allows the subtractMoney() to work
 			  	//------------------------------------------------
-			  	if(subMoney == false & holding == false & state == menu){
-				  	subLoc.x = mouse.x - pwidth/2;
-				  	subLoc.y = mouse.y - pheight/2;
-				  	console.log('subAmount');
+			  	if(holding == false && state == menu){
+				  	if(subMoney == false){
+					  	subLoc.x = mouse.x - pwidth/2;
+					  	subLoc.y = mouse.y - pheight/2;
+					  	console.log('subAmount');
+					  	subCount = 50;
+				  	}
 				  	subAmount = picItem.price;
-				  	money -= subAmount;
-				  	subCount = 50;
-			  	}
+					money -= subAmount;
+			 	}
 			    if(subAmount > 0) subMoney = true;
 			  	holding = true;
 			  	//------------------------------------------------
 			  	
 		 	} else {
 		 		noMoney = true;
-		 		promptcount = 50;
+		 		promptcount = 10;
 		 	}
 		}		
 	//************************************************************
@@ -1232,21 +1289,23 @@ function pickupCheck(picItem){
 
 			  	//this portion allows the subtractMoney() to work
 			  	//------------------------------------------------
-			  	if(subMoney == false & holding == false & state == menu){
-				  	subLoc.x = mouse.x - bwidth/2;
-				  	subLoc.y = mouse.y - bheight/2;
-				  	console.log('subAmount');
+			  	if(holding == false && state == menu){
+				  	if(subMoney == false ){
+					  	subLoc.x = mouse.x - bwidth/2;
+					  	subLoc.y = mouse.y - bheight/2;
+					  	console.log('subAmount');
+					  	subCount = 50;
+				  	}
 				  	subAmount = picItemB.price;
-				  	money -= subAmount;
-				  	subCount = 50;
-			  	}
+					money -= subAmount;
+				}
 			  	if(subAmount > 0) subMoney = true;
 			  	holding = true;
 			  	//------------------------------------------------
 			  	
 		 	} else {
 		 		noMoney = true;
-		 		promptcount = 50;
+		 		promptcount = 10;
 		 	}
 		}			
 	}
@@ -1258,18 +1317,20 @@ function holdItem(){
 		holding = false;
 	//this portion allows the addToMoney() to work
   	//------------------------------------------------
+  //	if(money_add_check == true)
 	  	if(addMoney == false){
 		  	addLoc.x = mouse.x - pwidth/2;
 		  	addLoc.y = mouse.y - pheight/2;
 		  	console.log('subAmount');
-		  	if (picItem) {
+		  	addCount = 50;
+	  	}
+	  	if (picItem) {
 		  		addAmount = picItem.price;
 		  	} else if (picItemB){ 
 		  		addAmount = picItemB.price;
 		  	}
 		  	money += addAmount;
-		  	addCount = 50;
-	  	}
+
   		addMoney = true;
   		arranging = false;
  // 		picItem = null;
@@ -1291,6 +1352,9 @@ function cantBuy(){
 	if(noMoney == true && promptcount > 0) {
 		promptcount -= 1;
 		context.drawImage(cant_buy_img,70,30);
+		picItemB = null;
+  		picItem = null;
+  		holding = false;
 		//context.fillText('sorry, not enough money', canvas.width/2 -70, 50);
 
 		if (errorSound) error_sound.play();
@@ -1317,7 +1381,7 @@ function subtractMoney(){
 function addToMoney(){
 	context.font = "small-caps bold 20px Trebuchet MS";
     context.fillStyle = 'green';
-	if(addMoney == true && addCount > 0){
+	if(addMoney == true && addCount > 0 ){
 		addCount  -= 2;
 		context.fillText('+$'+addAmount, addLoc.x, addLoc.y + addCount);
 		money_add();
@@ -1404,7 +1468,7 @@ function placement(){
 	var xval= 100 + PspaceingSize;
 	//var yval 100;
 	for(var i = 1; i < activePillars.length - 1; i++){
-		context.fillStyle = 'rgba(255,255,0,0.09)';
+		context.fillStyle = 'rgba(255,255,0,0.5)';
 		context.fillRect(xval,canvas.height*3/5 + 60, pwidth,pheight);  
  		context.fill();
  		xval += PspaceingSize;
@@ -1550,10 +1614,11 @@ function testLoad(){
 			}
 //console.log('fa');
 //console.log('locB'+locB);
-			if(locB <loadx && loadx < locA - ((locA-locB)/2)){
+			//this line make the test fail in the center of the two pillars
+			if(locB <loadx && loadx < locA - ((locA-locB)/2)){//- ((activeWeights[weightIndex].s))
 //console.log('f');
 				support = activeBridge.load + pilA + pilB;
-				distance = (locA - locB)/15;
+				distance = (locA - locB)/50; //originally divided by 15
 
 				totalS = support/distance;
 
@@ -1587,13 +1652,17 @@ function successFunc(){
 	car_sound.currentTime = 0;
 	animal_sound.pause();
 	animal_sound.currentTime = 0;
-	if(successSound)success_sound.play();
-	successSound = false;
 
 	if (step == 8) step += 1;
 
 	loadx = canvas.width-100;
-	if(testGo) { money += activeWeights[weightIndex].reward; }
+	if(testGo) {
+			money += activeWeights[weightIndex].reward; 
+			addAmount = activeWeights[weightIndex].reward;
+			addLoc.x = 800;
+			addLoc.y = 50;
+	}
+
 	if(testGo && weightIndex < activeWeights.length -1){ weightIndex += 1; }
 	testGo = false;
 	//context.font = "small-caps bold 120px Trebuchet MS";
@@ -1602,7 +1671,10 @@ function successFunc(){
 		state = win;
 	} else {
 		//context.fillText('SUCCESS!',canvas.width/2 - 200, canvas.height/2);
+		if(successSound) success_sound.play();
+		successSound = false;
 		context.drawImage(success_img,canvas.width/2 - 200, canvas.height/2 -110,900,180);
+		success_bool = true;
 	}
 	//context.fill();
 } 
@@ -1697,9 +1769,9 @@ function placePillars(){
 	var xval= 100;
 		var worked = false;
 		for(var i = 0; i < activePillars.length; i++){
-			if((xval + 10 < mouse.x  && mouse.x < xval + pwidth/2 + 10) && 
+			if((xval -30 < mouse.x  && mouse.x < xval + pwidth/2 + 40) && 
 				(canvas.height*3/5 + 60 < mouse.y && mouse.y < canvas.height*3/5 + 60 + pheight/2) &&
-				onEnd == false){
+				onEnd == false && activePillars[i].name != 'end'){
 	 			console.log('add to the active list');
 	 			activePillars.splice(i, 1, picItem);
 	 			worked = true;
@@ -1796,9 +1868,9 @@ addEventListener("keydown", function(key){
         testGo = true;
     }
 });
-
+/*
 addEventListener("keydown", function(key){ 
-    if(key.keyCode == 80 && state == play){//27 for escape
+    if(key.keyCode == 80 && state == play && fakeMenu == 100){//27 for escape
     	console.log("ppppppppppaaaaaaaaaaaauuuseeeeeee");
     	step = 30
     	tutor = false;
@@ -1808,7 +1880,26 @@ addEventListener("keydown", function(key){
         state = play ;
     }
 });
+*/
 
+function pauseButton(){
+	 if(state == play && fakeMenu == 100 && testGo == false){
+	 	button_sound.play();
+    	step = 30
+    	tutor = false;
+        state = pause;
+    }else  if(state == pause){
+    	button_sound.play();
+        state = play ;
+    }
+}
+
+function goButton(){
+	 if(state == play && testGo == false && step > 5 && tutor == false && step != 10){
+	 	button_sound.play();
+        testGo = true;
+    }
+}
 
 document.addEventListener('mousemove', function(e){ 
 	var rect = canvas.getBoundingClientRect();
@@ -1834,33 +1925,74 @@ document.addEventListener("mousedown", function(){
 });
 
 document.addEventListener("mouseup", function(){ 
-	if(step == 1 || step == 3 || step == 4 || step == 9  || step == 10 
-	|| (step == 12 && state == failure) || step == 18 && state == success || step == 21 || step > 23){
+	if(step == 1 || step == 3 || step == 4  || step == 10 
+	  || step == 21 || step > 23){
 		step += 1;
 	}
 
 	mdown = false;
   	carry = false;
-  	if(state == success || state == failure) {
-  		loadx = canvas.width-100;
-  		loady = canvas.height*3/5
-  		state = play;
-  		amountRotated = 0;
-  	}
+  	finishResult();
+
 
 	if(state == play){
-	
-	}if(state == menu){
+		if((240 < mouse.x && mouse.x < 340) &&
+			(20 < mouse.y && mouse.y < 90)){
+			pauseButton();
+		//240,20, 100,60
+		}else if((120 < mouse.x && mouse.x < 220) &&
+			(20 < mouse.y && mouse.y < 90)){
+			goButton();
+		}
+	}else if(state == pause){
+		if((240 < mouse.x && mouse.x < 340) &&
+			(20 < mouse.y && mouse.y < 90)){
+			pauseButton();
+		}
+	}
+
+	if(state == menu){
 		
 	}if(state == put){
 		if (picItem) placePillars();
 		else if (picItemB) placeBridges();
 		state = play;
 		//picItem = emptyp;
-
-
 	}
 });
+
+function finishResult(){
+	if(state == success || state == failure) {
+  		loadx = canvas.width-100;
+  		loady = canvas.height*3/5
+  		if((step == 12 && state == failure) || 
+  			(step == 18  || step == 9 && state == success)) step += 1;
+  		state = play;
+  		result_time = 2;
+  		amountRotated = 0;
+  		
+
+  		if(success_bool == true){
+  			addCount = 50;
+  			addMoney = true;
+			addToMoney();
+			success_bool = false;
+		}
+  	}
+}
+
+function resultTimer(){
+	if(state == success || state == failure) {
+		if(result_time <= 0){
+			finishResult();
+			//result_time = 2;
+		} else {
+			result_time--;
+		}
+	}		
+}
+setInterval(resultTimer, 1000);
+
 
 function drawP(img,xloc,yloc){
 	context.drawImage(img,xloc,yloc,pwidth,pheight);
