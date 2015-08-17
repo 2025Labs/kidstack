@@ -34,7 +34,7 @@ var lheight = 100;
 var iwidth = 30*13/3;
 var iheight = 40*13/3;
 
-loadSpeed = 50;//5
+loadSpeed = 5;//5
 var amountRotated = 0;
 var rotationdir = 'right';
 //movable variables
@@ -56,6 +56,10 @@ var BspaceingSize = 100;
 var test = false;
 var testGo = false;
 var pass =true;
+var instruct = false;
+
+
+var replace_time = 0;
 //---------------------------
 //mouse variables
 
@@ -118,9 +122,12 @@ var victory_lap = true;
 var success_bool = false;
 var result_time = 2;
 
+var replay_tick = 10;
+var fail_count = 0;
+
 /////////////////////////////////////////////
 //GAME STATES
-var state = 1;
+var state = 1//1;
 //----------------
 //possible states
 var play = 1;
@@ -130,6 +137,8 @@ var success = 4;
 var failure = 5;
 var pause = 6;
 var win = 7;
+var replay = 8
+var hint = 9
 // var test = 7;***********************************
 /////////////////////////////////////////////
 
@@ -137,6 +146,9 @@ var win = 7;
 /////////////////////////////////////////
 //Image uploads
 var empty_pillar_img = document.getElementById('empty_pillar_img')
+var outline_pillar_1_img = document.getElementById('outline_pillar_1_img')
+var outline_pillar_2_img = document.getElementById('outline_pillar_2_img')
+
 
 
 var marshMellow_pillar_img = document.getElementById('marshMellow_pillar_img')
@@ -220,6 +232,11 @@ var fail_img = document.getElementById('fail_img')
 var victory_img = document.getElementById('victory_img')
 var pause_img = document.getElementById('pause_img')
 var cant_buy_img = document.getElementById('cant_buy_img')
+var replace_error_img = document.getElementById('replace_error_img')
+var click_screen_img = document.getElementById('click_screen_img')
+var click_screen_2_img = document.getElementById('click_screen_2_img')
+var click_replay_img = document.getElementById('click_replay_img')
+var replay_img = document.getElementById('replay_img')
 
 var go_button_img = document.getElementById('go_button_img')
 var pause_button_img = document.getElementById('pause_button_img')
@@ -250,7 +267,15 @@ var tutorial_note_21_img = document.getElementById('tutorial_note_21_img')
 var tutorial_note_22_img = document.getElementById('tutorial_note_22_img')
 var tutorial_note_23_img = document.getElementById('tutorial_note_23_img')
 var tutorial_note_24_img = document.getElementById('tutorial_note_24_img')
+var tutorial_note_25_img = document.getElementById('tutorial_note_25_img')
 
+var instructions_img = document.getElementById('instructions_img')
+
+var hint_1_img = document.getElementById('hint_1_img')
+var hint_2_img = document.getElementById('hint_2_img')
+var hint_3_img = document.getElementById('hint_3_img')
+var hint_4_img = document.getElementById('hint_4_img')
+var hint_5_img = document.getElementById('hint_5_img')
 
 var arrow_up_img = document.getElementById('arrow_up_img')
 var arrow_right_img = document.getElementById('arrow_right_img')
@@ -502,7 +527,18 @@ activeWeights.push(get(truck5));
 
 
 activeWeights.push(get(endL));
-var weightIndex = 0;
+var weightIndex = 0;//0
+
+
+var hints = [hint_5_img];
+hints.push(hint_2_img);
+hints.push(hint_1_img);
+hints.push(hint_3_img);
+hints.push(hint_4_img);
+//hints.push(get(endL));
+
+var hintIndex = 0;//0
+
 //-------------------------------------------------------------------
 
 //<img src="game_art/marshMellow_pillar.png"> 
@@ -539,11 +575,22 @@ function scrollTicker(){
 } setInterval(scrollTicker, 1000);
 
 function scrollMover(){
-	if(step == 22 && scroll_counter < 3){
-		scroll_xloc ++;
+	if(step == 22 && scroll_counter < 3 && scroll_xloc < 100){
+		scroll_xloc += 2;
 		//console.log("tick");
 	}
 } setInterval(scrollMover, 10);
+
+var click_bool = true;
+
+function clickTicker(){
+	if(click_bool == true){
+		click_bool = false;
+	}else if (click_bool == false){
+		click_bool = true;
+	}
+}setInterval(clickTicker, 800);
+
 //-------------------------------------------------------------------
 
 ///////////////////////////////////////////////
@@ -563,6 +610,7 @@ function tutorial(){
 	//	context.fillText('click the screen for next! ',canvas.width/2 - 150, canvas.height/2 + 60 );
 	//	context.fill();
 		context.drawImage(tutorial_note_1_img,canvas.width/2 - 150,canvas.height/2 -100,400,200);
+		if(click_bool == true) context.drawImage(click_screen_img,canvas.width/2 - 150,canvas.height/2 + 120);
 		//scrollAnimation();
 	}if(step == 2){ 
 	//	context.fillText('Oh look we have our first traveller! ',canvas.width/2 - 150, canvas.height/2);
@@ -579,6 +627,7 @@ function tutorial(){
 	//	context.fill();
 		arrow = true;
 		context.drawImage(tutorial_note_3_img,canvas.width/2 - 150,canvas.height/2 -100,400,200);
+		if(click_bool == true) context.drawImage(click_screen_img,canvas.width/2 - 150,canvas.height/2 + 120);
 	}if(step == 2){ 
 	}if(step == 4){ 
 	//	context.fillText(' this is your money, You can only purchase items that you have enough  ',canvas.width/2 - 150, canvas.height/2);
@@ -587,13 +636,14 @@ function tutorial(){
 	//	context.fill();
 		context.drawImage(tutorial_note_4_img,canvas.width/2 - 150,canvas.height/2 -100,400,200);
 		context.drawImage(arrow_right_img,canvas.width - 270,30,100,100);
+		if(click_bool == true) context.drawImage(click_screen_img,canvas.width/2 - 150,canvas.height/2 + 120);
 	}if(step == 2){ 
 	}if(step == 5){ 
 	//	context.fillText('The first thing we need is a bridge span ',canvas.width/2 - 150, canvas.height/2);
 	//	context.fillText('just press and drag the marshmellow span icon to purchase it!  ',canvas.width/2 - 150, canvas.height/2 + 30 );
 	//	context.fill();
 		context.drawImage(tutorial_note_5_img,canvas.width/2 - 150,canvas.height/2 -100,400,200);
-		context.drawImage(arrow_down_img,120, canvas.height/2 - 30,100,100);
+		if(itemp.x > 50) context.drawImage(arrow_down_img,itemp.x +10, canvas.height/2 - 30,100,100);
 	}if(step == 6){ 
 	//	context.fillText('Great job! now drag the bridge outside of the   ',canvas.width/2 - 150, canvas.height/2);
 	///	context.fillText('menu and place the bridge between the two ledges',canvas.width/2 - 150, canvas.height/2 + 30 );
@@ -625,13 +675,14 @@ function tutorial(){
 	//	context.fill();
 		context.drawImage(tutorial_note_9_img,canvas.width/2 - 150,canvas.height/2 -100,400,200);
 		context.drawImage(arrow_right_img,canvas.width - 270,30,100,100);
+		if(click_bool == true) context.drawImage(click_screen_img,canvas.width/2 - 150,canvas.height/2 + 120);
 	} 
 	if(step == 11){ 
 	//	context.fillText('Now lets see if the next traveller will make it accross',canvas.width/2 - 150, canvas.height/2);
 	//	context.fillText('you can also press enter to send the traveller accross',canvas.width/2 - 150, canvas.height/2 + 30 );
 	//	context.fill();
 		context.drawImage(tutorial_note_10_img,canvas.width/2 - 150,canvas.height/2 -100,400,200);
-		context.drawImage(arrow_up_img,420, 95,100,100);
+		context.drawImage(arrow_up_img,470, 95,100,100);
 	}
 	if(step == 12){ 
 		arrow = true;
@@ -643,6 +694,7 @@ function tutorial(){
 	//	context.fill();
 		if (arrow == true) context.drawImage(tutorial_note_11_img,canvas.width/2 - 150,canvas.height/2 -100,400,200);
 		if (arrow == true) context.drawImage(arrow_left_img,150, canvas.height/2 - 200,100,100);
+	//	if(click_bool == true) context.drawImage(click_screen_img,canvas.width/2 - 150,canvas.height/2 + 120);
 		tutor = true;
 	}
 	if(step == 14){ 
@@ -653,7 +705,8 @@ function tutorial(){
 	//	context.fill();
 		arrow = true;
 		context.drawImage(tutorial_note_12_img,canvas.width/2 - 150,canvas.height/2 -100,400,200);
-		context.drawImage(arrow_down_img,120, 10,100,100);
+		if(itemp.x > 50) context.drawImage(arrow_down_img,itemp.x+ 10, 10,100,100);
+		//if(click_bool == true) context.drawImage(click_screen_img,canvas.width/2 - 150,canvas.height/2 + 120);
 	}
 	if(step == 15){ 
 	//	context.fillText('Great job! now drag the support beam outside of the   ',canvas.width/2 - 150, canvas.height/2);
@@ -667,7 +720,11 @@ function tutorial(){
 	//	context.fill();
 		if(menuBox == 100){
 			context.drawImage(tutorial_note_14_img,canvas.width/2 - 150,canvas.height/2 -100,400,150);
-			context.drawImage(arrow_down_img,canvas.width/2, canvas.height - 300,100,100);
+
+			var i
+			for(i = 001; i < 800; i += 100){
+				context.drawImage(arrow_down_img,150 + i, canvas.height - 300,100,100);
+			}
 		} else {
 			context.drawImage(tutorial_note_13_img,canvas.width/2 - 150,canvas.height/2 -100,400,200);
 		}
@@ -678,7 +735,7 @@ function tutorial(){
 	if(step == 17){ 
 	//	context.fillText('Great job! now lets see if it the traveler makes it accross   ',canvas.width/2 - 150, canvas.height/2);
 		context.drawImage(tutorial_note_15_img,canvas.width/2 - 150,canvas.height/2 -100,400,200);
-		context.drawImage(arrow_up_img,420, 95,100,100);
+		context.drawImage(arrow_up_img,470, 95,100,100);
 
 		
 		tutor = false;
@@ -694,7 +751,13 @@ function tutorial(){
 	//	context.drawImage(tutorial_note_16_img,canvas.width/2 - 150,canvas.height/2 -100,400,200);
 	//	context.fillText('EXPLAIN THE DISTANCE IS A VARIABLE AND RECYCLING   ',canvas.width/2 - 150, canvas.height/2);
 	context.drawImage(tutorial_note_17_img,canvas.width/2 - 150,canvas.height/2 -250,400,200);
-	context.drawImage(arrow_down_img,canvas.width/2, canvas.height - 300,100,100);
+	
+	var i
+			for(i = 0; i <= 8; i += 1){				
+				if(activePillars[i].name != 'empty' && activePillars[i].name != 'end' ){
+					context.drawImage(arrow_down_img, i*100 +50, canvas.height - 300,100,100);
+				} 
+			}
 	
 	}
 	if(step == 20){ 
@@ -714,6 +777,7 @@ function tutorial(){
 		arrow = true;
 		context.drawImage(tutorial_note_19_img,canvas.width/2 - 150,canvas.height/2 -100,400,200);
 		context.drawImage(arrow_right_img,canvas.width - 270,30,100,100);
+		if(click_bool == true) context.drawImage(click_screen_img,canvas.width/2 - 150,canvas.height/2 + 120);
 	}
 	if(step == 22){ 
 	//	context.fillText('Ok now if you want more materials all you have to do is',canvas.width/2 - 150, canvas.height/2);
@@ -736,6 +800,7 @@ function tutorial(){
 	//	context.fillText('click the screen for next!',canvas.width/2 - 150, canvas.height/2 + 60 );
 	//	context.fill();
 		context.drawImage(tutorial_note_22_img,canvas.width/2 - 150,canvas.height/2 -100,400,200);
+		if(click_bool == true) context.drawImage(click_screen_img,canvas.width/2 - 150,canvas.height/2 + 120);
 	}
 	if(step == 25){ 
 	//	context.fillText('the greater the distance between two pillars   ',canvas.width/2 - 150, canvas.height/2);
@@ -743,9 +808,16 @@ function tutorial(){
 	//	context.fillText('click the screen for next!',canvas.width/2 - 150, canvas.height/2 + 60 );
 	//	context.fill();
 		context.drawImage(tutorial_note_23_img,canvas.width/2 - 150,canvas.height/2 -100,400,200);
+		if(click_bool == true) context.drawImage(click_screen_img,canvas.width/2 - 150,canvas.height/2 + 120);
 	}
 	if(step == 26){ 
+		context.drawImage(tutorial_note_24_img,canvas.width/2 - 150,canvas.height/2 -100,400,200);
+		if(click_bool == true) context.drawImage(click_screen_img,canvas.width/2 - 150,canvas.height/2 + 120);
+	
+	}
+	if(step == 27){ 
 		context.drawImage(tutorial_note_16_img,canvas.width/2 - 150,canvas.height/2 -100,400,200);
+		if(click_bool == true) context.drawImage(click_screen_img,canvas.width/2 - 150,canvas.height/2 + 120);
 		countdown = 30;
 		wpos.x = -350;
 		wpos.y = 200;
@@ -767,7 +839,7 @@ function music(){
 		if(victory_lap == true) victory_sound.play();
 		victory_lap = false;
 	}else {
-		if (step < 26 || state == pause) {
+		if (step <= 27 || state == pause) {
 			play_sound.pause();
 			tutorial_sound.play();
 
@@ -807,6 +879,10 @@ function draw(){
 	///console.log('countdown: '+ countdown);
 //	console.log('addMoney: '+ addMoney);
 	//console.log('end1: '+ activePillars[0].name);
+//	console.log('fail_count: '+ fail_count);
+//	console.log('hints.length '+ hints.length);
+//	console.log('hintIndex '+ hintIndex);
+
 
 
 
@@ -816,11 +892,11 @@ function draw(){
 
 
 //	if(picItem) console.log('PICUP---------------');
-//	if(picItem) console.log('PICUP =' + picItem.name);
+	if(picItem) console.log('PICUP =' + picItem.name);
 //	if(picItem) console.log('PICUP---------------');
 
 //	if(picItemB) console.log('PICUPB---------------');
-	//if(picItemB) console.log('PICUPB =' + picItemB.name);
+	if(picItemB) console.log('PICUPB =' + picItemB.name);
 //	if(picItemB) console.log('PICUPB---------------');
 	
 	if(state == play){
@@ -831,7 +907,15 @@ function draw(){
 				drawMenu(); 
 				moneyDisplay();
 		//	console.log('loadx' +loadx);
+		}else if(instruct){
+			background();
+			drawAnimation();
+			drawObjects();
+			drawMenu();
+			moneyDisplay();
+			instructions();
 		}else {
+			failCount();
 			background();
 			drawObjects();
 			slideMenu();
@@ -844,6 +928,7 @@ function draw(){
 			addToMoney();
 			clearPickup();
 			elligibleForArrangement();
+			mustReplace();
 		}
 	//	console.log(mouse.x);
 	//	console.log('___'+ menuBox);
@@ -877,6 +962,7 @@ function draw(){
 		subtractMoney();
 		holdItem();
 		addToMoney();
+
 		
 		//console.log(mouse.x);
 		//console.log('___'+ menuBox);
@@ -924,6 +1010,19 @@ function draw(){
 		//moneyDisplay();
 	}if(state == win){
 		winFunc();
+	}if(state == replay){
+		background();
+		drawObjects();
+		drawMenu(); 
+		moneyDisplay();
+		replayFunc();
+	}if(state == hint){
+		background();
+		drawAnimation();
+		drawObjects();
+		drawMenu();
+		moneyDisplay();
+		hintFunc();
 	}
 	tutorial();
 	music();
@@ -957,7 +1056,7 @@ function update() {
 function background(){
 	canvas.width = canvas.width;
 	context.drawImage(background_img,100,0,canvas.width -100,canvas.height);
-	if (state < 4 && testGo == false  && step > 1 && tutor == false) timerAnimation();
+	if (state < 4 && testGo == false  && step > 1 && tutor == false && instruct == false) timerAnimation();
 	//context.fillStyle = 'AliceBlue';
 	//context.drawImage(activeWeights[weightIndex].picture,canvas.width/2,canvas.height/2,100,100);
 //	context.fillRect(0,0, canvas.width,canvas.height);  
@@ -989,7 +1088,7 @@ function timerAnimation(){
 }
 
 function timerCount(){
-	if (state != pause && step > 1)countdown -= 1;
+	if (state != pause && step > 1 && instruct == false)countdown -= 1;
 } 
 setInterval(timerCount, 1000);
 
@@ -1001,10 +1100,10 @@ function drawObjects(){
 }
 
 function drawButtons(){
-	context.drawImage(go_button_img,420,20, 100,70);
-	context.drawImage(pause_button_img,540,20, 100,70);
-	//context.drawImage(tips_button_img,360,20, 100,70);
-
+	context.drawImage(tips_button_img,350,20, 100,70);
+	context.drawImage(go_button_img,470,20, 100,70);
+	context.drawImage(pause_button_img,590,20, 100,70);
+	
 
 }
 
@@ -1018,6 +1117,7 @@ function pauseScreen(){
 	context.fillStyle = 'rgba(0, 0, 0, 0.2)';
 	context.fillRect(0,0, canvas.width,canvas.height);  
 	context.drawImage(pause_img,canvas.width/2 - 100, canvas.height/2 -50,300,100);
+	context.drawImage(pause_button_img,590,20, 100,70);
 }
 
 function drawMenu(){
@@ -1500,13 +1600,30 @@ function resetMenu(){
 	}	
 }
 
+var outline_switch = 1;
+
+function outlineAnim(){
+	if(outline_switch == 1){
+		outline_switch = 2;
+	}else if (outline_switch == 2){
+		outline_switch = 1;
+	}
+} setInterval(outlineAnim, 300);
+
+
 function placement(){
 	var xval= 100 + PspaceingSize;
 	//var yval 100;
 	for(var i = 1; i < activePillars.length - 1; i++){
-		context.fillStyle = 'rgba(255,255,0,0.5)';
-		context.fillRect(xval,canvas.height*3/5 + 60, pwidth,pheight);  
- 		context.fill();
+		//context.fillStyle = 'rgba(255,255,0,0.5)';
+		//context.fillRect(xval,canvas.height*3/5 + 60, pwidth,pheight);  
+ 		//context.fill();
+ 		if (outline_switch == 1){
+ 			context.drawImage(outline_pillar_1_img,xval,canvas.height*3/5 + 60, pwidth,pheight)
+ 		} else if (outline_switch == 2){
+ 			context.drawImage(outline_pillar_2_img,xval,canvas.height*3/5 + 60, pwidth,pheight)
+
+ 		}
  		xval += PspaceingSize;
 	}
 }
@@ -1664,6 +1781,7 @@ function testLoad(){
 
 				if(totalS < activeWeights[weightIndex].weight){
 	//				console.log('failure');
+					fail_count++;
 					state = failure;
 					amountRotated = 0;
 				}else { console.log('ptrue'); pass = true; }
@@ -1674,6 +1792,7 @@ function testLoad(){
 	//	console.log('pass ' + pass);
 		if(pass && loadx < -activeWeights[weightIndex].s*3/2) {
 			state = success;
+			fail_count = 0;
 			amountRotated = 0;
 		}	
 	}
@@ -1758,9 +1877,12 @@ function winFunc(){
 	//context.fill();
 	context.drawImage(victory_img,canvas.width/2 - 300, canvas.height/2 -100,700,150);
 
-
-
+	if(replay_tick <= 0) state = replay;
 }
+
+function replayTick(){
+	if(state == win)replay_tick--;
+} setInterval(replayTick, 1000);
 
 function elligibleForArrangement(){
 	if (canvas.height*3/5 < mouse.y && mouse.y < canvas.height*3/5 + bheight){
@@ -1773,14 +1895,32 @@ function elligibleForArrangement(){
 
 } 
 
+
+//--------------------------------------------------------
+//placement error
+function mustReplace(){
+	if (replace_time > 0) {
+		context.drawImage(replace_error_img,350,150);
+	}
+} 
+function replaceTicker(){
+	if (replace_time > 0) {
+		replace_time--;
+	}else {
+		replace_time = 0;
+	}
+} setInterval(replaceTicker, 1000);
+//---------------------------------------------------------
+
 function arrangePillars(){
 	if(testGo == false){
+		console.log('add to the active list');
 		var xval= 100;
 		for(var i = 0; i < activePillars.length; i++){
 			if((xval < mouse.x  && mouse.x < xval + pwidth + 20 ) && 
 				(canvas.height*3/5 + 60 < mouse.y && mouse.y < canvas.height*3/5 + 60 + pheight) &&
 				onEnd == false){
-					//console.log('add to the active list');
+				//	console.log('add to the active list');
 				if(activePillars[i] != emptyp && activePillars[i] != endP){
 					moveIndex = i;
 					movePillar = activePillars[i];
@@ -1806,12 +1946,10 @@ function placePillars(){
 		var worked = false;
 		for(var i = 0; i < activePillars.length; i++){
 			if((xval -30 < mouse.x  && mouse.x < xval + pwidth/2 + 40) && 
-				(canvas.height*3/5 + 60 < mouse.y && mouse.y < canvas.height*3/5 + 60 + pheight/2) &&
+				(canvas.height*3/5 + 60 < mouse.y && mouse.y < canvas.height*3/5 + 60 + pheight) &&
 				onEnd == false && activePillars[i].name != 'end'){
 				if(activePillars[i].name != 'end' && activePillars[i].name != 'empty' ){
-	//		context.font = "small-caps bold 25px Trebuchet MS";
-   	//		context.fillStyle = 'red';
-	//		context.drawImage(cant_buy_img,70,30);
+					replace_time = 2;
 		}else {
 		 			console.log('add to the active list');
 		 			activePillars.splice(i, 1, picItem);
@@ -1840,6 +1978,7 @@ function placePillars(){
 				//picItem = null;
 			}
 		}
+		picItem = null;  
 }
 
 //************************************************************************************
@@ -1867,9 +2006,7 @@ function placeBridges(){
 	if((mouse.x > 100 && mouse.x < canvas.width) &&
 			(canvas.height*3/5 < mouse.y && mouse.y < canvas.height*3/5 + pheight/2 + 10)){
 		if(activeBridge.name != 'end' && activeBridge.name != 'empty' ){
-	//		context.font = "small-caps bold 25px Trebuchet MS";
-   	//		context.fillStyle = 'red';
-	//		context.drawImage(cant_buy_img,70,30);
+			replace_time = 2;
 		}else {
 			console.log('add to the active list');
 			activeBridge = picItemB;
@@ -1929,7 +2066,7 @@ addEventListener("keydown", function(key){
     }
 });
 */
-
+//-----------------------------------------------------------------------------------
 function pauseButton(){
 	 if(state == play && fakeMenu == 100 && testGo == false){
 	 	button_sound.play();
@@ -1949,6 +2086,38 @@ function goButton(){
     }
 }
 
+function instructions(){	
+   if(state == play && testGo == false && step > 5 && tutor == false && step != 10){	
+	   context.drawImage(instructions_img,canvas.width/2 -150,10,400,570);	 
+	   context.drawImage(click_screen_2_img,canvas.width/2 -100,canvas.height -80,300,20);	 
+	}
+}
+//---------------------------------------------------------------------------------------
+function replayFunc(){ 
+	if(click_bool == true)context.drawImage(click_replay_img,canvas.width/2 -100,330,300,20);
+	context.drawImage(replay_img,canvas.width/2 -120,200);		
+}
+
+
+function resetGame(){
+	state = 1;
+	weightIndex = 0;
+	money = 500;
+	countdown = 30;
+	wpos.x = -350;
+	wpos.y = 200;
+	replay_tick = 10;
+	activeBridge = emptyB;
+	victory_lap = true;
+
+	var i;
+	for(i = 1; i < activePillars.length -1; i++){
+		activePillars[i] = emptyp;
+	}
+
+}
+
+//--------------------------------------------------------------
 document.addEventListener('mousemove', function(e){ 
 	var rect = canvas.getBoundingClientRect();
 
@@ -1960,9 +2129,30 @@ document.addEventListener('mousemove', function(e){
 
 }, false);
 
+document.addEventListener('touchmove', function(e){ 
+	var rect = canvas.getBoundingClientRect();
+
+    mouse.x = ((e.clientX - rect.left)/canvasWidth)*1000; 
+    mouse.y = ((e.clientY - rect.top)/canvasHeight)*1000*(1/resolution); 
+
+   // console.log('canvasWidth'+canvasWidth);
+	//console.log('canvasHeight'+canvasHeight);
+
+}, false);
+//--------------------------------------------------------------
+
+
 
 document.addEventListener("mousedown", function(){ 
-  	mdown = true;
+  	downEvent();
+});
+document.addEventListener("touchstart", function(){
+	downEvent();
+});
+
+function downEvent(){
+	console.log('downEvent');
+	mdown = true;
   	if(state == play){
   		if (elligible_for_arrangement == 'pillars'){
   			arrangePillars();
@@ -1970,9 +2160,17 @@ document.addEventListener("mousedown", function(){
   			arrangeBridges();
   		}
 	}
-});
+}
 
 document.addEventListener("mouseup", function(){ 
+	upEvent();
+});
+document.addEventListener("touchend", function(){ 
+	upEvent();
+});
+
+function upEvent(){
+	console.log('upEvent');
 	if(step == 1 || step == 3 || step == 4  || step == 10 
 	  || step == 21 || step > 23){
 		step += 1;
@@ -1984,19 +2182,30 @@ document.addEventListener("mouseup", function(){
 
 
 	if(state == play){
-		if((540 < mouse.x && mouse.x < 640) &&
+		if((590 < mouse.x && mouse.x < 690) &&
 			(20 < mouse.y && mouse.y < 90)){
-			pauseButton();
+			if(instruct == false) pauseButton();
 		//240,20, 100,60
-		}else if((420 < mouse.x && mouse.x < 520) &&
+		}else if((470 < mouse.x && mouse.x < 570) &&
 			(20 < mouse.y && mouse.y < 90)){
-			goButton();
+			if(instruct == false) goButton();
+		}
+		else if((350 < mouse.x && mouse.x < 450) &&
+			(20 < mouse.y && mouse.y < 90)){
+			if(instruct == false){
+				instruct = true;
+				var instruct_check = true;	
+			}
+
 		}
 	}else if(state == pause){
-		if((540 < mouse.x && mouse.x < 640) &&
+		if((590 < mouse.x && mouse.x < 690) &&
 			(20 < mouse.y && mouse.y < 90)){
 			pauseButton();
 		}
+	}
+	if(instruct_check == undefined) {
+		instruct = false;
 	}
 
 	if(state == menu){
@@ -2007,7 +2216,23 @@ document.addEventListener("mouseup", function(){
 		state = play;
 		//picItem = emptyp;
 	}
-});
+	if (state == replay){
+		button_sound.play();
+		resetGame();
+	}
+	if (state == hint){
+		button_sound.play();
+		fail_count = 0;
+		state = play;
+
+		if(hintIndex < hints.length - 1){
+			hintIndex++;
+		}else {
+			hintIndex = 0
+		}
+	}
+}
+
 
 function finishResult(){
 	if(state == success || state == failure) {
@@ -2040,6 +2265,17 @@ function resultTimer(){
 	}		
 }
 setInterval(resultTimer, 1000);
+
+function failCount(){
+	if (fail_count  >= 7){
+		state = hint;
+	}
+}
+
+function hintFunc(){
+	if(click_bool == true)context.drawImage(click_screen_2_img,canvas.width/2 -100,350,300,20);
+	context.drawImage(hints[hintIndex],canvas.width/2 -150,140,400,200);	
+}
 
 
 function drawP(img,xloc,yloc){
