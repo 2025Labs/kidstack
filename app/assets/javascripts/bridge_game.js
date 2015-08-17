@@ -882,6 +882,9 @@ function draw(){
 //	console.log('fail_count: '+ fail_count);
 //	console.log('hints.length '+ hints.length);
 //	console.log('hintIndex '+ hintIndex);
+//	console.log('itemp.x' +itemp.x);
+	//console.log('e.clientX' + e.clientX);
+	console.log('mouse.x' + mouse.x);
 
 
 
@@ -892,11 +895,11 @@ function draw(){
 
 
 //	if(picItem) console.log('PICUP---------------');
-	if(picItem) console.log('PICUP =' + picItem.name);
+	//if(picItem) console.log('PICUP =' + picItem.name);
 //	if(picItem) console.log('PICUP---------------');
 
 //	if(picItemB) console.log('PICUPB---------------');
-	if(picItemB) console.log('PICUPB =' + picItemB.name);
+//	if(picItemB) console.log('PICUPB =' + picItemB.name);
 //	if(picItemB) console.log('PICUPB---------------');
 	
 	if(state == play){
@@ -1024,7 +1027,7 @@ function draw(){
 		moneyDisplay();
 		hintFunc();
 	}
-	tutorial();
+	if(state != pause) tutorial();
 	music();
 //
 //	rotate();
@@ -1188,7 +1191,7 @@ function drawMenu(){
 }
 
 function slideMenu(){
-	if (mouse.x < menuBox && mdown == false && sliding == false && 
+	if (mouse.x < menuBox && sliding == false && 
 		step > 1 && step != 8 && step != 11 && step != 20 && step != 10 
 		&& step != 17 && step != 19 && step != 24 && step != 25 && step != 26){
 		state = menu;
@@ -1215,6 +1218,7 @@ function slideMenu(){
 }
 
 function drawItem(){
+	console.log('drawItem');
 	var itemx = itemp.x;
 	var itemy = itemp.y;
 
@@ -2070,7 +2074,7 @@ addEventListener("keydown", function(key){
 function pauseButton(){
 	 if(state == play && fakeMenu == 100 && testGo == false){
 	 	button_sound.play();
-    	step = 30
+    	//step = 30
     	tutor = false;
         state = pause;
     }else  if(state == pause){
@@ -2087,7 +2091,7 @@ function goButton(){
 }
 
 function instructions(){	
-   if(state == play && testGo == false && step > 5 && tutor == false && step != 10){	
+   if(state == play && testGo == false && step > 26 && tutor == false && step != 10){	
 	   context.drawImage(instructions_img,canvas.width/2 -150,10,400,570);	 
 	   context.drawImage(click_screen_2_img,canvas.width/2 -100,canvas.height -80,300,20);	 
 	}
@@ -2121,6 +2125,9 @@ function resetGame(){
 document.addEventListener('mousemove', function(e){ 
 	var rect = canvas.getBoundingClientRect();
 
+	console.log('e.clientX'+e.clientX);
+	console.log('e.clientY '+e.clientY );
+
     mouse.x = ((e.clientX - rect.left)/canvasWidth)*1000; 
     mouse.y = ((e.clientY - rect.top)/canvasHeight)*1000*(1/resolution); 
 
@@ -2128,17 +2135,25 @@ document.addEventListener('mousemove', function(e){
 	//console.log('canvasHeight'+canvasHeight);
 
 }, false);
+
 
 document.addEventListener('touchmove', function(e){ 
+	e.preventDefault();
+
 	var rect = canvas.getBoundingClientRect();
 
-    mouse.x = ((e.clientX - rect.left)/canvasWidth)*1000; 
-    mouse.y = ((e.clientY - rect.top)/canvasHeight)*1000*(1/resolution); 
+	 console.log('e.clientX'+e.touches[0].clientX);
+	console.log('e.clientY '+e.touches[0].clientY );
 
-   // console.log('canvasWidth'+canvasWidth);
-	//console.log('canvasHeight'+canvasHeight);
+    mouse.x = ((e.touches[0].clientX - rect.left)/canvasWidth)*1000; 
+    mouse.y = ((e.touches[0].clientY - rect.top)/canvasHeight)*1000*(1/resolution); 
+
+    //console.log('mouse.x'+ mouse.x);
+	//console.log('mouse.y'+ mouse.y);
 
 }, false);
+
+
 //--------------------------------------------------------------
 
 
@@ -2146,7 +2161,20 @@ document.addEventListener('touchmove', function(e){
 document.addEventListener("mousedown", function(){ 
   	downEvent();
 });
-document.addEventListener("touchstart", function(){
+document.addEventListener("touchstart", function(e){
+	e.preventDefault();
+
+	var rect = canvas.getBoundingClientRect();
+
+	 console.log('e.clientX'+e.touches[0].clientX);
+	console.log('e.clientY '+e.touches[0].clientY );
+
+    mouse.x = ((e.touches[0].clientX - rect.left)/canvasWidth)*1000; 
+    mouse.y = ((e.touches[0].clientY - rect.top)/canvasHeight)*1000*(1/resolution);
+
+  	elligibleForArrangement();
+    pickup();
+
 	downEvent();
 });
 
@@ -2163,9 +2191,11 @@ function downEvent(){
 }
 
 document.addEventListener("mouseup", function(){ 
+	console.log('mouseup---------------')
 	upEvent();
 });
 document.addEventListener("touchend", function(){ 
+	console.log('touchend-----------')
 	upEvent();
 });
 
@@ -2184,6 +2214,7 @@ function upEvent(){
 	if(state == play){
 		if((590 < mouse.x && mouse.x < 690) &&
 			(20 < mouse.y && mouse.y < 90)){
+			console.log('pause1')
 			if(instruct == false) pauseButton();
 		//240,20, 100,60
 		}else if((470 < mouse.x && mouse.x < 570) &&
@@ -2193,6 +2224,7 @@ function upEvent(){
 		else if((350 < mouse.x && mouse.x < 450) &&
 			(20 < mouse.y && mouse.y < 90)){
 			if(instruct == false){
+				if(step > 26)button_sound.play();
 				instruct = true;
 				var instruct_check = true;	
 			}
@@ -2201,10 +2233,17 @@ function upEvent(){
 	}else if(state == pause){
 		if((590 < mouse.x && mouse.x < 690) &&
 			(20 < mouse.y && mouse.y < 90)){
+			console.log('pause2')
 			pauseButton();
+		}else if((350 < mouse.x && mouse.x < 450) &&
+			(20 < mouse.y && mouse.y < 90)){
+			step = 30
 		}
+
+
 	}
 	if(instruct_check == undefined) {
+		if(instruct == true) button_sound.play();
 		instruct = false;
 	}
 
@@ -2366,7 +2405,7 @@ function get(type) {
 //fuction that updates the screen size
 	function updateScreenSize(){
 //updates width to be propotional to screen size
- canvasWidth = window.innerWidth*2/3;
+ canvasWidth = window.innerWidth*4/5;//2/3
  //updates height be propotional to the width
  canvasHeight = canvasWidth * 1/resolution;
 	
