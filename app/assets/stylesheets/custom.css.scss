@@ -146,6 +146,11 @@ $correct_color: #008000;
 	max-width: 30%;
 }
 
+.imagerightxsmall{
+	@extend .imagerightbase;	
+	max-width: 10%;
+}
+
 .imageleftlarge{
 	@extend .imageleftbase;	
 	max-width: 60%;
@@ -164,7 +169,7 @@ $correct_color: #008000;
 
 .imageleftxsmall{
 	@extend .imageleftbase;	
-	max-width: 20%;
+	max-width: 10%;
 }
 
 
