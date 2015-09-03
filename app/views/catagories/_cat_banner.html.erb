@@ -6,4 +6,8 @@
 	<% unless @catagory.questions.first.nil? %>
 		<%= link_to image_tag("navgraphics/quiz_icon.png", :class=>'navbuttons'), quiz_catagory_path(:catagory_id => @catagory.id)  %> </span>
 	<% end %>
+
+	<% if @catagory.game_name? %>
+		<%= link_to image_tag("navgraphics/games_icon.png", :class=>'navbuttons'), game_catagory_path(:catagory_id => @catagory.id)  %> </span>
+	<% end %>
 </div>

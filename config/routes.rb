@@ -1,6 +1,7 @@
 Kidstack::Application.routes.draw do
   
 
+  get "static_pages/characters"
   resources :sections
   resources :questions
   resources :catagories do
@@ -29,6 +30,8 @@ Kidstack::Application.routes.draw do
 
   match '/news', to: 'catagories#news', via: 'get'
   match '/projects', to: 'catagories#projects', via: 'get'
+  
+  match '/characters', to: 'static_pages#characters', via: 'get'
 
       
   root 'catagories#index'
