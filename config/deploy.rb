@@ -17,7 +17,7 @@ set :normalize_asset_timestamps, false
 #### APP SETTINGS
 set :application, "kidstack"
 set :deploy_to, "/var/web/#{application}"
-set :keep_releases, 3
+set :keep_releases, 1
 
 #### Repository info
 set :scm, :git
