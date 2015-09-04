@@ -9,7 +9,9 @@
 
 #### Everything for Computing
 #catagory = FactoryGirl.create(:catagory, name:"computing", navgraphic: "navgraphics/computing.png", headergraphic: "computing", color: "computing", video: "EPDesign.m4v")
-catagory = Catagory.create(name:"Computing", navgraphic: "navgraphics/computing.png", headergraphic: "computing", color: "computing", keypoints: "this is a key point", game_name:"comp_game.js")
+catagory = Catagory.create(name:"Computing", navgraphic: "navgraphics/computing.png", headergraphic: "computing", color: "computing", keypoints: "this is a key point")
+#catagory = Catagory.create(name:"Computing", navgraphic: "navgraphics/computing.png", headergraphic: "computing", color: 
+#"computing", keypoints: "this is a key point", game_name:"comp_game.js")
 
 section = FactoryGirl.create(:section, catagory_id: catagory.id, linking: "first", main_idea:"Computing refers to any device or machine whose behavior is controlled by logical instructions", header:"<span class='accent1'>Computing</span> refers to any device or machine whose behavior is controlled by <span class='accent1'>logical instructions</span>", section_image: "section_images/programmable_devices.png", image_position: "imagerightlarge",content: "Computing is just a general word to describe machines that use logic to control what they do. Computing includes things we normally think of as computers – like laptops – as well as things we don’t normally think of as computers, but that also have logic that helps them work, such as modern televisions, DVD players, rockets, or even some parts of cars. An example of a computerized part of a car is something called an “Electronic Fuel Injection system”. Those are big fancy words that just mean that a computer system on the car reads data from sensors and uses that data to adjust the amount of fuel to be burned. So, many things beyond what we normally call computers really do have computers - or computing - in them, don’t they? So, what's a computer, then?")
 
