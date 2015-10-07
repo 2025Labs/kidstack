@@ -1,4 +1,6 @@
 class CatagoriesController < ApplicationController
+   #requires user authentication before running games.  will automatically redirect
+   before_action :authenticate_user!, :only => [:game]
   def new
   end
   
@@ -54,6 +56,7 @@ class CatagoriesController < ApplicationController
   end
 
   def game
+
      @catagory = Catagory.find(params[:catagory_id])
   end 
 

@@ -1,6 +1,9 @@
 Kidstack::Application.routes.draw do
   
 
+  devise_for :users
+  
+
   get "static_pages/characters"
   resources :sections
   resources :questions
@@ -36,8 +39,12 @@ Kidstack::Application.routes.draw do
       
   root 'catagories#index'
  
+ 
+#resources :catagories, only: [:index, :show]
   
-
+#devise_scope :user do
+ #   match '/sign-in' => "devise/session#{new}", :as => :login
+ # end
   
 
   # The priority is based upon order of creation: first created -> highest priority.
