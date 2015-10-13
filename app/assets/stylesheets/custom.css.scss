@@ -134,6 +134,31 @@ $correct_color: #008000;
 	color: $logo_color;
 }
 
+
+.pricelist_title{
+	font-size: 16px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	font-weight:bold;
+	color: $logo_color;
+}
+.pricelist_item{
+	font-size: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	color:#000000;
+}
+
+.mainpage_title{
+	padding-bottom: 10px;
+	font-weight:bold;
+	font-size: 21px;
+	color: $logo_color;
+	
+	line-height: 40px;
+	text-decoration:none;
+}
+
 /* options for positioning images in the section text */
 
 .imagerightbase{
@@ -205,8 +230,12 @@ $correct_color: #008000;
 
 .slidearea{
 	background-color: $video_area;
-	padding: 20px;
+	padding-left:30px;
+	padding-right:10px;
+	padding-bottom:10px;
+	padding-top:10px;
 }
+
 
 /* styles for quiz area */
 
@@ -279,6 +308,30 @@ $correct_color: #008000;
 	color:$logo_color;
 }
 
+.inlineaccentengrprocess {
+	font-size: 14px;
+	color: $engineering_process_color;
+}
+.inlineaccentmaterials {
+	font-size: 14px;
+	color: $materials_color;
+}
+.inlineaccentstructures {
+	font-size: 14px;
+	color: $structures_color;
+}
+.inlineaccentmachines {
+	font-size: 14px;
+	color: $machines_color;
+}
+.inlineaccentenergy{
+	font-size: 14px;
+	color: $energy_color;
+}
+.inlineaccentcomputing {
+	font-size: 14px;
+	color: $computing_color;
+}
 
 /* colors for backgrounds to align with catagories*/
 
