@@ -1,6 +1,7 @@
 class CatagoriesController < ApplicationController
    #requires user authentication before running games.  will automatically redirect
-   before_action :authenticate_user!, :only => [:game, :projects, :quiz, :news]
+    # before_action :authenticate_user!, :only => [:game, :project, :quiz, :news]
+    before_action :authenticate_user!, :only => [:game, :magazine]
    
   def new
   end
@@ -23,6 +24,9 @@ class CatagoriesController < ApplicationController
   def news
   end
 
+  def magazine
+  end
+  
   def quiz
     @catagory = Catagory.find(params[:catagory_id])
     @questions = @catagory.questions.order("id")

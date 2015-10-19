@@ -8,16 +8,16 @@
 <div class = "slidearea">
 				
 	<div class="row-fluid">
-		<div class="span2">
+		<div class="span3">
 			<span class="mainpage_title">About This Site:</span>
 				<br>Use this site to learn how engineering has built the world around you! <br><br>Click any of the icons at the top to find out about that area (<span class="inlineaccentengrprocess"> Engineering Process</span>, <span class="inlineaccentmaterials"> Materials</span>, <span class="inlineaccentstructures"> Structures</span>, <span class="inlineaccentmachines"> Machines</span>, <span class="inlineaccentenergy"> Energy</span>, or  <span class="inlineaccentcomputing"> Computing</span>).
 				
 				<br><br><%= link_to image_tag("navgraphics/news_icon.png", :class=>'navbuttons'), news_path  %>Find out what's going on in the world of engineering in the &#8220;Engineering in the News&#8482;&#8221; area. 
-				<br><br><%= link_to image_tag("navgraphics/project_icon.png", :class=>'navbuttons'), projects_path  %> <br>Or, do some projects from the &#8220;Projects&#8221; area. 
-				<br><br>Read about the characters on the <%= link_to image_tag("navgraphics/characters_icon.png", :class=>'navbuttons'), characters_path  %> page. 
-				<br><br>Access to all of the content is free through 2015.
+				<br><%= link_to image_tag("navgraphics/project_icon.png", :class=>'navbuttons'), projects_path  %> <br>Or, do some projects from the &#8220;Projects&#8221; area. <br>
+				 <%= link_to image_tag("navgraphics/characters_icon.png", :class=>'navbuttons'), characters_path  %> <br>Read about the characters on the &#8220;Characters&#8221;page. 
+				<br><br>Access to all of the content, except the 2025 Kids <b>Engineering in the News&#8482;</b>  magazine, is free through 2015. <%= link_to ("Order the magazine now!"), pricelist_path %>
 		</div> <!-- span 2 -->
-		<div class="span6">
+		<div class="span5">
 			<span class="mainpage_title">Featured Video:</span>
 				<div class="row-fluid">
 					When you turn on a light, where does that energy come from? Follow Sunny (his friends call him &#8220;Banana Boy&#8221;) to find out how we get energy to power our world. <br><br>
