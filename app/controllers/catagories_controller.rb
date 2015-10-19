@@ -1,6 +1,7 @@
 class CatagoriesController < ApplicationController
    #requires user authentication before running games.  will automatically redirect
-   before_action :authenticate_user!, :only => [:game]
+   before_action :authenticate_user!, :only => [:game, :projects, :quiz, :news]
+   
   def new
   end
   
