@@ -1,5 +1,15 @@
+<div class="logo_mainbkgd">
+	<div class="catagoryandtopic" > login 
+		<%= link_to image_tag("navgraphics/news_icon.png", :class=>'navbuttons'), news_path  %>
+		<%= link_to image_tag("navgraphics/project_icon.png", :class=>'navbuttons'), projects_path  %>  </span>
+	</div>
+</div>
+
+
+<div class = "slidearea">
 <div class="characters_title">
- Log on to your 2025 Kids Subscription
+ Log in to your 2025 Kids Subscription
+ <br><br>
 </div>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -26,3 +36,4 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+</div> <!-- slide area -->

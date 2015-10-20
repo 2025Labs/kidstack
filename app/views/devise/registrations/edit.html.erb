@@ -1,3 +1,11 @@
+<div class="logo_mainbkgd">
+	<div class="catagoryandtopic" > edit profile 
+		<%= link_to image_tag("navgraphics/news_icon.png", :class=>'navbuttons'), news_path  %>
+		<%= link_to image_tag("navgraphics/project_icon.png", :class=>'navbuttons'), projects_path  %>  </span>
+	</div>
+</div>
+
+<div class = "slidearea">
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
@@ -32,8 +40,9 @@
   </div>
 <% end %>
 
-<h3>Cancel my account</h3>
+<!-- <h3>Cancel my account</h3>
 
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p> -->
 
 <%= link_to "Back", :back %>
+</div> <!-- slide area -->
