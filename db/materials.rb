@@ -9,7 +9,7 @@
 
 #### Everything for Materials
 #catagory = FactoryGirl.create(:catagory, name:"materials", navgraphic: "navgraphics/materials.png", headergraphic: "materials", color: "materials", keypoints: "And here are some key points<p>" )
-catagory = Catagory.create(name:"Materials", navgraphic: "navgraphics/materials.png", headergraphic: "materials", color: "materials", keypoints: "materials main point one.")
+catagory = Catagory.create(name:"Materials", navgraphic: "navgraphics/materials.png", headergraphic: "materials", color: "materials", keypoints: "materials main point one.", video:"//www.youtube.com/embed/sWYa0bUt4_4")
 
 section = FactoryGirl.create(:section, catagory_id: catagory.id, linking: "first", main_idea:"Materials are what things are made of", header:"Materials are what things are <span class='accent1'>made of</span>", content: "What is a material? A material is what something is made of. Some examples are: wood, stone, plastic, glass, cement, cotton, or steel. Engineers have special words they use to describe materials, like <i>properties</i> or <i>behaviors</i>. For now, you can just think about what they <i>seem</i> like to you. For example, glass is hard and it breaks easily. Wood is softer, and you can dent it with something hard like a hammer. A rubber ball is solid but “squishy”. Fabrics like cotton can be bent or crumpled, and then go right back to how they looked before -- but if you step on a soda can and crumple it, it will not go back to its initial shape when you step off it.<br><br>You encounter materials in everything you touch. Look around you to see what materials you can identify. How do they feel? What happens when you try to bend them, or stretch them, or drop them?")
 
