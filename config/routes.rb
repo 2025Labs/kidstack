@@ -35,7 +35,8 @@ Kidstack::Application.routes.draw do
   match '/projects', to: 'catagories#projects', via: 'get'
   
   match '/characters', to: 'static_pages#characters', via: 'get'
-  match '/pricelist', to: 'static_pages#pricelist', via: 'get'
+  match '/products', to: 'static_pages#pricelist', via: 'get'
+  match '/puzzles', to: 'catagories#puzzles', via: 'get'
   match '/morseproj', to: 'static_pages#morseproj', via: 'get'
   match '/magazine', to: 'catagories#magazine', via: 'get'
 
