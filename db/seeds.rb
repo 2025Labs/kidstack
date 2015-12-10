@@ -6,6 +6,12 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+Catagory.delete_all
+Topic.delete_all
+Question.delete_all
+Answer.delete_all
+Section.delete_all
+
 require "#{Rails.root}/db/ep.rb"
 require "#{Rails.root}/db/materials.rb"
 require "#{Rails.root}/db/structures.rb"
