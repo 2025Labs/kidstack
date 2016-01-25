@@ -9,7 +9,7 @@
 
 #### Everything for Computing
 #catagory = FactoryGirl.create(:catagory, name:"computing", navgraphic: "navgraphics/computing.png", headergraphic: "computing", color: "computing", video: "EPDesign.m4v")
-catagory = Catagory.create(name:"Computing", navgraphic: "navgraphics/computing.png", headergraphic: "computing", color: "computing", keypoints: "this is a key point")
+catagory = Catagory.create(name:"Computing", navgraphic: "navgraphics/computing.png", headergraphic: "computing", color: "computing", keypoints: "this is a key point", video:"//www.youtube.com/embed/lZxJgTiKDis")
 #catagory = Catagory.create(name:"Computing", navgraphic: "navgraphics/computing.png", headergraphic: "computing", color: 
 #"computing", keypoints: "this is a key point", game_name:"comp_game.js")
 
