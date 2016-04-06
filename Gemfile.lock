@@ -28,7 +28,7 @@ GEM
     arel (4.0.1)
     atomic (1.1.14)
     bcrypt (3.1.10)
-    bootstrap-sass (3.2.0.0)
+    bootstrap-sass (2.3.2.0)
       sass (~> 3.2)
     builder (3.1.4)
     capistrano (2.15.5)
@@ -178,7 +178,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bootstrap-sass (= 3.2.0.0)
+  bootstrap-sass (= 2.3.2.0)
   capistrano
   capistrano-ext
   capybara (= 1.1.2)
