@@ -8,8 +8,43 @@
 
 
 <div class = "slidearea">
-
 	<div class ="row-fluid" style="padding-bottom:5px; border-bottom: 1px solid #d9d9d9;">
+		<div class="span2">
+			<%= link_to image_tag("navgraphics/energy.png"), catagory_path("Energy") %>
+		</div> <!-- span2 -->
+
+		<div class="span4">
+				<div class="projects_title">Circuit Math: Voltage, Resistance, and Current (ages 12+)</div>
+				
+				<div class="projects_description">In this project, you are a scientist who has been charged with discovering the mathematical relationship among voltage, resistance, and current in simple circuits. You are in a race with other scientists to see who can make this discovery first and claim all the credit. You will build circuits with the same voltage but different levels of resistance. You will see what happens to the current when you change the resistance. NOTE: This project includes Teacher/Leader Notes at the back of the project documentation.
+
+				</div> <!-- end projects description -->
+		</div> <!-- span 4 -->
+		
+		<div class="span3">	
+			<div class="energy_bkgd">
+			<div class="projects_caption" >You Will Need:</div>
+				<div class="projects_materials_needed">
+					•	Two AA batteries and a battery holder <br>
+					•	Resistors with different levels of resistance<br>
+					•	A digital multi meter<br>
+					•	A breadboard<br>
+					•	An LED<br>
+					•	Alligator clips, jumper wires, two short copper wires<br>
+					•	See the project Parts Sheet for details
+				</div> <!-- class matls needed -->
+			</div> <!-- background -->
+		</div> <!-- span 3 -->
+		
+		<div class="span3">						
+				<div class="imageleftlarge" style="margin-left: 30px">
+					<%= link_to image_tag("projects_images/frontpage_vir.png", :class=>'navbuttons'), "VoltageResistanceCurrent_class_version.pdf"  %> 
+				</div>	<!-- class -->
+		</div> <!-- span 3 -->
+ 	</div> <!-- row -->
+	
+
+<div class ="row-fluid" style="padding-bottom:5px; padding-top: 20px; border-bottom: 1px solid #d9d9d9;">
 		<div class="span2">
 			<%= link_to image_tag("navgraphics/computing.png"), catagory_path("Computing") %>
 		</div> <!-- span2 -->
