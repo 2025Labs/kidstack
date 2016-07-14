@@ -32,10 +32,136 @@ $correct_color: #008000;
 	padding-bottom:7px;
 }
 
-.footer{
+#footer{
+	background-color: $video_area;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	padding-left: 60px;
+	padding-right: 40px;
+	margin-top: 20px;
+	margin-bottom: 10px;
+	text-align: left;
+}
+
+.footheader1 {
+	font-size:15px;	
+	font-family: Impact, charcoal, sans-serif;
+	padding-left: 20px;
+	padding-right: 60px;
+	$engineering_process_color: #1A9CD6;
+	margin-top: 40px;
+	text-align: left;
+}
+
+
+.footsub1 {
+	padding-left: 20px;
+	text-decoration: none;
+	color: #1A9CD6;
+}
+
+.footheader2 {
+	font-size:15px;	
+	font-family: Impact, charcoal, sans-serif;
+	padding-left: 20px;
+	padding-right: 60px;
+	color: #A05CAC;
+	margin-top: 40px;
+	text-align: left;
+}
+
+.footsub2 {
+	padding-left: 20px;
+	text-decoration: none;
+	color: #A05CAC;
+}
+
+.footheader3 {
+	font-size:15px;	
+	font-family: Impact, charcoal, sans-serif;
+	padding-left: 20px;
+	padding-right: 60px;
+	color: #139F9D;
+	margin-top: 40px;
+	text-align: left;
+}
+
+.footsub3 {
+	padding-left: 20px;
+	text-decoration: none;
+	color: #139F9D;
+}
+
+.footheader4 {
+	font-size:15px;	
+	font-family: Impact, charcoal, sans-serif;
+	padding-left: 20px;
+	padding-right: 60px;
+	color: #A3D147;
+	margin-top: 40px;
+	text-align: left;
+}
+
+.footsub4 {
+	padding-left: 20px;
+	text-decoration: none;
+	color: #A3D147;
+}
+
+.footheader5 {
+	font-size:15px;	
+	font-family: Impact, charcoal, sans-serif;
+	padding-left: 20px;
+	padding-right: 60px;
+	color: #F59A00;
+	margin-top: 40px;
+	text-align: left;
+}
+
+.footsub5 {
+	padding-left: 20px;
+	text-decoration: none;
+	color: #F59A00;
+}
+
+.footheader6 {
+	font-size:15px;	
+	font-family: Impact, charcoal, sans-serif;
+	padding-left: 20px;
+	padding-right: 60px;
+	color: #F74D9C;
+	margin-top: 40px;
+	text-align: left;
+}
+
+.footsub6 {
+	padding-left: 20px;
+	text-decoration: none;
+	color: #F74D9C;
+}
+
+.footsub {
+	padding-left: 20px;
+	text-decoration: none;
+	color: $logo_color;
+	padding-top: 100px;
+	padding-bottom: 10px;
+}
+
+.row-fluid2 {
+	padding-left: 1150px;
+	padding-right: 300px;
 	padding-top: 20px;
 	padding-bottom: 20px;
 }
+
+.row-fluid3 {
+	padding-left: 450px;
+	padding-right: 60px;
+	padding-top: 20px;
+	padding-bottom: 0px;
+}
+
 
 .bottomsquares{
 	float:right;
@@ -578,6 +704,9 @@ a:hover {
 .row-fluid .span2NoGutter { width:16%; margin-left:.66667%} // 100% / 6 col
 .row-fluid .span3NoGutter { width:24.5%; margin-left:.59%} // 100% / 4 col
 .row-fluid .span6NoGutter { width:49.9%; margin-left:-.4%} // 100% / 2 col
+
+
+
 
 #menu {
     list-style:none;
