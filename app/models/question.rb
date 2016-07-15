@@ -7,7 +7,7 @@ class Question < ActiveRecord::Base
     def catnext
 
       if topic_id == nil
-        catagory.questions.where("id > ?", id).order("question_num ASC").first
+        catagory.questions.where("id > ?", id).order("id ASC").first
       else
         topic.questions.where("id > ?", id).order("id ASC").first
       end
