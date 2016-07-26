@@ -1,125 +1,63 @@
 <div id = "footer"> 
 	<div class = "container-fluid">
-		
-	
-		<div class="row-fluid">
+		<div class="row-fluid">		
 			
-			<div class="span2" style = "text-align:left">
-		
-				<a class ="footheader1"  <a href="http://www.2025kids.com/catagories/Engineering%20Process">Eng. Process</a>
-				<br>
+		<div class="span2" style = "text-align:left">
+		<a class ="footheader1" <%= link_to ("Eng. Process"), catagory_path("Engineering%20Process") %></a><br>
+		<a class ="footsub1" <%= link_to ("Design Process"), topic_path("design%20process") %></a><br>
+		<a class ="footsub1" <%= link_to ("Innovation Process"), topic_path("innovation%20process") %></a><br>
+		<a class ="footsub1" <%= link_to ("Failure Analysis"), topic_path("failure%20analysis") %></a><br>
+		<a class ="footsub1" <%= link_to ("Reverse Engineering"), topic_path("reverse%20engineering") %></a><br>		
+			</div>	
 
-				<a class ="footsub1" <a href="http://www.2025kids.com/topics/design%20process">Design Process</a>
-				<br>
-				
-				<a class ="footsub1" <a href="http://www.2025kids.com/topics/innovation%20process">Innovation Process</a>
-				<br>
-
-				<a class ="footsub1" <a href="http://www.2025kids.com/topics/failure%20analysis">Failure Analysis</a>
-				<br>
-
-				<a class ="footsub1" <a href="http://www.2025kids.com/topics/reverse%20engineering">Reverse Engineering</a>
-
-			</div>
-
-			
-
-			<div class="span2" style = "text-align:left">
-		
-				<a class ="footheader2" <a href="http://www.2025kids.com/catagories/Materials">Materials</a>
-				<br>
-
-				<a class ="footsub2" <a href="http://www.2025kids.com/topics/behaviors%20and%20properties">Behaviors and Properties</a>
-				<br>
-				
-				<a class ="footsub2" <a href="http://www.2025kids.com/topics/steel">Steel</a>
-				<br>
-
-				<a class ="footsub2" <a href="http://www.2025kids.com/topics/glass">Glass</a>
-				<br>
-
-				<a class ="footsub2" <a href="http://www.2025kids.com/topics/plastics">Plastics</a>
-				<br>
-
-				<a class ="footsub2" <a href="http://www.2025kids.com/topics/concrete">Cement and Concrete</a>
-				<br>
-
-				<a class ="footsub2" <a href="http://www.2025kids.com/topics/silicon">Silicon</a>
-
-			</div>
-
-			<div class="span2" style = "text-align:left">
-		
-				<a class ="footheader3" <a href="http://www.2025kids.com/catagories/Structures">Structures</a>
-				<br>
-
-				<a class ="footsub3" <a href="http://www.2025kids.com/topics/forces">Forces</a>
-				<br>
-				
-				<a class ="footsub3" <a href="http://www.2025kids.com/topics/bridges">Bridges</a>
-				<br>
-
-				<a class ="footsub3" <a href="http://www.2025kids.com/topics/skyscrapers">Skycrapers</a>
-				
-			</div>
-
-
-			<div class="span2" style = "text-align:left">
-		
-				<a class ="footheader4" <a href="http://www.2025kids.com/catagories/Machines">Machines</a>
-				<br>
-
-				<a class ="footsub4" <a href="http://www.2025kids.com/topics/simple%20machines">Simple Machines</a>
-				<br>
-				
-				<a class ="footsub4" <a href="http://www.2025kids.com/topics/motorsandengines">Motors and Engines</a>
-				<br>
-
-				<a class ="footsub4" <a href="http://www.2025kids.com/topics/friction">Friction</a>
-				<br>
-
-				<a class ="footsub4" <a href="http://www.2025kids.com/topics/bikesandcars">Bikes and Cars</a>
-				<br>
-
-				<a class ="footsub4" <a href="http://www.2025kids.com/topics/robotics">Robotics</a>
-
-			</div>
-
-			<div class="span2" style = "text-align:left">
-		
-				<a class ="footheader5" <a href="http://www.2025kids.com/catagories/Energy">Energy</a>
-				<br>
-
-				<a class ="footsub5" <a href="http://www.2025kids.com/topics/energy%20sources">Energy Sources</a>
-				<br>
-				
-				<a class ="footsub5" <a href="http://www.2025kids.com/topics/energy%20conversion">Converting Energy</a>
-				<br>
-
-				<a class ="footsub5" <a href="http://www.2025kids.com/topics/electricgrid">The Electric Grid</a>
-				<br>
-
-				<a class ="footsub5" <a href="http://www.2025kids.com/topics/energy%20storage">Energy Storage</a>
-
-			</div>
-
-			<div class="span2" style = "text-align:left">
-		
-				<a class ="footheader6" <a href="http://www.2025kids.com/catagories/Computing">Computing</a>
-				<br>
-
-				<a class ="footsub6" <a href="http://www.2025kids.com/topics/programming%20languages">Programming Language</a>
-				<br>
-				
-				<a class ="footsub6" <a href="http://www.2025kids.com/topics/anatomy%20of%20a%20computer">Anatomy of a Computer</a>
-				
-				
-			</div>
+		<div class="span2" style = "text-align:left">
+		<a class ="footheader2" <%= link_to ("Materials"), catagory_path("Materials") %></a><br>
+		<a class ="footsub2" <%= link_to ("Steel"), topic_path("steel") %></a><br>
+		<a class ="footsub2" <%= link_to ("Glass"), topic_path("glass") %></a><br>
+		<a class ="footsub2" <%= link_to ("Plastics"), topic_path("plastics") %></a><br>
+		<a class ="footsub2" <%= link_to ("Cement and Concrete"), topic_path("concrete") %></a><br>
+		<a class ="footsub2" <%= link_to ("Silicon"), topic_path("silicon") %></a><br>
+		<a class ="footsub2" <%= link_to ("Metal Alloys"), topic_path("metal%20alloys") %></a><br>
 		</div>
 
-			<div class ="row-fluid2">
+		<div class="span2" style = "text-align:left">		
+		<a class ="footheader3" <%= link_to ("Structures"), catagory_path("Structures") %></a><br>
+		<a class ="footsub3" <%= link_to ("Forces"), topic_path("forces") %></a><br>
+		<a class="footsub3" <%= link_to ("Arches, Beams, Columns"), topic_path("arches%20beams%20and%20columns") %></a><br>
+		<a class="footsub3" <%= link_to ("Bridges"), topic_path("bridges") %></a><br>	
+		<a class="footsub3" <%= link_to ("Skyscrapers"), topic_path("skyscrapers") %></a><br>
+		</div>
 
 
+		<div class="span2" style = "text-align:left">
+		<a class ="footheader4" <%= link_to ("Machines"), catagory_path("Machines") %></a><br>
+		<a class="footsub4" <%= link_to ("Simple Machines"), topic_path("simple%20machines") %></a><br>
+		<a class="footsub4" <%= link_to ("Motors and Engines"), topic_path("motorsandengines") %></a><br>
+		<a class="footsub4" <%= link_to ("Friction"), topic_path("friction") %></a><br>
+		<a class="footsub4" <%= link_to ("Bikes and Cars"), topic_path("bikesandcars") %></a><br>
+		<a class="footsub4" <%= link_to ("Robotics"), topic_path("robotics") %></a><br>
+		</div>
+
+		<div class="span2" style = "text-align:left">
+		
+		<a class ="footheader5" <%= link_to ("Energy"), catagory_path("Energy") %></a><br>
+		<a class="footsub5" <%= link_to ("Energy Sources"), topic_path("energy%20sources") %></a><br>
+		<a class="footsub5" <%= link_to ("Converting Energy"), topic_path("energy%20conversion") %></a><br>
+		<a class="footsub5" <%= link_to ("The Electric Grid"), topic_path("electricgrid") %></a><br>
+		<a class="footsub5" <%= link_to ("Energy Storage"), topic_path("energy%20storage") %></a><br>
+</div>
+
+		<div class="span2" style = "text-align:left">
+		<a class ="footheader6" <%= link_to ("Computing"), catagory_path("Computing") %></a><br>
+		<a class="footsub6" <%= link_to ("Programming Languages"), topic_path("programming%20languages") %></a><br>
+		<a class="footsub6" <%= link_to ("Anatomy of a Computer"), topic_path("anatomy%20of%20a%20computer") %></a><br>
+		<a class="footsub6" <%= link_to ("Computer Networking"), topic_path("computer%20networking") %></a><br>
+		<a class="footsub6" <%= link_to ("Computer Security"), topic_path("computer%20security") %></a><br>
+		</div>
+		
+		</div>
+
+		<div class ="row-fluid2">
 			<div class="span6" style="text-align:left">
 		
 				<a href="http://www.2025labs.com" target="_blank"><%= image_tag("2025_logo_noback.png", :alt => "2025 Labs site") %> </a>
