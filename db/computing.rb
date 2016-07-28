@@ -130,6 +130,6 @@ answer = Answer.create(question_id: question.id, image: "answer_images/answer_c.
 
 
 
-topic = FactoryGirl.create(:topic, name:"future of computing",  navgraphic: "navgraphics/computing_devices.png", catagory_id: catagory.id, available: "no")
+#topic = FactoryGirl.create(:topic, name:"future of computing",  navgraphic: "navgraphics/computing_devices.png", catagory_id: catagory.id, available: "no")
 #topic = FactoryGirl.create(:topic, name:"how computers work",  navgraphic: "navgraphics/computeranatomy.png", catagory_id: catagory.id, available: "no")
 
