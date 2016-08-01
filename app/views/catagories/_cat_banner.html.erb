@@ -1,8 +1,10 @@
 <div class="<%= @catagory.color%>_mainbkgd">
 
-	<a class="catagoryandtopic" <%= link_to @catagory.headergraphic, catagory_path(@catagory.name) %></a> <span class= "catagoryandtopic" ><%= yield :location %></span>
+	<span class="catagoryandtopic"> <a class= "catagoryandtopic" <%= link_to @catagory.headergraphic, catagory_path(@catagory.name) %>
+	<%= yield :location %></a></span>
 	<%= link_to image_tag("navgraphics/news_icon.png", :class=>'navbuttons'), news_path  %> </span>
 	<%= link_to image_tag("navgraphics/project_icon.png", :class=>'navbuttons'), projects_path  %> </span>
+	<%= link_to image_tag("navgraphics/characters_icon.png", :class=>'navbuttons'), characters_path  %> </span>
 	<% unless @catagory.questions.first.nil? %>
 		<%= link_to image_tag("navgraphics/quiz_icon.png", :class=>'navbuttons'), quiz_catagory_path(:catagory_id => @catagory.id)  %> </span>
 	<% end %>

@@ -6,6 +6,7 @@
 
 	<%= link_to image_tag("navgraphics/news_icon.png", :class=>'navbuttons'), news_path  %> </span>
 	<%= link_to image_tag("navgraphics/project_icon.png", :class=>'navbuttons'), projects_path  %> </span>
+	<%= link_to image_tag("navgraphics/characters_icon.png", :class=>'navbuttons'), characters_path  %> </span>
 	<% unless @topic.questions.first.nil? %>
 		<%= link_to image_tag("navgraphics/quiz_icon.png", :class=>'navbuttons'), quiz_topic_path(:topic_id => @topic.id)  %> </span>
 	<% end %>

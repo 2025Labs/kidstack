@@ -25,7 +25,9 @@ $correct_color: #008000;
 .navbuttons{
 	padding-right: 20px;
 	float:right;
+	padding-top: -20px;
 }
+
 .topnav{
 	float:left;
 	padding-top:7px;
@@ -154,6 +156,7 @@ $correct_color: #008000;
 
 .row-fluid2 {
 	padding-left: 0px;
+
 }
 
 .center_text{
@@ -495,7 +498,6 @@ $correct_color: #008000;
 	@extend .base_bkgd;
 	background-color:$engineering_process_color;
 	opacity: .7;
-
 }
 
 .materials_bkgd{
@@ -588,10 +590,6 @@ a.catagoryandtopic:active {
 }
 
 
-
-
-
-
 /* colors for backgrounds to align with catagories on the text behind the cat and nav text below header*/
 
 .mainbkgd{
@@ -599,11 +597,18 @@ a.catagoryandtopic:active {
 	padding-right:10px;
 	padding-bottom:10px;
 	padding-top:10px;
+	font-size: 25px;
+	padding-bottom: 15px;
+	padding-top: 5px;
+	margin-bottom:10px;
+	margin-top: -5px;
+	height: 30px;
 }
 
 .engineering_process_mainbkgd{
 	@extend .mainbkgd;
 	background-color:$engineering_process_color;
+
 }
 
 .materials_mainbkgd{
@@ -635,9 +640,11 @@ a.catagoryandtopic:active {
 	background-color: $logo_color;
 	padding-left:10px;
 	padding-right:10px;
-	padding-bottom:10px;
-	padding-top:10px;
+	padding-bottom: 20px;
+	padding-top: 0px;
 	margin-bottom:10px;
+	margin-top: -5px;
+	height: 30px;
 }
 
 /* these two classes are here to keep the bookmarked section headers from having the underscoring*/
